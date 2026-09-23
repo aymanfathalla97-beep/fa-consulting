@@ -22,37 +22,20 @@
       --card-shadow-hover: 0 20px 40px -15px rgba(2, 12, 27, 0.16);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.6; }
+    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.7; }
     
-    .top-banner {
-      background-color: #050c18;
-      color: #94a3b8;
-      font-size: 13px;
-      padding: 8px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(197, 155, 39, 0.2);
-    }
-    .badge-live {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background: #10b981;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #10b981;
-    }
     header {
       background: rgba(10, 25, 47, 0.98);
       position: sticky;
       top: 0;
       z-index: 1000;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
     }
     .nav-container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 12px 24px;
+      padding: 14px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -64,7 +47,7 @@
       text-decoration: none;
     }
     .logo-img {
-      height: 48px;
+      height: 46px;
       width: auto;
       object-fit: contain;
     }
@@ -82,7 +65,7 @@
     }
     .logo-title span { color: var(--accent-gold); }
     .logo-subtitle {
-      font-size: 9.5px;
+      font-size: 9px;
       font-weight: 600;
       color: #94a3b8;
       letter-spacing: 1.5px;
@@ -90,14 +73,14 @@
     }
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       list-style: none;
       align-items: center;
     }
     .nav-links a {
       color: #cbd5e1;
       text-decoration: none;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 600;
       transition: color 0.2s;
     }
@@ -110,7 +93,9 @@
       font-weight: 700;
       text-decoration: none;
       font-size: 13.5px;
+      box-shadow: 0 4px 12px rgba(197, 155, 39, 0.2);
     }
+
     .hero {
       background: radial-gradient(circle at 80% 20%, #1e3a5f 0%, #0a192f 65%, #050c18 100%);
       color: var(--white);
@@ -136,7 +121,7 @@
       margin-bottom: 24px;
     }
     .hero h1 {
-      font-size: 42px;
+      font-size: 40px;
       line-height: 1.3;
       font-weight: 900;
       margin-bottom: 20px;
@@ -147,7 +132,7 @@
       -webkit-text-fill-color: transparent;
     }
     .hero-desc {
-      font-size: 16.5px;
+      font-size: 16px;
       color: #94a3b8;
       line-height: 1.8;
       margin-bottom: 34px;
@@ -156,17 +141,18 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
       color: #071220;
-      padding: 14px 30px;
+      padding: 14px 28px;
       border-radius: 8px;
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 800;
       text-decoration: none;
+      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.3);
     }
     .btn-secondary {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: var(--white);
-      padding: 14px 26px;
+      padding: 14px 24px;
       border-radius: 8px;
       font-size: 15px;
       font-weight: 700;
@@ -174,12 +160,13 @@
     }
     
     .founder-card {
-      background: rgba(17, 34, 64, 0.7);
-      border: 1px solid rgba(197, 155, 39, 0.25);
+      background: rgba(17, 34, 64, 0.75);
+      border: 1px solid rgba(197, 155, 39, 0.3);
       border-radius: 16px;
       padding: 28px 24px;
       backdrop-filter: blur(16px);
       position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
     .founder-badge-top {
       position: absolute;
@@ -201,8 +188,8 @@
       margin-bottom: 18px;
     }
     .founder-avatar {
-      width: 82px;
-      height: 82px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
       object-position: top center;
@@ -210,8 +197,8 @@
       box-shadow: 0 0 15px rgba(197, 155, 39, 0.35);
       flex-shrink: 0;
     }
-    .founder-name { font-size: 21px; font-weight: 800; color: #ffffff; }
-    .founder-tagline { font-size: 12.5px; color: var(--accent-gold-light); font-weight: 600; }
+    .founder-name { font-size: 20px; font-weight: 800; color: #ffffff; }
+    .founder-tagline { font-size: 12px; color: var(--accent-gold-light); font-weight: 600; }
     .founder-stats-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .founder-stats-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #cbd5e1; }
     .stat-icon { color: var(--accent-gold); font-weight: bold; }
@@ -236,10 +223,60 @@
     
     .section-container { max-width: 1280px; margin: 0 auto; padding: 75px 24px; }
     .section-header { text-align: center; max-width: 780px; margin: 0 auto 50px; }
-    .section-label { font-size: 12.5px; font-weight: 800; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 8px; display: block; }
+    .section-label { font-size: 12.5px; font-weight: 800; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 8px; display: block; letter-spacing: 1px; }
     .section-title { font-size: 32px; font-weight: 900; color: var(--primary); margin-bottom: 14px; }
     .section-desc { font-size: 15.5px; color: var(--text-muted); line-height: 1.7; }
     
+    /* الأهداف المؤسسية */
+    .goals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .goal-card {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: var(--card-shadow);
+      border-right: 4px solid var(--accent-gold);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .goal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .goal-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .goal-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .goal-card ul li {
+      font-size: 13.5px;
+      color: #475569;
+      position: relative;
+      padding-right: 18px;
+      line-height: 1.6;
+    }
+    .goal-card ul li::before {
+      content: "▪";
+      position: absolute;
+      right: 0;
+      color: var(--accent-gold);
+      font-size: 14px;
+    }
+
     .field-card {
       background: var(--white);
       border: 1px solid var(--border-color);
@@ -249,11 +286,12 @@
       transition: transform 0.3s ease;
     }
     .field-card:hover { transform: translateY(-4px); }
-    .field-img { width: 100%; height: 240px; object-fit: cover; display: block; }
-    .field-body { padding: 20px; }
+    .field-img { width: 100%; height: 230px; object-fit: cover; display: block; }
+    .field-body { padding: 22px; }
     .field-body h4 { font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
     .field-body p { font-size: 13px; color: #475569; line-height: 1.6; }
 
+    /* صندوق مؤشرات الجودة المتساوي جنباً إلى جنب */
     .eval-box {
       background: #0a192f;
       color: #fff;
@@ -261,19 +299,60 @@
       padding: 36px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      align-items: center;
+      gap: 30px;
+      align-items: stretch;
       border: 1px solid rgba(197, 155, 39, 0.3);
     }
+    .eval-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.04);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
     .eval-score {
-      font-size: 46px;
+      font-size: 42px;
       font-weight: 900;
       color: var(--accent-gold-light);
       font-family: 'Montserrat', sans-serif;
       line-height: 1;
     }
+    
+    .eval-img-wrapper {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.2);
+      margin-top: 14px;
+      background: #050c18;
+    }
+    .eval-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    
+    .testimonial-img-wrapper {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 14px 0;
+      background: #050c18;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .testimonial-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
-    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
     .track-card {
       background: var(--white);
       border: 1px solid var(--border-color);
@@ -289,11 +368,11 @@
       padding: 22px;
     }
     .track-num { font-size: 11px; font-weight: 800; color: var(--accent-gold-light); text-transform: uppercase; margin-bottom: 5px; }
-    .track-head h3 { font-size: 19px; font-weight: 800; }
-    .track-body { padding: 22px; display: flex; flex-direction: column; gap: 16px; }
-    .program-item { padding-bottom: 15px; border-bottom: 1px dashed var(--border-color); }
+    .track-head h3 { font-size: 18px; font-weight: 800; }
+    .track-body { padding: 22px; display: flex; flex-direction: column; gap: 15px; }
+    .program-item { padding-bottom: 14px; border-bottom: 1px dashed var(--border-color); }
     .program-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .program-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .program-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
     .badge-hours {
       background: #f8fafc;
       color: #334155;
@@ -303,13 +382,13 @@
       padding: 2px 8px;
       border-radius: 4px;
     }
-    .program-name { font-size: 14.5px; font-weight: 700; color: var(--text-dark); }
+    .program-name { font-size: 14px; font-weight: 700; color: var(--text-dark); }
     
     .discovery-section {
       background: linear-gradient(135deg, #0a192f 0%, #162a45 100%);
       color: var(--white);
       border-radius: 20px;
-      padding: 50px 36px;
+      padding: 45px 36px;
       border: 1px solid rgba(197, 155, 39, 0.3);
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
@@ -328,12 +407,12 @@
       font-weight: 800;
       margin-bottom: 12px;
     }
-    .discovery-section h3 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
-    .discovery-section p { font-size: 14.5px; color: #cbd5e1; line-height: 1.8; margin-bottom: 22px; }
+    .discovery-section h3 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+    .discovery-section p { font-size: 14px; color: #cbd5e1; line-height: 1.8; margin-bottom: 20px; }
     .discovery-action-box {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 26px;
+      padding: 24px;
       border-radius: 14px;
       text-align: center;
     }
@@ -345,7 +424,7 @@
       border-radius: 8px;
       font-weight: 800;
       text-decoration: none;
-      font-size: 14.5px;
+      font-size: 14px;
     }
     
     .accred-section {
@@ -363,7 +442,7 @@
       align-items: center;
     }
     .accred-content h2 { font-size: 30px; font-weight: 900; color: var(--primary); margin-bottom: 16px; }
-    .accred-content p { font-size: 15.5px; color: var(--text-muted); line-height: 1.8; margin-bottom: 22px; }
+    .accred-content p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 22px; }
     .accred-points { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .accred-points li { display: flex; gap: 10px; font-size: 14px; color: var(--text-dark); font-weight: 600; }
     
@@ -391,20 +470,20 @@
     .cert-mockup h4 { font-family: 'Cinzel', serif; font-size: 16px; color: var(--primary); margin: 10px 0 2px; }
     .cert-type { font-size: 9px; color: #b45309; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
     .cert-trainee-box { border-bottom: 2px solid var(--accent-gold); display: inline-block; padding: 0 18px 4px; margin-bottom: 10px; }
-    .cert-trainee-name { font-size: 16px; font-weight: 700; color: #64748b; font-style: italic; }
-    .cert-prog-title { font-size: 12.5px; font-weight: 700; color: #0f172a; background: #f1f5f9; padding: 7px; border-radius: 6px; margin-bottom: 16px; }
+    .cert-trainee-name { font-size: 15px; font-weight: 700; color: #64748b; font-style: italic; }
+    .cert-prog-title { font-size: 12px; font-weight: 700; color: #0f172a; background: #f1f5f9; padding: 7px; border-radius: 6px; margin-bottom: 16px; }
     .cert-badges-row { display: flex; justify-content: space-around; border-top: 1px solid var(--border-color); padding-top: 12px; font-size: 11px; color: var(--text-muted); font-weight: 700; }
     
     footer { background: #050c18; color: #94a3b8; padding: 55px 24px 28px; }
     .footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
-    .footer-col h4 { color: var(--white); font-size: 15.5px; font-weight: 800; margin-bottom: 16px; }
+    .footer-col h4 { color: var(--white); font-size: 15px; font-weight: 800; margin-bottom: 16px; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-links a { color: #94a3b8; text-decoration: none; font-size: 13.5px; }
     .footer-links a:hover { color: var(--accent-gold-light); }
     .footer-bottom { max-width: 1280px; margin: 0 auto; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 12px; }
 
     @media (max-width: 992px) {
-      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .footer-grid, .eval-box { grid-template-columns: 1fr; }
+      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .footer-grid, .eval-box, .goals-grid { grid-template-columns: 1fr; }
       .authority-grid { grid-template-columns: repeat(2, 1fr); }
       .hero h1 { font-size: 30px; }
       .nav-links { display: none; }
@@ -412,7 +491,6 @@
   </style>
 </head>
 <body>
-
 
   <!-- الهيدر -->
   <header>
@@ -426,11 +504,10 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">المرجعية الاستشارية</a></li>
-        <li><a href="#environment">بيئة العمل والحلول</a></li>
-        <li><a href="#field-track">سابقة الأعمال الميدانية</a></li>
+        <li><a href="#goals">أهدافنا المؤسسية</a></li>
+        <li><a href="#field-track">سابقة الأعمال</a></li>
         <li><a href="#tracks">البرامج التنفيذية</a></li>
         <li><a href="#audit">مؤشرات الجودة</a></li>
-        <li><a href="#discovery">جلسة التشخيص</a></li>
       </ul>
       <a href="https://wa.me/201271221780?text=طلب%20جلسة%20تشخيص%20تنفيذي%20واستعراض%20البرامج" target="_blank" class="btn-header">حجز جلسة استكشافية</a>
     </div>
@@ -448,10 +525,10 @@
           <span>بعمق سيكولوجي وخبرة إقليمية رائدة</span>
         </h1>
         <p class="hero-desc">
-          حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقه بمعهد الإدارة العامة بالرياض وعمق أكاديمي متخصص في علم النفس الاداري لتشخيص وحل المشكلات التنظيمية.
+          حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بمعهد الإدارة العامة بالرياض وعمق أكاديمي متخصص في علم النفس الإداري لتشخيص وحل المشكلات التنظيمية.
         </p>
         <div class="hero-actions">
-          <a href="#tracks" class="btn-primary">استعراض بعض البرامج التنفيذية (15 برنامجاً)</a>
+          <a href="#tracks" class="btn-primary">استعراض البرامج التنفيذية</a>
           <a href="#discovery" class="btn-secondary">طلب جلسة تشخيص تنفيذي (60 دقيقة)</a>
         </div>
       </div>
@@ -460,9 +537,9 @@
       <div class="founder-card" id="about">
         <div class="founder-badge-top">القيادة الاستشارية والأكاديمية</div>
         <div class="founder-header">
-          <img src="dr_fathalla.jpg" alt="د. فتح الله محمد" class="founder-avatar" onerror="this.src='fathalla.png.png';">
+          <img src="dr_fathalla.jpg" alt="د. فتح الله أبو ذكري" class="founder-avatar" onerror="this.src='fathalla.png.png';">
           <div>
-            <div class="founder-name">د. فتح الله محمد</div>
+            <div class="founder-name">د. فتح الله أبو ذكري</div>
             <div class="founder-tagline">المستشار التنفيذي ومؤسس الكيان</div>
           </div>
         </div>
@@ -496,8 +573,8 @@
         <p>التقييم العام للمدرب</p>
       </div>
       <div class="auth-item">
-        <h3>15</h3>
-        <p>برنامجاً تدريبياً تنفيذيًا متخصصًا</p>
+        <h3>متخصص</h3>
+        <p>برامج تدريبية تنفيذية متقدمة</p>
       </div>
       <div class="auth-item">
         <h3>B2B</h3>
@@ -506,46 +583,51 @@
     </div>
   </div>
 
-  <!-- بيئة العمل والحلول المؤسسية -->
-  <section class="section-container" id="environment" style="background: #ffffff;">
+  <!-- الأهداف المؤسسية -->
+  <section class="section-container" id="goals" style="background: #ffffff;">
     <div class="section-header">
-      <span class="section-label">Institutional Excellence</span>
-      <h2 class="section-title">بيئة العمل والحلول المؤسسية</h2>
+      <span class="section-label">Strategic Objectives</span>
+      <h2 class="section-title">رؤيتنا الاستراتيجية وأهدافنا المؤسسية</h2>
       <p class="section-desc">
-        نقدم استشاراتنا وبرامجنا القيادية للشركات والمؤسسات الراغبة في تطوير فرق عملها وتحقيق أعلى معايير الحوكمة والتحول المؤسسي.
+        نرتكز في "FA Consulting" على أطر منهجية ومعايير دقيقة لضمان تحقيق أعلى قيمة مضافة لشركائنا من المؤسسات.
       </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 0 auto;">
-      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px -10px rgba(10,25,47,0.08);">
-        <div style="position: relative; height: 220px; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80" alt="جلسات مجالس الإدارة" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 14px; right: 14px; background: rgba(10,25,47,0.85); color: #e5b842; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">C-SUITE ENGAGEMENT</span>
-        </div>
-        <div style="padding: 24px;">
-          <h3 style="font-size: 18px; font-weight: 800; color: #0a192f; margin-bottom: 10px;">التوجيه الاستراتيجي وحوكمة القرارات</h3>
-          <p style="font-size: 13.5px; color: #475569; line-height: 1.7;">نشارك مجالس الإدارة في مواءمة الرؤية الاستراتيجية وتفكيك الصراعات التنظيمية الكبرى، لضمان أعلى مستويات الفعالية والجاهزية.</p>
-        </div>
+    <div class="goals-grid">
+      <div class="goal-card">
+        <h3>🎯 1. الأهداف التنموية والتعليمية (جودة التدريب)</h3>
+        <ul>
+          <li><strong>تطوير الكفاءات البشرية:</strong> تمكين الأفراد والمؤسسات من اكتساب المهارات الحديثة وسد الفجوات المعرفية.</li>
+          <li><strong>تصميم برامج تدريبية مبتكرة:</strong> تقديم حقائب تدريبية متطورة تواكب متطلبات سوق العمل المتغير.</li>
+          <li><strong>اعتماد منهجيات التعلم التطبيقي:</strong> التركيز على التدريب العملي ونقل الخبرات الفورية بدلاً من التلقين النظري.</li>
+        </ul>
       </div>
-      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px -10px rgba(10,25,47,0.08);">
-        <div style="position: relative; height: 220px; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="مختبرات السلوك" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 14px; right: 14px; background: rgba(2,132,199,0.9); color: #ffffff; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">BEHAVIORAL LABS</span>
-        </div>
-        <div style="padding: 24px;">
-          <h3 style="font-size: 18px; font-weight: 800; color: #0a192f; margin-bottom: 10px;">مختبرات السلوك والتدريب التطبيقي</h3>
-          <p style="font-size: 13.5px; color: #475569; line-height: 1.7;">ورش عمل مغلقة ترتكز على محاكاة التحديات السلوكية الحقيقية وإدارة ضغوط العمل (Burnout).</p>
-        </div>
+
+      <div class="goal-card">
+        <h3>💡 2. الأهداف الاستشارية (حلول الأعمال)</h3>
+        <ul>
+          <li><strong>تقديم حلول استراتيجية مخصصة:</strong> صياغة استشارات إدارية وفنية تدعم المؤسسات في حل مشكلاتها وتطوير أدائها.</li>
+          <li><strong>دعم التحول الرقمي والتطوير المؤسسي:</strong> مساعدة الشركات على إعادة هيكلة عملياتها وتوظيف التكنولوجيا الحديثة.</li>
+          <li><strong>ضمان نتائج ملموسة وقابلة للقياس (ROI):</strong> قياس العائد على الاستثمار للجهات المستفيدة من الاستشارات.</li>
+        </ul>
       </div>
-      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px -10px rgba(10,25,47,0.08);">
-        <div style="position: relative; height: 220px; overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" alt="بيئة استشارية إقليمية" style="width: 100%; height: 100%; object-fit: cover;">
-          <span style="position: absolute; top: 14px; right: 14px; background: rgba(16,185,129,0.9); color: #ffffff; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">REGIONAL DELIVERY</span>
-        </div>
-        <div style="padding: 24px;">
-          <h3 style="font-size: 18px; font-weight: 800; color: #0a192f; margin-bottom: 10px;">حلول للشركات والمؤسسات في مصر ودول الخليج</h3>
-          <p style="font-size: 13.5px; color: #475569; line-height: 1.7;">انطلاقاً من مقرنا في القاهرة، نقدم برامجنا للشركات والمؤسسات في مصر ودول الخليج.</p>
-        </div>
+
+      <div class="goal-card">
+        <h3>📈 3. الأهداف التسويقية والتنافسية (الانتشار والمكانة)</h3>
+        <ul>
+          <li><strong>بناء علامة تجارية موثوقة:</strong> ترسيخ اسم المؤسسة كمرجع أول في قطاع الاستشارات والتدريب.</li>
+          <li><strong>توسيع قاعدة العملاء:</strong> استهداف قطاعات متنوعة (حكومية، خاصة، غير ربحية، أفراد).</li>
+          <li><strong>التوسع الجغرافي:</strong> تقديم خدمات التدريب والاستشارات محلياً وإقليمياً، وتفعيل التدريب عن بعد (E-learning).</li>
+        </ul>
+      </div>
+
+      <div class="goal-card">
+        <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
+        <ul>
+          <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد عالمية لمنح شهادات موثقة.</li>
+          <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
+          <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -555,7 +637,7 @@
     <div class="section-header">
       <span class="section-label">Proven Track Record</span>
       <h2 class="section-title">سابقة الأعمال الميدانية والتدريب التنفيذي</h2>
-      <p class="section-desc">توثيق عملي لسنوات من قيادة البرامج الإدارية وتأهيل الكوادر الحكومية والقيادية في كبرى المحافل الرسمية وقاعات التدريب بالمملكة العربية السعودية.</p>
+      <p class="section-desc">توثيق عملي لسنوات من قيادة البرامج الإدارية وتأهيل الكوادر الحكومية والقيادية في كبرى المحافل الرسمية.</p>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
@@ -563,7 +645,7 @@
         <img src="saudi_reception.jpg" alt="المشاركة والمصافحة" class="field-img">
         <div class="field-body">
           <h4>حضور رسمي ومحافل قيادية كبرى</h4>
-          <p>المشاركة الفاعلة في الملتقيات والمؤتمرات الإدارية رفيعة المستوى بالمملكة، وتوجيه الحوارات القيادية حول التحول المؤسسي.</p>
+          <p>المشاركة الفاعلة في الملتقيات والمؤتمرات الإدارية رفيعة المستوى، وتوجيه الحوارات القيادية حول التحول المؤسسي.</p>
         </div>
       </div>
       <div class="field-card">
@@ -588,37 +670,41 @@
     <div class="section-header">
       <span class="section-label">Verified Performance</span>
       <h2 class="section-title">مؤشرات جودة وتقييمات موثقة</h2>
-      <p class="section-desc">تقارير تقييم رسمية صادرة ضمن نموذج تقييم المتدربين بمعهد الإدارة العامة، تعكس كفاءة الأداء ومستوى رضا المشاركين.</p>
+      <p class="section-desc">تقارير تقييم رسمية صادرة ضمن نموذج تقييم المتدربين، تعكس كفاءة الأداء ومستوى رضا المشاركين.</p>
     </div>
 
     <div class="eval-box">
-      <div>
-        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px;">
-          <span class="eval-score">96.83%</span>
-          <span style="color: #94a3b8; font-size: 14px; font-weight: 700;">التقييم العام للمدرب</span>
+      <div class="eval-column">
+        <div>
+          <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;">
+            <span class="eval-score">96.83%</span>
+            <span style="color: #94a3b8; font-size: 13.5px; font-weight: 700;">التقييم العام للمدرب</span>
+          </div>
+          <h3 style="font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px;">تقرير تقييم صادر خلال العام التدريبي</h3>
+          <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6;">حقق تقييماً مرتفعاً في عناصر تقييم المدرب وفق نموذج تقييم المتدربين الرسمي.</p>
         </div>
-        <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 14px;">تقرير تقييم صادر خلال العام التدريبي 1441/1442هـ</h3>
-        <p style="font-size: 14px; color: #cbd5e1; line-height: 1.8; margin-bottom: 20px;">حقق تقييماً بنسبة 97.22% في 6 من عناصر تقييم المدرب، بينما بلغ التقييم العام للمدرب 96.83% وفق نموذج تقييم المتدربين بمعاهد الإدارة.</p>
-        <div style="border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
-          <img src="ipa_eval.png" alt="تقرير وحدة دعم الجودة" style="width: 100%; height: auto; display: block;">
+        <div class="eval-img-wrapper">
+          <img src="ipa_eval.png" alt="تقرير وحدة دعم الجودة">
         </div>
       </div>
 
-      <div style="background: rgba(255,255,255,0.06); padding: 24px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1);">
-        <h4 style="font-size: 16px; color: var(--accent-gold-light); margin-bottom: 14px;">شهادات وانطباعات المتدربين القياديين</h4>
-        <div style="border-radius: 10px; overflow: hidden; margin-bottom: 16px;">
-          <img src="testimonial_trainee.jpg" alt="إشادة المتدربين" style="width: 100%; height: auto; display: block;">
+      <div class="eval-column">
+        <div>
+          <h4 style="font-size: 16px; color: var(--accent-gold-light); margin-bottom: 8px;">شهادات وانطباعات المتدربين القياديين</h4>
+          <p style="font-size: 13px; color: #e2e8f0; font-style: italic; line-height: 1.6;">"نشكر الدكتور فتح الله أبو ذكري على تعاونه وشرحه الممتاز.. ومن أفضل الدورات التي مررت بها."</p>
         </div>
-        <p style="font-size: 13.5px; color: #e2e8f0; font-style: italic; line-height: 1.7;">"نشكر الدكتور فتح الله محمد على تعاونه وشرحه الممتاز.. ومن أفضل الدورات التي مررت بها."</p>
+        <div class="testimonial-img-wrapper">
+          <img src="testimonial_trainee.jpg" alt="إشادة المتدربين">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- البرامج التنفيذية الـ 15 -->
+  <!-- البرامج التدريبية -->
   <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
     <div class="section-header">
       <span class="section-label">Executive Programs</span>
-      <h2 class="section-title">15 برنامجاً تدريبيًا تنفيذيًا متخصصًا</h2>
+      <h2 class="section-title">من نموذج برامجنا التدريبية المتخصصة</h2>
       <p class="section-desc">منظومة برامج تطويرية مصممة وفق أرقى المعايير المهنية لتلبية تطلعات مجالس الإدارة ومدراء الموارد البشرية.</p>
     </div>
 
@@ -630,19 +716,19 @@
         </div>
         <div class="track-body">
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">16 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">16 ساعة</span></div>
             <div class="program-name">1. القيادة السلوكية الاستراتيجية وإدارة فرق العمل عالية الأداء</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
             <div class="program-name">2. الذكاء العاطفي والاجتماعي لصناع القرار التنفيذي</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
             <div class="program-name">3. ديناميكيات بناء وتوجيه الثقافة المؤسسية الإيجابية</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
             <div class="program-name">4. حوكمة السلوك المؤسسي والامتثال الأخلاقي في بيئات العمل</div>
           </div>
         </div>
@@ -655,19 +741,19 @@
         </div>
         <div class="track-body">
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
             <div class="program-name">5. إدارة الاحتراق الوظيفي (Burnout) واستعادة التوازن المهني</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
             <div class="program-name">6. المرونة النفسية التنظيمية (Resilience) وإدارة ضغوط الأزمات</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">14 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">14 ساعة</span></div>
             <div class="program-name">7. إدارة الصراعات المؤسسية وفنون التفاوض وحل النزاعات</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">10 ساعات تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">10 ساعات</span></div>
             <div class="program-name">8. تعزيز الرفاه الوظيفي وتأسيس الأمان النفسي في العمل</div>
           </div>
         </div>
@@ -680,19 +766,19 @@
         </div>
         <div class="track-body">
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">16 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">16 ساعة</span></div>
             <div class="program-name">9. التشخيص التنظيمي وإدارة التحول والتغيير المؤسسي</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">14 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">14 ساعة</span></div>
             <div class="program-name">10. تصميم مصفوفات الجدارات السلوكية وتقييم الأداء المتوازن</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
             <div class="program-name">11. الكوتشينغ التنفيذي وتوجيه القيادات الصاعدة</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
             <div class="program-name">12. استراتيجيات استبقاء المواهب والكفاءات الحرجة</div>
           </div>
         </div>
@@ -705,15 +791,15 @@
         </div>
         <div class="track-body">
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">10 ساعات تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">10 ساعات</span></div>
             <div class="program-name">13. التواصل الاستراتيجي ولغة الإقناع لصناع القرار</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">8 ساعات تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">8 ساعات</span></div>
             <div class="program-name">14. العروض التقديمية التنفيذية وإدارة الاجتماعات رفيعة المستوى</div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة تدريبية</span></div>
+            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
             <div class="program-name">15. صناعة القرارات التنظيمية وحل المشكلات بأساليب التفكير الابتكاري</div>
           </div>
         </div>
@@ -740,7 +826,7 @@
       <div class="accred-content">
         <span class="section-label">Credential & Verification</span>
         <h2>شهادات إتمام تنفيذية من FA Consulting</h2>
-        <p>يُمنح مجتازو برامجنا شهادة إتمام تنفيذية صادرة برقم تسلسلي فريد، تحت إشراف المستشار التنفيذي ومؤسس الكيان، مستندة إلى خبرته الأكاديمية والمهنية.</p>
+        <p>يُمنح مجتازو برامجنا شهادة إتمام تنفيذية صادرة برقم تسلسلي فريد، تحت إشراف المستشار التنفيذي ومؤسس الكيان.</p>
         <ul class="accred-points">
           <li><span>✓</span> <div><strong>شهادة إتمام تنفيذية (Executive Certificate):</strong> توثق إنجاز البرنامج وعدد الساعات الفعلية.</div></li>
           <li><span>✓</span> <div><strong>رقم تسلسلي فريد (Unique ID):</strong> لكل متدرب لتسهيل توثيق الشهادة.</div></li>
@@ -771,13 +857,13 @@
     <div class="footer-grid">
       <div class="footer-col">
         <div class="logo-title" style="margin-bottom: 12px;">FA <span>CONSULTING</span></div>
-        <p>بيت خبرة واستشارات قيادية يُعنى بتمكين المنظمات وصناعة القيادات التنفيذيه .</p>
+        <p>بيت خبرة واستشارات قيادية يُعنى بتمكين المنظمات وصناعة القيادات التنفيذية.</p>
       </div>
       <div class="footer-col">
         <h4>المسارات الاستشارية والتدريبية</h4>
         <ul class="footer-links" style="list-style: none;">
-          <li><a href="#tracks" style="color: #94a3b8; text-decoration: none;">القيادة التنفيذية والسلوك التنظيمي</a></li>
-          <li><a href="#tracks" style="color: #94a3b8; text-decoration: none;">الصحة النفسية وجودة بيئة العمل</a></li>
+          <li><a href="#tracks">القيادة التنفيذية والسلوك التنظيمي</a></li>
+          <li><a href="#tracks">الصحة النفسية وجودة بيئة العمل</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -785,7 +871,7 @@
         <p>المقر الرئيسي: القاهرة، مصر<br>واتساب: <span dir="ltr">+20 127 122 1780</span></p>
       </div>
     </div>
-    <div class="footer-bottom" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+    <div class="footer-bottom">
       <p>&copy; 2026 FA Consulting & Executive Training. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
