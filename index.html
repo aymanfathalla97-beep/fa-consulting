@@ -324,7 +324,7 @@
     }
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    /* البطاقات البصرية الاحترافية للمسارات بصور افتراضية عالمية مهنية مستقلة */
+    /* البطاقات البصرية الاحترافية للمسارات */
     .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; margin-bottom: 60px; }
     .track-banner-card {
       position: relative;
@@ -377,6 +377,7 @@
       font-weight: 600;
     }
 
+    /* تفاصيل البرامج داخل المسار مع الأسعار وطريقة الحضور */
     .tracks-details-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -398,10 +399,10 @@
       padding: 26px;
     }
     .track-head h3 { font-size: 19px; font-weight: 800; }
-    .track-body { padding: 26px; display: flex; flex-direction: column; gap: 18px; }
-    .program-item { padding-bottom: 16px; border-bottom: 1px dashed var(--border-color); }
+    .track-body { padding: 26px; display: flex; flex-direction: column; gap: 20px; }
+    .program-item { padding-bottom: 18px; border-bottom: 1px dashed var(--border-color); }
     .program-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .program-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .program-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
     .badge-hours {
       background: #f8fafc;
       color: #334155;
@@ -411,7 +412,27 @@
       padding: 3px 10px;
       border-radius: 6px;
     }
-    .program-name { font-size: 15px; font-weight: 700; color: var(--text-dark); }
+    .badge-mode {
+      background: rgba(197, 155, 39, 0.1);
+      color: #92400e;
+      border: 1px solid rgba(197, 155, 39, 0.3);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .program-name { font-size: 15.5px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; display: block; }
+    .program-pricing {
+      font-size: 14px;
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
+      border: 1px solid #a7f3d0;
+    }
+    .program-pricing span { font-size: 11px; color: #6b7280; font-weight: 600; display: block; }
 
     .discovery-section {
       background: linear-gradient(135deg, #0a192f 0%, #162a45 100%);
@@ -758,16 +779,15 @@
     </div>
   </section>
 
-  <!-- المسارات التدريبية التفاعلية بصور افتراضية عالمية مهنية (Stock Photos) غير مكررة -->
+  <!-- المسارات التدريبية التفاعلية مع تفاصيل الأسعار ونمط التدضور -->
   <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
     <div class="section-header">
       <span class="section-label">Professional Programs</span>
       <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
-      <p class="section-desc">اضغط على أي مسار أدناه للاطلاع على محتوياته التفصيلية والبرامج المرتبطة به.</p>
+      <p class="section-desc">اضغط على أي مسار أدناه للاطلاع على محتوياته التفصيلية، أسعاره، ونمط التدريب.</p>
     </div>
 
     <div class="tracks-grid">
-      <!-- المسار الأول (صورة تعبيرية للاجتماعات والتواصل) -->
       <a href="#track-1-details" class="track-banner-card">
         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="المسار الأول" class="track-banner-bg">
         <div class="track-banner-overlay"></div>
@@ -778,7 +798,6 @@
         </div>
       </a>
 
-      <!-- المسار الثاني (صورة تعبيرية لإدارة الأزمات والتفكير التحليلي) -->
       <a href="#track-2-details" class="track-banner-card">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="المسار الثاني" class="track-banner-bg">
         <div class="track-banner-overlay"></div>
@@ -789,7 +808,6 @@
         </div>
       </a>
 
-      <!-- المسار الثالث (صورة تعبيرية لجودة العمليات والإنتاجية) -->
       <a href="#track-3-details" class="track-banner-card">
         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="المسار الثالث" class="track-banner-bg">
         <div class="track-banner-overlay"></div>
@@ -800,7 +818,6 @@
         </div>
       </a>
 
-      <!-- المسار الرابع (صورة تعبيرية لبيئة العمل المؤسسي والمكاتب) -->
       <a href="#track-4-details" class="track-banner-card">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="المسار الرابع" class="track-banner-bg">
         <div class="track-banner-overlay"></div>
@@ -812,96 +829,160 @@
       </a>
     </div>
 
-    <!-- تفاصيل البرامج -->
+    <!-- تفاصيل البرامج الشاملة (الأسعار - الساعات - نمط التدريب) -->
     <div class="tracks-details-container">
+      <!-- المسار الأول -->
       <div class="track-card" id="track-1-details">
         <div class="track-head">
           <h3>المسار الأول: مهارات الاتصال الفعال والذكاء العاطفي</h3>
         </div>
         <div class="track-body">
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">16 ساعة</span></div>
-            <div class="program-name">1. فنون الاتصال الاستراتيجي والتأثير القيادي الفعال</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 16 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">1. فنون الاتصال الاستراتيجي والتأثير القيادي الفعال</span>
+            <div class="program-pricing">$1,200 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">2. الذكاء العاطفي والاجتماعي لصناع القرار</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">2. الذكاء العاطفي والاجتماعي لصناع القرار</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">3. مهارات التواصل المتقدمة ولغة الإقناع المؤسسي</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">3. مهارات التواصل المتقدمة ولغة الإقناع المؤسسي</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">4. بناء شبكة علاقات عمل إيجابية ومؤثرة</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">4. بناء شبكة علاقات عمل إيجابية ومؤثرة</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
         </div>
       </div>
 
+      <!-- المسار الثاني -->
       <div class="track-card" id="track-2-details">
         <div class="track-head">
           <h3>المسار الثاني: التعامل مع ضغوط العمل وإدارة الأزمات</h3>
         </div>
         <div class="track-body">
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">5. استراتيجيات التعامل الفعال مع ضغوط العمل اليومية</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">5. استراتيجيات التعامل الفعال مع ضغوط العمل اليومية</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">6. المرونة النفسية التنظيمية وإدارة الأزمات الطارئة</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">6. المرونة النفسية التنظيمية وإدارة الأزمات الطارئة</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">14 ساعة</span></div>
-            <div class="program-name">7. إدارة الاحتراق الوظيفي واستعادة التوازن والتحفيز</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 14 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">7. إدارة الاحتراق الوظيفي واستعادة التوازن والتحفيز</span>
+            <div class="program-pricing">$1,100 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">10 ساعات</span></div>
-            <div class="program-name">8. تقنيات الاسترخاء والتوازن الذهني للقيادات</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 10 ساعات</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">8. تقنيات الاسترخاء والتوازن الذهني للقيادات</span>
+            <div class="program-pricing">$850 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
         </div>
       </div>
 
+      <!-- المسار الثالث -->
       <div class="track-card" id="track-3-details">
         <div class="track-head">
           <h3>المسار الثالث: الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</h3>
         </div>
         <div class="track-body">
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">16 ساعة</span></div>
-            <div class="program-name">9. السلوك التنظيمي وانعكاسه المباشر على جودة الإنتاج</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 16 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">9. السلوك التنظيمي وانعكاسه المباشر على جودة الإنتاج</span>
+            <div class="program-pricing">$1,200 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">14 ساعة</span></div>
-            <div class="program-name">10. ربط كفاءة الأداء المؤسسي بمعايير الجودة الشاملة</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 14 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">10. ربط كفاءة الأداء المؤسسي بمعايير الجودة الشاملة</span>
+            <div class="program-pricing">$1,100 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">11. تحفيز الفرق لتحقيق أعلى معدلات الإنتاجية والتميز</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">11. تحفيز الفرق لتحقيق أعلى معدلات الإنتاجية والتميز</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">12. تقييم الأداء المؤسسي وتطوير العمليات المستمرة</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">12. تقييم الأداء المؤسسي وتطوير العمليات المستمرة</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
         </div>
       </div>
 
+      <!-- المسار الرابع -->
       <div class="track-card" id="track-4-details">
         <div class="track-head">
           <h3>المسار الرابع: بيئة العمل الاحترافية وثقافة المنظمات</h3>
         </div>
         <div class="track-body">
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">10 ساعات</span></div>
-            <div class="program-name">13. بناء وتطوير ثقافة تنظيمية فعالة ومستدامة</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 10 ساعات</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">13. بناء وتطوير ثقافة تنظيمية فعالة ومستدامة</span>
+            <div class="program-pricing">$850 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">14. ترسيخ معايير بيئة العمل الاحترافية وشراكات العمل</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">14. ترسيخ معايير بيئة العمل الاحترافية وشراكات العمل</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
           <div class="program-item">
-            <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">15. إدارة الصراعات المؤسسية وخلق بيئة عمل آمنة ومحفزة</div>
+            <div class="program-header-row">
+              <span class="badge-hours">⏱ 12 ساعة</span>
+              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
+            </div>
+            <span class="program-name">15. إدارة الصراعات المؤسسية وخلق بيئة عمل آمنة ومحفزة</span>
+            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
           </div>
         </div>
       </div>
