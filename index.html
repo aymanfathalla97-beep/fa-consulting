@@ -111,6 +111,7 @@
       </div>
     </div>
 
+    <!-- قسم من نحن -->
     <section class="max-w-[1320px] mx-auto py-24 px-6 bg-white">
       <div class="bg-slate-50 border border-slate-200 rounded-3xl p-12 shadow-sm">
         <h3 class="text-2xl font-black text-primary mb-5">من نحن | FA Consulting & Training</h3>
@@ -118,7 +119,7 @@
       </div>
     </section>
 
-    <!-- قائمة جميع البرامج الـ 15 (تتوسط الشاشة وبشكل متناسق) -->
+    <!-- 1. البرامج التدريبية (في المنتصف وبشكل متناسق) -->
     <section class="bg-slate-50 py-24 px-6 border-t border-b border-slate-200" id="tracks">
       <div class="max-w-[1320px] mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16">
@@ -127,7 +128,6 @@
           <p class="text-slate-600 text-sm">اختر أي برنامج أدناه لاستعراض تفاصيله الكاملة والالتحاق به.</p>
         </div>
 
-        <!-- شبكة البرامج في المنتصف -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center max-w-[1200px] mx-auto">
           <template x-for="(course, key) in courses" :key="key">
             <button type="button" @click="selectCourse(key)" class="group relative rounded-2xl overflow-hidden h-72 shadow-md hover:-translate-y-1.5 hover:shadow-xl transition text-right bg-slate-900 border-0 p-0 cursor-pointer">
@@ -156,13 +156,80 @@
       </div>
     </section>
 
+    <!-- 2. مؤشرات الجودة والتقييمات فوق الشهادات -->
+    <section class="max-w-[1320px] mx-auto py-24 px-6" id="audit">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-extrabold text-gold uppercase tracking-widest mb-3 block">Verified Performance</span>
+        <h2 class="text-3xl font-black text-primary mb-4">مؤشرات جودة وتقييمات موثقة</h2>
+        <p class="text-slate-600 text-sm">تقارير تقييم رسمية صادرة ضمن نموذج تقييم المتدربين، تعكس كفاءة الأداء ومستوى رضا المشاركين.</p>
+      </div>
+
+      <div class="bg-primary text-white rounded-3xl p-10 md:p-14 grid md:grid-cols-2 gap-10 border border-amber-900/30 shadow-xl">
+        <div class="bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-baseline gap-4 mb-4">
+              <span class="text-5xl font-black text-gold-light font-cinzel">96.83%</span>
+              <span class="text-slate-400 text-sm font-bold">التقييم العام للمدرب</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2">تقرير تقييم صادر خلال العام التدريبي</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">حقق تقييماً مرتفعاً في عناصر تقييم المدرب وفق نموذج تقييم المتدربين الرسمي.</p>
+          </div>
+          <div class="w-full h-48 rounded-xl overflow-hidden mt-6 bg-slate-950 border border-white/10">
+            <img src="ipa_eval.png" alt="تقرير وحدة دعم الجودة" class="w-full h-full object-contain">
+          </div>
+        </div>
+
+        <div class="bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div>
+            <h4 class="text-base text-gold-light font-bold mb-3">شهادات وانطباعات المتدربين القياديين</h4>
+            <p class="text-xs text-slate-200 italic leading-relaxed">"نشكر الدكتور فتح الله أبو ذكري على تعاونه وشرحه الممتاز.. ومن أفضل الدورات التي مررت بها."</p>
+          </div>
+          <div class="w-full h-48 rounded-xl overflow-hidden mt-6 bg-slate-950 border border-white/10">
+            <img src="testimonial_trainee.jpg" alt="إشادة المتدربين" class="w-full h-full object-contain">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. الشهادات المهنية المعتمدة في الأسفل خالص -->
+    <section class="bg-slate-50 py-24 px-6 border-t border-slate-200" id="certificates">
+      <div class="max-w-[1320px] mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-xs font-extrabold text-gold uppercase tracking-widest mb-3 block">Credential & Verification</span>
+          <h2 class="text-3xl font-black text-primary mb-6">شهادات إتمام مهنية</h2>
+          <p class="text-slate-600 text-sm leading-relaxed mb-8">شهادة إتمام مهنية صادرة من FA Consulting؛ تُصدر برقم تسلسلي فريد يتيح التحقق من بيانات البرنامج والمتدرب بكل شفافية وموثوقية.</p>
+          <ul class="space-y-4 text-sm font-bold text-slate-800 list-none pr-0">
+            <li class="flex gap-3"><span class="text-gold">✓</span> <div><strong>شهادة إتمام مهنية (Professional Certificate):</strong> توثق إنجاز البرنامج وعدد الساعات الفعلية.</div></li>
+            <li class="flex gap-3"><span class="text-gold">✓</span> <div><strong>رقم تسلسلي فريد (Unique ID):</strong> لكل متدرب لتسهيل توثيق الشهادة.</div></li>
+            <li class="flex gap-3"><span class="text-gold">✓</span> <div><strong>إشراف أكاديمي ومهني:</strong> تصدر الشهادة تحت إشراف المستشار التنفيذي للمؤسسة.</div></li>
+          </ul>
+        </div>
+
+        <div class="bg-white border-8 border-double border-primary rounded-2xl p-8 shadow-2xl text-center relative">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-5 py-1 rounded-full">SAMPLE CERTIFICATE</div>
+          <h4 class="font-cinzel text-lg font-bold text-primary mt-4 mb-1">FA CONSULTING &amp; TRAINING</h4>
+          <div class="text-[10px] text-amber-800 font-extrabold tracking-widest uppercase mb-4">Certificate of Completion</div>
+          <div class="text-xs text-slate-500 mb-4">نموذج معاينة توضيحي للشهادة المهنية</div>
+          <div class="border-b-2 border-gold inline-block px-6 pb-2 mb-4">
+            <div class="text-sm font-bold text-slate-500 italic">[اسم المتدرب / الجهة المستفيدة]</div>
+          </div>
+          <div class="text-xs text-slate-600 mb-2">For Successfully Completing:</div>
+          <div class="text-xs font-bold text-primary bg-slate-100 p-2.5 rounded-lg mb-6">Strategic Organizational Behavior &amp; Professional Leadership</div>
+          <div class="flex justify-around border-t border-slate-200 pt-4 text-xs font-bold text-slate-500">
+            <div>Duration: <strong>16 Hours</strong></div>
+            <div>ID: <strong>FA-2026-8941</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 
   <!-- صفحة تفاصيل الدورة (Brochure View) -->
   <div x-show="currentView === 'brochure'" x-transition class="max-w-[1320px] mx-auto py-16 px-6">
     <button type="button" @click="currentView = 'home'; window.scrollTo({top:0, behavior:'smooth'})" class="bg-primary text-white px-5 py-2.5 rounded-xl font-bold text-xs mb-8 cursor-pointer border-0">← العودة إلى الرئيسية والبرامج</button>
     
-    <div class="bg-white border border-slate-200 rounded-3xl p-10 shadow-xl" x-data="{}">
+    <div class="bg-white border border-slate-200 rounded-3xl p-10 shadow-xl">
       <div class="border-b-2 border-gold pb-6 mb-8 flex justify-between items-center flex-wrap gap-4">
         <div>
           <h2 class="text-2xl md:text-3xl font-black text-primary mb-1" x-text="selectedCourse.title"></h2>
