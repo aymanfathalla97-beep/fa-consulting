@@ -18,11 +18,11 @@
       --bg-light: #f8fafc;
       --white: #ffffff;
       --border-color: #e2e8f0;
-      --card-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.08);
-      --card-shadow-hover: 0 20px 40px -15px rgba(2, 12, 27, 0.16);
+      --card-shadow: 0 15px 35px -10px rgba(2, 12, 27, 0.06);
+      --card-shadow-hover: 0 25px 50px -15px rgba(2, 12, 27, 0.12);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.7; }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.9; font-size: 16px; }
     
     header {
       background: rgba(10, 25, 47, 0.98);
@@ -33,9 +33,9 @@
       backdrop-filter: blur(10px);
     }
     .nav-container {
-      max-width: 1280px;
+      max-width: 1320px;
       margin: 0 auto;
-      padding: 14px 24px;
+      padding: 18px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -43,21 +43,27 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       text-decoration: none;
     }
-    .logo-img {
+    .logo-box {
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+      color: #071220;
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 18px;
+      width: 46px;
       height: 46px;
-      width: auto;
-      object-fit: contain;
-    }
-    .logo-block {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);
     }
+    .logo-block { display: flex; flex-direction: column; }
     .logo-title {
       font-family: 'Cinzel', serif;
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 900;
       color: var(--white);
       letter-spacing: 1px;
@@ -65,7 +71,7 @@
     }
     .logo-title span { color: var(--accent-gold); }
     .logo-subtitle {
-      font-size: 9px;
+      font-size: 9.5px;
       font-weight: 600;
       color: #94a3b8;
       letter-spacing: 1.5px;
@@ -73,14 +79,14 @@
     }
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 28px;
       list-style: none;
       align-items: center;
     }
     .nav-links a {
       color: #cbd5e1;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 600;
       transition: color 0.2s;
     }
@@ -88,25 +94,25 @@
     .btn-header {
       background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
       color: #0a192f;
-      padding: 9px 20px;
-      border-radius: 6px;
+      padding: 11px 22px;
+      border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
-      font-size: 13.5px;
+      font-size: 14px;
       box-shadow: 0 4px 12px rgba(197, 155, 39, 0.2);
     }
 
     .hero {
       background: radial-gradient(circle at 80% 20%, #1e3a5f 0%, #0a192f 65%, #050c18 100%);
       color: var(--white);
-      padding: 85px 24px 95px;
+      padding: 110px 24px 120px;
     }
     .hero-wrapper {
-      max-width: 1280px;
+      max-width: 1320px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
+      gap: 60px;
       align-items: center;
     }
     .hero-tag {
@@ -114,17 +120,17 @@
       background: rgba(197, 155, 39, 0.12);
       border: 1px solid rgba(197, 155, 39, 0.35);
       color: var(--accent-gold-light);
-      padding: 6px 16px;
+      padding: 8px 18px;
       border-radius: 30px;
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
     .hero h1 {
-      font-size: 38px;
-      line-height: 1.3;
+      font-size: 42px;
+      line-height: 1.35;
       font-weight: 900;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .hero h1 span {
       background: linear-gradient(135deg, #ffffff 40%, var(--accent-gold-light) 100%);
@@ -132,29 +138,29 @@
       -webkit-text-fill-color: transparent;
     }
     .hero-desc {
-      font-size: 15.5px;
+      font-size: 16.5px;
       color: #94a3b8;
-      line-height: 1.8;
-      margin-bottom: 34px;
+      line-height: 1.9;
+      margin-bottom: 40px;
     }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
     .btn-primary {
       background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
       color: #071220;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 15px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 15.5px;
       font-weight: 800;
       text-decoration: none;
-      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.3);
+      box-shadow: 0 8px 25px rgba(197, 155, 39, 0.3);
     }
     .btn-secondary {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: var(--white);
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-size: 15px;
+      padding: 15px 26px;
+      border-radius: 10px;
+      font-size: 15.5px;
       font-weight: 700;
       text-decoration: none;
     }
@@ -162,186 +168,148 @@
     .founder-card {
       background: rgba(17, 34, 64, 0.75);
       border: 1px solid rgba(197, 155, 39, 0.3);
-      border-radius: 16px;
-      padding: 28px 24px;
+      border-radius: 20px;
+      padding: 34px 28px;
       backdrop-filter: blur(16px);
       position: relative;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
     }
     .founder-badge-top {
       position: absolute;
-      top: -13px;
-      right: 26px;
+      top: -14px;
+      right: 28px;
       background: var(--accent-gold);
       color: #071220;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
-      padding: 3px 12px;
+      padding: 4px 14px;
       border-radius: 20px;
     }
     .founder-header {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 18px;
-      margin-bottom: 18px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
     }
     .founder-avatar {
-      width: 80px;
-      height: 80px;
+      width: 84px;
+      height: 84px;
       border-radius: 50%;
       object-fit: cover;
       object-position: top center;
       border: 2px solid var(--accent-gold);
-      box-shadow: 0 0 15px rgba(197, 155, 39, 0.35);
+      box-shadow: 0 0 18px rgba(197, 155, 39, 0.35);
       flex-shrink: 0;
     }
-    .founder-name { font-size: 20px; font-weight: 800; color: #ffffff; }
-    .founder-tagline { font-size: 12px; color: var(--accent-gold-light); font-weight: 600; }
-    .founder-stats-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .founder-stats-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: #cbd5e1; }
-    .stat-icon { color: var(--accent-gold); font-weight: bold; }
+    .founder-name { font-size: 21px; font-weight: 800; color: #ffffff; }
+    .founder-tagline { font-size: 12.5px; color: var(--accent-gold-light); font-weight: 600; }
+    .founder-stats-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .founder-stats-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: #cbd5e1; line-height: 1.7; }
+    .stat-icon { color: var(--accent-gold); font-weight: bold; font-size: 16px; }
     
     .authority-bar {
       background: var(--primary-light);
-      padding: 34px 24px;
+      padding: 40px 24px;
       color: var(--white);
       border-top: 1px solid rgba(255, 255, 255, 0.05);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     .authority-grid {
-      max-width: 1280px;
+      max-width: 1320px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 30px;
       text-align: center;
     }
-    .auth-item h3 { font-family: 'Cinzel', serif; font-size: 32px; color: var(--accent-gold-light); font-weight: 900; }
-    .auth-item p { font-size: 12.5px; color: #94a3b8; font-weight: 600; }
+    .auth-item h3 { font-family: 'Cinzel', serif; font-size: 36px; color: var(--accent-gold-light); font-weight: 900; }
+    .auth-item p { font-size: 13.5px; color: #94a3b8; font-weight: 600; margin-top: 6px; }
     
-    .section-container { max-width: 1280px; margin: 0 auto; padding: 75px 24px; }
-    .section-header { text-align: center; max-width: 780px; margin: 0 auto 50px; }
-    .section-label { font-size: 12.5px; font-weight: 800; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 8px; display: block; letter-spacing: 1px; }
-    .section-title { font-size: 32px; font-weight: 900; color: var(--primary); margin-bottom: 14px; }
-    .section-desc { font-size: 15.5px; color: var(--text-muted); line-height: 1.7; }
+    /* المساحات البيضاء الكبيرة بين الأقسام (Whitespace) */
+    .section-container { max-width: 1320px; margin: 0 auto; padding: 100px 24px; }
+    .section-header { text-align: center; max-width: 820px; margin: 0 auto 60px; }
+    .section-label { font-size: 13px; font-weight: 800; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 10px; display: block; letter-spacing: 1.5px; }
+    .section-title { font-size: 36px; font-weight: 900; color: var(--primary); margin-bottom: 16px; line-height: 1.3; }
+    .section-desc { font-size: 16.5px; color: var(--text-muted); line-height: 1.8; }
     
-    /* من نحن */
+    /* من نحن بمساحات واسعة */
     .about-company-box {
       background: #f8fafc;
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 40px;
-      margin-bottom: 50px;
+      border-radius: 20px;
+      padding: 50px;
+      margin-bottom: 40px;
       box-shadow: var(--card-shadow);
     }
-    .about-company-box h3 {
-      font-size: 22px;
-      color: var(--primary);
-      margin-bottom: 15px;
-      font-weight: 800;
-    }
-    .about-company-box p {
-      font-size: 15px;
-      color: #475569;
-      line-height: 1.8;
-    }
+    .about-company-box h3 { font-size: 24px; color: var(--primary); margin-bottom: 20px; font-weight: 800; }
+    .about-company-box p { font-size: 16px; color: #475569; line-height: 1.9; }
 
     /* ما الذي تحصله مؤسستكم (B2B Value) */
     .b2b-value-section {
       background: linear-gradient(135deg, #0a192f, #112240);
       color: #fff;
-      padding: 60px 24px;
-      border-radius: 16px;
-      margin: 50px 0;
+      padding: 80px 40px;
+      border-radius: 20px;
+      margin: 60px 0;
       border: 1px solid rgba(197, 155, 39, 0.3);
+      box-shadow: 0 20px 40px rgba(2, 12, 27, 0.2);
     }
     .b2b-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 1100px;
-      margin: 30px auto 0;
+      gap: 24px;
+      max-width: 1150px;
+      margin: 40px auto 0;
     }
     .b2b-item {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
+      padding: 24px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
-      gap: 15px;
-      font-size: 15px;
+      gap: 18px;
+      font-size: 15.5px;
       font-weight: 700;
     }
-    .b2b-icon { color: var(--accent-gold); font-size: 20px; }
+    .b2b-icon { color: var(--accent-gold); font-size: 22px; }
 
-    /* الأهداف المؤسسية */
+    /* الأهداف المؤسسية بنقاط واضحة لمدراء الـ HR */
     .goals-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 30px;
+      gap: 30px;
+      margin-top: 40px;
     }
     .goal-card {
       background: var(--white);
       border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 28px;
+      border-radius: 16px;
+      padding: 34px;
       box-shadow: var(--card-shadow);
-      border-right: 4px solid var(--accent-gold);
+      border-right: 5px solid var(--accent-gold);
     }
-    .goal-card h3 {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .goal-card ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .goal-card ul li {
-      font-size: 13.5px;
-      color: #475569;
-      position: relative;
-      padding-right: 18px;
-      line-height: 1.6;
-    }
-    .goal-card ul li::before {
-      content: "▪";
-      position: absolute;
-      right: 0;
-      color: var(--accent-gold);
-      font-size: 14px;
-    }
+    .goal-card h3 { font-size: 19px; font-weight: 800; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .goal-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .goal-card ul li { font-size: 14.5px; color: #475569; position: relative; padding-right: 20px; line-height: 1.7; }
+    .goal-card ul li::before { content: "▪"; position: absolute; right: 0; color: var(--accent-gold); font-size: 16px; }
 
-    .field-card {
-      background: var(--white);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-    .field-img { width: 100%; height: 230px; object-fit: cover; display: block; }
-    .field-body { padding: 22px; }
-    .field-body h4 { font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
-    .field-body p { font-size: 13px; color: #475569; line-height: 1.6; }
+    .field-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); }
+    .field-img { width: 100%; height: 240px; object-fit: cover; display: block; }
+    .field-body { padding: 26px; }
+    .field-body h4 { font-size: 17px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+    .field-body p { font-size: 14px; color: #475569; line-height: 1.8; }
 
     .eval-box {
       background: #0a192f;
       color: #fff;
-      border-radius: 16px;
-      padding: 36px;
+      border-radius: 20px;
+      padding: 45px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 35px;
       align-items: stretch;
       border: 1px solid rgba(197, 155, 39, 0.3);
     }
@@ -350,38 +318,80 @@
       flex-direction: column;
       justify-content: space-between;
       background: rgba(255,255,255,0.04);
-      padding: 24px;
-      border-radius: 12px;
+      padding: 28px;
+      border-radius: 14px;
       border: 1px solid rgba(255,255,255,0.08);
     }
-    .eval-score {
-      font-size: 42px;
-      font-weight: 900;
-      color: var(--accent-gold-light);
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1;
-    }
+    .eval-score { font-size: 46px; font-weight: 900; color: var(--accent-gold-light); font-family: 'Montserrat', sans-serif; line-height: 1; }
     .eval-img-wrapper, .testimonial-img-wrapper {
-      width: 100%;
-      height: 200px;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-top: 14px;
-      background: #050c18;
-      border: 1px solid rgba(255,255,255,0.1);
+      width: 100%; height: 210px; border-radius: 10px; overflow: hidden; margin-top: 18px; background: #050c18; border: 1px solid rgba(255,255,255,0.1);
     }
-    .eval-img-wrapper img, .testimonial-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
+    .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    /* البطاقات البصرية الاحترافية للمسارات */
+    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; margin-bottom: 60px; }
+    .track-banner-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      height: 300px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-decoration: none;
+    }
+    .track-banner-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .track-banner-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      filter: brightness(0.55);
+      transition: transform 0.5s ease;
+    }
+    .track-banner-card:hover .track-banner-bg { transform: scale(1.05); }
+    .track-banner-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(10,25,47,0.1) 20%, rgba(10,25,47,0.92) 90%);
+      z-index: 2;
+    }
+    .track-banner-content {
+      position: relative;
+      z-index: 3;
+      padding: 30px;
+      color: #fff;
+    }
+    .track-banner-num { font-size: 11.5px; font-weight: 800; color: var(--accent-gold-light); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1.2px; }
+    .track-banner-title { font-size: 21px; font-weight: 800; margin-bottom: 12px; line-height: 1.4; }
+    .track-banner-details {
+      font-size: 14px;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(5px);
+      padding: 8px 16px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 6px;
+      font-weight: 600;
     }
 
-    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    /* تفاصيل البرامج المعروضة باحترافية */
+    .tracks-details-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 50px;
+    }
     .track-card {
       background: var(--white);
       border: 1px solid var(--border-color);
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
       box-shadow: var(--card-shadow);
       display: flex;
@@ -390,127 +400,126 @@
     .track-head {
       background: linear-gradient(135deg, #0a192f, #112240);
       color: var(--white);
-      padding: 22px;
+      padding: 26px;
     }
-    .track-num { font-size: 11px; font-weight: 800; color: var(--accent-gold-light); text-transform: uppercase; margin-bottom: 5px; }
-    .track-head h3 { font-size: 18px; font-weight: 800; }
-    .track-body { padding: 22px; display: flex; flex-direction: column; gap: 15px; }
-    .program-item { padding-bottom: 14px; border-bottom: 1px dashed var(--border-color); }
+    .track-head h3 { font-size: 19px; font-weight: 800; }
+    .track-body { padding: 26px; display: flex; flex-direction: column; gap: 18px; }
+    .program-item { padding-bottom: 16px; border-bottom: 1px dashed var(--border-color); }
     .program-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .program-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+    .program-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
     .badge-hours {
       background: #f8fafc;
       color: #334155;
       border: 1px solid #cbd5e1;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
     }
-    .program-name { font-size: 14px; font-weight: 700; color: var(--text-dark); }
-    
+    .program-name { font-size: 15px; font-weight: 700; color: var(--text-dark); }
+
     .discovery-section {
       background: linear-gradient(135deg, #0a192f 0%, #162a45 100%);
       color: var(--white);
       border-radius: 20px;
-      padding: 45px 36px;
+      padding: 55px 40px;
       border: 1px solid rgba(197, 155, 39, 0.3);
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
-      gap: 36px;
+      gap: 40px;
       align-items: center;
-      margin-top: 45px;
+      margin-top: 60px;
     }
     .discovery-badge {
       background: rgba(197, 155, 39, 0.2);
       color: var(--accent-gold-light);
       border: 1px solid rgba(197, 155, 39, 0.4);
       display: inline-block;
-      padding: 4px 14px;
+      padding: 6px 16px;
       border-radius: 20px;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 800;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
-    .discovery-section h3 { font-size: 24px; font-weight: 900; margin-bottom: 12px; }
-    .discovery-section p { font-size: 14px; color: #cbd5e1; line-height: 1.8; margin-bottom: 20px; }
+    .discovery-section h3 { font-size: 26px; font-weight: 900; margin-bottom: 14px; }
+    .discovery-section p { font-size: 15px; color: #cbd5e1; line-height: 1.8; margin-bottom: 22px; }
     .discovery-action-box {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 24px;
-      border-radius: 14px;
+      padding: 28px;
+      border-radius: 16px;
       text-align: center;
     }
     .btn-booking {
       display: block;
       background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
       color: #071220;
-      padding: 13px 18px;
-      border-radius: 8px;
+      padding: 14px 20px;
+      border-radius: 10px;
       font-weight: 800;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
     }
     
     .accred-section {
       background: var(--bg-light);
       border-top: 1px solid var(--border-color);
       border-bottom: 1px solid var(--border-color);
-      padding: 85px 24px;
+      padding: 100px 24px;
     }
     .accred-wrapper {
-      max-width: 1280px;
+      max-width: 1320px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 55px;
+      gap: 60px;
       align-items: center;
     }
-    .accred-content h2 { font-size: 30px; font-weight: 900; color: var(--primary); margin-bottom: 16px; }
-    .accred-content p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 22px; }
-    .accred-points { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .accred-points li { display: flex; gap: 10px; font-size: 14px; color: var(--text-dark); font-weight: 600; }
+    .accred-content h2 { font-size: 32px; font-weight: 900; color: var(--primary); margin-bottom: 18px; }
+    .accred-content p { font-size: 16px; color: var(--text-muted); line-height: 1.9; margin-bottom: 26px; }
+    .accred-points { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .accred-points li { display: flex; gap: 12px; font-size: 14.5px; color: var(--text-dark); font-weight: 600; }
     
     .cert-mockup {
       background: var(--white);
       border: 8px double var(--primary);
-      border-radius: 14px;
-      padding: 26px 20px;
+      border-radius: 16px;
+      padding: 32px 24px;
       box-shadow: var(--card-shadow);
       text-align: center;
       position: relative;
     }
     .cert-mockup-tag {
       position: absolute;
-      top: -12px;
+      top: -13px;
       left: 50%;
       transform: translateX(-50%);
       background: var(--primary);
       color: var(--white);
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
-      padding: 4px 16px;
+      padding: 5px 18px;
       border-radius: 20px;
     }
-    .cert-mockup h4 { font-family: 'Cinzel', serif; font-size: 16px; color: var(--primary); margin: 10px 0 2px; }
-    .cert-type { font-size: 9px; color: #b45309; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
-    .cert-trainee-box { border-bottom: 2px solid var(--accent-gold); display: inline-block; padding: 0 18px 4px; margin-bottom: 10px; }
-    .cert-trainee-name { font-size: 15px; font-weight: 700; color: #64748b; font-style: italic; }
-    .cert-prog-title { font-size: 12px; font-weight: 700; color: #0f172a; background: #f1f5f9; padding: 7px; border-radius: 6px; margin-bottom: 16px; }
-    .cert-badges-row { display: flex; justify-content: space-around; border-top: 1px solid var(--border-color); padding-top: 12px; font-size: 11px; color: var(--text-muted); font-weight: 700; }
+    .cert-mockup h4 { font-family: 'Cinzel', serif; font-size: 17px; color: var(--primary); margin: 12px 0 4px; }
+    .cert-type { font-size: 9.5px; color: #b45309; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .cert-trainee-box { border-bottom: 2px solid var(--accent-gold); display: inline-block; padding: 0 20px 6px; margin-bottom: 12px; }
+    .cert-trainee-name { font-size: 15.5px; font-weight: 700; color: #64748b; font-style: italic; }
+    .cert-prog-title { font-size: 13px; font-weight: 700; color: #0f172a; background: #f1f5f9; padding: 8px; border-radius: 6px; margin-bottom: 18px; }
+    .cert-badges-row { display: flex; justify-content: space-around; border-top: 1px solid var(--border-color); padding-top: 14px; font-size: 11.5px; color: var(--text-muted); font-weight: 700; }
     
-    footer { background: #050c18; color: #94a3b8; padding: 55px 24px 28px; }
-    .footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
-    .footer-col h4 { color: var(--white); font-size: 15px; font-weight: 800; margin-bottom: 16px; }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a { color: #94a3b8; text-decoration: none; font-size: 13.5px; }
+    footer { background: #050c18; color: #94a3b8; padding: 70px 24px 35px; }
+    .footer-grid { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 45px; }
+    .footer-col h4 { color: var(--white); font-size: 16px; font-weight: 800; margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { color: #94a3b8; text-decoration: none; font-size: 14px; }
     .footer-links a:hover { color: var(--accent-gold-light); }
-    .footer-bottom { max-width: 1280px; margin: 0 auto; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 12px; }
+    .footer-bottom { max-width: 1320px; margin: 0 auto; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 12.5px; }
 
     @media (max-width: 992px) {
-      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
+      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .tracks-details-container, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
       .authority-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero h1 { font-size: 28px; }
+      .hero h1 { font-size: 30px; }
       .nav-links { display: none; }
     }
   </style>
@@ -521,7 +530,7 @@
   <header>
     <nav class="nav-container">
       <a href="#" class="logo-container">
-        <img src="logo.png.jpeg" alt="FA Consulting Logo" class="logo-img">
+        <div class="logo-box">FA</div>
         <div class="logo-block">
           <div class="logo-title">FA <span>CONSULTING</span></div>
           <div class="logo-subtitle">Executive Training & Leadership</div>
@@ -609,7 +618,7 @@
   </div>
 
   <!-- قسم من نحن -->
-  <section class="section-container" style="background: #ffffff; padding-bottom: 20px;">
+  <section class="section-container" style="background: #ffffff;">
     <div class="about-company-box">
       <h3>من نحن | FA Consulting & Training</h3>
       <p>شركة متخصصة في التدريب والاستشارات المؤسسية وتطوير الأعمال؛ تركز على تطوير القيادات، السلوك التنظيمي، بيئة العمل، وإدارة الأزمات. نقدم خبرات تراكمية رفيعة المستوى لمساعدة الشركات على بناء بيئة عمل مستقرة وعالية الإنتاجية تحت إشراف نخبة من الخبراء الأكاديميين والمهنيين.</p>
@@ -617,9 +626,9 @@
   </section>
 
   <!-- ما الذي تحصله مؤسستكم (B2B Value) -->
-  <section class="section-container" id="b2b-offer" style="padding-top: 10px;">
+  <section class="section-container" id="b2b-offer" style="padding-top: 0;">
     <div class="b2b-value-section">
-      <div class="section-header" style="margin-bottom: 20px;">
+      <div class="section-header" style="margin-bottom: 25px;">
         <span class="section-label" style="color: var(--accent-gold-light);">Corporate Value Proposition</span>
         <h2 class="section-title" style="color: #ffffff;">ما الذي تحصله مؤسستكم؟</h2>
         <p class="section-desc" style="color: #cbd5e1;">منهجية عمل متكاملة تضمن تحقيق أعلى عائد على الاستثمار التدريبي لفريقكم.</p>
@@ -694,7 +703,7 @@
       <p class="section-desc">توثيق عملي لسنوات من قيادة البرامج الإدارية وتأهيل الكوادر الحكومية والقيادية في كبرى المحافل الرسمية.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
       <div class="field-card">
         <img src="saudi_reception.jpg" alt="المشاركة والمصافحة" class="field-img">
         <div class="field-body">
@@ -754,20 +763,61 @@
     </div>
   </section>
 
-  <!-- البرامج التدريبية -->
+  <!-- المسارات التدريبية التفاعلية -->
   <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
     <div class="section-header">
       <span class="section-label">Professional Programs</span>
-      <h2 class="section-title">من برامجنا التدريبية المتخصصة في صناعة القيادة الاحترافية</h2>
-      <p class="section-desc">منظومة برامج تطويرية مصممة بعمق إداري لتلبية تطلعات مجالس الإدارة ومدراء الموارد البشرية.</p>
+      <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
+      <p class="section-desc">اضغط على أي مسار أدناه للاطلاع على محتوياته التفصيلية والبرامج المرتبطة به.</p>
     </div>
 
     <div class="tracks-grid">
-      <div class="track-card">
+      <a href="#track-1-details" class="track-banner-card">
+        <img src="trining_group.jpg" alt="المسار الأول" class="track-banner-bg">
+        <div class="track-banner-overlay"></div>
+        <div class="track-banner-content">
+          <div class="track-banner-num">المسار الأول</div>
+          <div class="track-banner-title">مهارات الاتصال الفعال والذكاء العاطفي</div>
+          <div class="track-banner-details">4 برامج تدريبية | مدة البرامج: 12 - 16 ساعة</div>
+        </div>
+      </a>
+
+      <a href="#track-2-details" class="track-banner-card">
+        <img src="saudi_reception.jpg" alt="المسار الثاني" class="track-banner-bg">
+        <div class="track-banner-overlay"></div>
+        <div class="track-banner-content">
+          <div class="track-banner-num">المسار الثاني</div>
+          <div class="track-banner-title">التعامل مع ضغوط العمل وإدارة الأزمات</div>
+          <div class="track-banner-details">4 برامج تدريبية | مدة البرامج: 10 - 14 ساعة</div>
+        </div>
+      </a>
+
+      <a href="#track-3-details" class="track-banner-card">
+        <img src="graduates_group.jpg" alt="المسار الثالث" class="track-banner-bg">
+        <div class="track-banner-overlay"></div>
+        <div class="track-banner-content">
+          <div class="track-banner-num">المسار الثالث</div>
+          <div class="track-banner-title">الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</div>
+          <div class="track-banner-details">4 برامج تدريبية | مدة البرامج: 12 - 16 ساعة</div>
+        </div>
+      </a>
+
+      <a href="#track-4-details" class="track-banner-card">
+        <img src="trining_group.jpg" alt="المسار الرابع" class="track-banner-bg">
+        <div class="track-banner-overlay"></div>
+        <div class="track-banner-content">
+          <div class="track-banner-num">المسار الرابع</div>
+          <div class="track-banner-title">بيئة العمل الاحترافية وثقافة المنظمات</div>
+          <div class="track-banner-details">3 برامج تدريبية | مدة البرامج: 10 - 12 ساعة</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- تفاصيل محتوى البرامج -->
+    <div class="tracks-details-container">
+      <div class="track-card" id="track-1-details">
         <div class="track-head">
-          <div class="track-num">المسار الأول</div>
-          <h3>مهارات الاتصال الفعال والذكاء العاطفي</h3>
-          <div style="font-size: 12px; color: var(--accent-gold-light); margin-top: 4px; font-weight: 600;">4 برامج تدريبية | مدة البرامج: 12 - 16 ساعة</div>
+          <h3>المسار الأول: مهارات الاتصال الفعال والذكاء العاطفي</h3>
         </div>
         <div class="track-body">
           <div class="program-item">
@@ -789,11 +839,9 @@
         </div>
       </div>
 
-      <div class="track-card">
+      <div class="track-card" id="track-2-details">
         <div class="track-head">
-          <div class="track-num">المسار الثاني</div>
-          <h3>التعامل مع ضغوط العمل وإدارة الأزمات</h3>
-          <div style="font-size: 12px; color: var(--accent-gold-light); margin-top: 4px; font-weight: 600;">4 برامج تدريبية | مدة البرامج: 10 - 14 ساعة</div>
+          <h3>المسار الثاني: التعامل مع ضغوط العمل وإدارة الأزمات</h3>
         </div>
         <div class="track-body">
           <div class="program-item">
@@ -815,11 +863,9 @@
         </div>
       </div>
 
-      <div class="track-card">
+      <div class="track-card" id="track-3-details">
         <div class="track-head">
-          <div class="track-num">المسار الثالث</div>
-          <h3>الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</h3>
-          <div style="font-size: 12px; color: var(--accent-gold-light); margin-top: 4px; font-weight: 600;">4 برامج تدريبية | مدة البرامج: 12 - 16 ساعة</div>
+          <h3>المسار الثالث: الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</h3>
         </div>
         <div class="track-body">
           <div class="program-item">
@@ -841,11 +887,9 @@
         </div>
       </div>
 
-      <div class="track-card">
+      <div class="track-card" id="track-4-details">
         <div class="track-head">
-          <div class="track-num">المسار الرابع</div>
-          <h3>بيئة العمل الاحترافية وثقافة المنظمات</h3>
-          <div style="font-size: 12px; color: var(--accent-gold-light); margin-top: 4px; font-weight: 600;">3 برامج تدريبية | مدة البرامج: 10 - 12 ساعة</div>
+          <h3>المسار الرابع: بيئة العمل الاحترافية وثقافة المنظمات</h3>
         </div>
         <div class="track-body">
           <div class="program-item">
