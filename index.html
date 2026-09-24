@@ -227,6 +227,56 @@
     .section-title { font-size: 32px; font-weight: 900; color: var(--primary); margin-bottom: 14px; }
     .section-desc { font-size: 15.5px; color: var(--text-muted); line-height: 1.7; }
     
+    /* من نحن */
+    .about-company-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 50px;
+      box-shadow: var(--card-shadow);
+    }
+    .about-company-box h3 {
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+    .about-company-box p {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    /* ما الذي تحصله مؤسستكم (B2B Value) */
+    .b2b-value-section {
+      background: linear-gradient(135deg, #0a192f, #112240);
+      color: #fff;
+      padding: 60px 24px;
+      border-radius: 16px;
+      margin: 50px 0;
+      border: 1px solid rgba(197, 155, 39, 0.3);
+    }
+    .b2b-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      margin: 30px auto 0;
+    }
+    .b2b-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .b2b-icon { color: var(--accent-gold); font-size: 20px; }
+
     /* الأهداف المؤسسية */
     .goals-grid {
       display: grid;
@@ -241,11 +291,6 @@
       padding: 28px;
       box-shadow: var(--card-shadow);
       border-right: 4px solid var(--accent-gold);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .goal-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--card-shadow-hover);
     }
     .goal-card h3 {
       font-size: 18px;
@@ -283,15 +328,12 @@
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
     }
-    .field-card:hover { transform: translateY(-4px); }
     .field-img { width: 100%; height: 230px; object-fit: cover; display: block; }
     .field-body { padding: 22px; }
     .field-body h4 { font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
     .field-body p { font-size: 13px; color: #475569; line-height: 1.6; }
 
-    /* صندوق مؤشرات الجودة المتساوي جنباً إلى جنب */
     .eval-box {
       background: #0a192f;
       color: #fff;
@@ -319,33 +361,16 @@
       font-family: 'Montserrat', sans-serif;
       line-height: 1;
     }
-    
-    .eval-img-wrapper {
+    .eval-img-wrapper, .testimonial-img-wrapper {
       width: 100%;
       height: 200px;
       border-radius: 8px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.2);
       margin-top: 14px;
-      background: #050c18;
-    }
-    .eval-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-    
-    .testimonial-img-wrapper {
-      width: 100%;
-      height: 200px;
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 14px 0;
       background: #050c18;
       border: 1px solid rgba(255,255,255,0.1);
     }
-    .testimonial-img-wrapper img {
+    .eval-img-wrapper img, .testimonial-img-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -407,7 +432,7 @@
       font-weight: 800;
       margin-bottom: 12px;
     }
-    .discovery-section h3 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+    .discovery-section h3 { font-size: 24px; font-weight: 900; margin-bottom: 12px; }
     .discovery-section p { font-size: 14px; color: #cbd5e1; line-height: 1.8; margin-bottom: 20px; }
     .discovery-action-box {
       background: rgba(255, 255, 255, 0.05);
@@ -483,9 +508,9 @@
     .footer-bottom { max-width: 1280px; margin: 0 auto; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 12px; }
 
     @media (max-width: 992px) {
-      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .footer-grid, .eval-box, .goals-grid { grid-template-columns: 1fr; }
+      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
       .authority-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero h1 { font-size: 30px; }
+      .hero h1 { font-size: 28px; }
       .nav-links { display: none; }
     }
   </style>
@@ -494,7 +519,7 @@
 
   <!-- الهيدر -->
   <header>
-    <div class="nav-container">
+    <nav class="nav-container">
       <a href="#" class="logo-container">
         <img src="logo.png.jpeg" alt="FA Consulting Logo" class="logo-img">
         <div class="logo-block">
@@ -503,14 +528,14 @@
         </div>
       </a>
       <ul class="nav-links">
-        <li><a href="#about">المرجعية الاستشارية</a></li>
+        <li><a href="#about">من نحن</a></li>
         <li><a href="#goals">أهدافنا المؤسسية</a></li>
-        <li><a href="#field-track">سابقة الأعمال</a></li>
+        <li><a href="#b2b-offer">ماذا تححصل مؤسستكم</a></li>
         <li><a href="#tracks">برامجنا التدريبية</a></li>
         <li><a href="#audit">مؤشرات الجودة</a></li>
       </ul>
-      <a href="https://wa.me/201271221780?text=طلب%20جلسة%20استكشافية%20واستعراض%20البرامج" target="_blank" class="btn-header">حجز جلسة استكشافية</a>
-    </div>
+      <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-header">حجز جلسة تشخيص مجانية</a>
+    </nav>
   </header>
 
   <!-- Hero Section -->
@@ -518,18 +543,18 @@
     <div class="hero-wrapper">
       <div>
         <div class="hero-tag">
-          <span>&#9733; بيت خبرة واستشارات صناعة القيادة الاحترافية والسلوك المؤسسي</span>
+          <span>&#9733; بناء حضور مهني موثوق في قطاع التدريب والاستشارات المؤسسية</span>
         </div>
         <h1>
           صناعة القيادة الاحترافية <br>
           <span>بخبرة إقليمية رائدة</span>
         </h1>
         <p class="hero-desc">
-          حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بمعهد الإدارة العامة بالرياض وعمق أكاديمي متخصص في علم النفس، بعمق إداري احترافي يشبه بيئات العمل في المؤسسات العالمية الشهيرة لتشخيص وحل المشكلات التنظيمية.
+          حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بمعهد الإدارة العامة بالرياض وعمق أكاديمي متخصص في علم النفس لتشخيص وحل المشكلات التنظيمية.
         </p>
         <div class="hero-actions">
           <a href="#tracks" class="btn-primary">برامجنا التدريبية</a>
-          <a href="#discovery" class="btn-secondary">طلب جلسة استكشافية (60 دقيقة)</a>
+          <a href="#discovery" class="btn-secondary">احجز جلسة تشخيص مؤسسي مجانية</a>
         </div>
       </div>
 
@@ -583,6 +608,35 @@
     </div>
   </div>
 
+  <!-- قسم من نحن -->
+  <section class="section-container" style="background: #ffffff; padding-bottom: 20px;">
+    <div class="about-company-box">
+      <h3>من نحن | FA Consulting & Training</h3>
+      <p>شركة متخصصة في التدريب والاستشارات المؤسسية وتطوير الأعمال؛ تركز على تطوير القيادات، السلوك التنظيمي، بيئة العمل، وإدارة الأزمات. نقدم خبرات تراكمية رفيعة المستوى لمساعدة الشركات على بناء بيئة عمل مستقرة وعالية الإنتاجية تحت إشراف نخبة من الخبراء الأكاديميين والمهنيين.</p>
+    </div>
+  </section>
+
+  <!-- ما الذي تحصله مؤسستكم (B2B Value) -->
+  <section class="section-container" id="b2b-offer" style="padding-top: 10px;">
+    <div class="b2b-value-section">
+      <div class="section-header" style="margin-bottom: 20px;">
+        <span class="section-label" style="color: var(--accent-gold-light);">Corporate Value Proposition</span>
+        <h2 class="section-title" style="color: #ffffff;">ما الذي تحصله مؤسستكم؟</h2>
+        <p class="section-desc" style="color: #cbd5e1;">منهجية عمل متكاملة تضمن تحقيق أعلى عائد على الاستثمار التدريبي لفريقكم.</p>
+      </div>
+      <div class="b2b-grid">
+        <div class="b2b-item"><span class="b2b-icon">✓</span> تشخيص الاحتياجات التدريبية بدقة</div>
+        <div class="b2b-item"><span class="b2b-icon">✓</span> تصميم البرنامج وفق احتياجات المؤسسة</div>
+        <div class="b2b-item"><span class="b2b-icon">✓</span> تدريب حضوري أو عن بُعد (Interactive)</div>
+        <div class="b2b-item"><span class="b2b-icon">✓</span> حقائب تدريبية مخصصة واحترافية</div>
+        <div class="b2b-item"><span class="b2b-icon">✓</span> تقييم الأداء قبل وبعد البرنامج</div>
+        <div class="b2b-item"><span class="b2b-icon">✓</span> تقرير ختامى تفصيلي للجهة المستفيدة</div>
+        <div class="b2b-item"><span class="b2b-icon">✓</span> شهادات إتمام للمتدربين برقم تسلسلي</div>
+        <div class="b2b-item"><span class="b2b-icon">✓</span> متابعة وتوصيات تطويرية مستمرة</div>
+      </div>
+    </div>
+  </section>
+
   <!-- الأهداف المؤسسية -->
   <section class="section-container" id="goals" style="background: #ffffff;">
     <div class="section-header">
@@ -606,8 +660,8 @@
       <div class="goal-card">
         <h3>💡 2. الأهداف الاستشارية (حلول الأعمال)</h3>
         <ul>
-          <li><strong>تقديم حلول استراتيجية مخصصة:</strong> صياغة استشارات إدارية وفنية تدعم المؤسسات في حل مشكلاتها وتطوير أدائها.</li>
-          <li><strong>دعم التحول الرقمي والتطوير المؤسسي:</strong> مساعدة الشركات على إعادة هيكلة عملياتها وتوظيف التكنولوجيا الحديثة.</li>
+          <li><strong>استشارات إدارية وتنظيمية وتطوير مؤسسي:</strong> صياغة استشارات إدارية تدعم المؤسسات في حل مشكلاتها وتطوير أدائها.</li>
+          <li><strong>دعم التحول والتطوير المؤسسي:</strong> مساعدة الشركات على إعادة هيكلة عملياتها وتطوير بيئة العمل.</li>
           <li><strong>ضمان نتائج ملموسة وقابلة للقياس (ROI):</strong> قياس العائد على الاستثمار للجهات المستفيدة من الاستشارات.</li>
         </ul>
       </div>
@@ -616,7 +670,7 @@
         <h3>📈 3. الأهداف التسويقية والتنافسية (الانتشار والمكانة)</h3>
         <ul>
           <li><strong>بناء علامة تجارية موثوقة:</strong> ترسيخ اسم المؤسسة كمرجع أول في قطاع الاستشارات والتدريب.</li>
-          <li><strong>توسيع قاعدة العملاء:</strong> استهداف قطاعات متنوعة (حكومية، خاصة، غير ربحية، أفراد).</li>
+          <li><strong>توسيع قاعدة العملاء:</strong> استهداف قطاعات متنوعة (حكومية، خاصة، غير ربحية).</li>
           <li><strong>التوسع الجغرافي:</strong> تقديم خدمات التدريب والاستشارات محلياً وإقليمياً، وتفعيل التدريب عن بعد (E-learning).</li>
         </ul>
       </div>
@@ -624,7 +678,7 @@
       <div class="goal-card">
         <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
         <ul>
-          <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد عالمية لمنح شهادات موثقة.</li>
+          <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد لمنح شهادات موثقة.</li>
           <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
           <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
         </ul>
@@ -700,12 +754,12 @@
     </div>
   </section>
 
-  <!-- البرامج التدريبية -->
+  <!-- البرامج التدريبية المرتبة بصرياً -->
   <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
     <div class="section-header">
       <span class="section-label">Professional Programs</span>
       <h2 class="section-title">من برامجنا التدريبية المتخصصة في صناعة القيادة الاحترافية</h2>
-      <p class="section-desc">منظومة برامج تطويرية مصممة بعمق إداري احترافي يشبه بيئات العمل في المؤسسات العالمية الشهيرة لتلبية تطلعات مجالس الإدارة.</p>
+      <p class="section-desc">منظومة برامج تطويرية مصممة بعمق إداري لتلبية تطلعات مجالس الإدارة ومدراء الموارد البشرية.</p>
     </div>
 
     <div class="tracks-grid">
@@ -713,6 +767,7 @@
         <div class="track-head">
           <div class="track-num">المسار الأول</div>
           <h3>مهارات الاتصال الفعال والذكاء العاطفي</h3>
+          <div style="font-size: 12px; color: var(--accent-gold-light); margin-top: 4px; font-weight: 600;">4 برامج تدريبية | من 12 - 16 ساعة للبرنامج</div>
         </div>
         <div class="track-body">
           <div class="program-item">
@@ -738,6 +793,7 @@
         <div class="track-head">
           <div class="track-num">المسار الثاني</div>
           <h3>التعامل مع ضغوط العمل وإدارة الأزمات</h3>
+          <div style="font-size: 12px; color: var(--accent-gold-light); margin-top: 4px; font-weight: 600;">4 برامج تدريبية | من 10 - 14 ساعة للبرنامج</div>
         </div>
         <div class="track-body">
           <div class="program-item">
@@ -763,6 +819,7 @@
         <div class="track-head">
           <div class="track-num">المسار الثالث</div>
           <h3>الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</h3>
+          <div style="font-size: 12px; color: var(--accent-gold-light); margin-top: 4px; font-weight: 600;">4 برامج تدريبية | من 12 - 16 ساعة للبرنامج</div>
         </div>
         <div class="track-body">
           <div class="program-item">
@@ -788,6 +845,7 @@
         <div class="track-head">
           <div class="track-num">المسار الرابع</div>
           <h3>بيئة العمل الاحترافية وثقافة المنظمات</h3>
+          <div style="font-size: 12px; color: var(--accent-gold-light); margin-top: 4px; font-weight: 600;">3 برامج تدريبية | من 10 - 12 ساعة للبرنامج</div>
         </div>
         <div class="track-body">
           <div class="program-item">
@@ -796,7 +854,7 @@
           </div>
           <div class="program-item">
             <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
-            <div class="program-name">14. ترسيخ معايير بيئة العمل الاحترافية الشبيهة بالمؤسسات العالمية</div>
+            <div class="program-name">14. ترسيخ معايير بيئة العمل الاحترافية وشراكات العمل</div>
           </div>
           <div class="program-item">
             <div class="program-meta"><span class="badge-hours">12 ساعة</span></div>
@@ -810,25 +868,25 @@
     <div class="discovery-section" id="discovery">
       <div>
         <span class="discovery-badge">مبادرة الشراكة المؤسسية</span>
-        <h3>جلسة التشخيص الاستشاري المجانية (60 دقيقة)</h3>
-        <p>نقدم لمجالس الإدارة ومدراء الموارد البشرية جلسة استكشافية افتراضية مدتها ساعة لتشخيص التحديات السلوكية لفريقكم.</p>
+        <h3>احجز جلسة تشخيص مؤسسي مجانية</h3>
+        <p>جلسة استكشافية لمدة 60 دقيقة مع المستشار التنفيذي لتحديد احتياجات فريقكم التدريبية والتطويرية.</p>
       </div>
       <div class="discovery-action-box">
-        <h4 style="color:#fff; margin-bottom:10px;">طلب حجز الجلسة للشركات</h4>
-        <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20استشاري%20(60%20دقيقة)%20لشركتنا" target="_blank" class="btn-booking">حجز الجلسة عبر واتساب</a>
+        <h4 style="color:#fff; margin-bottom:10px;">تواصل مباشر مع الإدارة</h4>
+        <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-booking">احجز جلستك الآن عبر واتساب</a>
       </div>
     </div>
   </section>
 
-  <!-- الشهادات النموذجية -->
+  <!-- الشهادات المهنية -->
   <section class="accred-section" id="certificates">
     <div class="accred-wrapper">
       <div class="accred-content">
         <span class="section-label">Credential & Verification</span>
         <h2>شهادات إتمام مهنية من FA Consulting</h2>
-        <p>يُمنح مجتازو برامجنا شهادة إتمام معتمدة برقم تسلسلي فريد، تحت إشراف المستشار التنفيذي للمؤسسة.</p>
+        <p>تُصدر الشهادة برقم تسلسلي فريد يتيح التحقق من بيانات البرنامج والمتدرب بكل شفافية وموثوقية.</p>
         <ul class="accred-points">
-          <li><span>✓</span> <div><strong>شهادة إتمام معتمدة (Professional Certificate):</strong> توثق إنجاز البرنامج وعدد الساعات الفعلية.</div></li>
+          <li><span>✓</span> <div><strong>شهادة إتمام مهنية (Professional Certificate):</strong> توثق إنجاز البرنامج وعدد الساعات الفعلية.</div></li>
           <li><span>✓</span> <div><strong>رقم تسلسلي فريد (Unique ID):</strong> لكل متدرب لتسهيل توثيق الشهادة.</div></li>
           <li><span>✓</span> <div><strong>إشراف أكاديمي ومهني:</strong> تصدر الشهادة تحت إشراف المستشار التنفيذي للمؤسسة.</div></li>
         </ul>
