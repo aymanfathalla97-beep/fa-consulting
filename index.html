@@ -324,7 +324,7 @@
     }
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    /* بطاقات المسارات الرئيسية */
+    /* بطاقات المسارات */
     .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; }
     .track-banner-card {
       position: relative;
@@ -440,14 +440,17 @@
     .brochure-list li { font-size: 14.5px; color: #475569; position: relative; padding-right: 18px; line-height: 1.7; }
     .brochure-list li::before { content: "▪"; position: absolute; right: 0; color: var(--accent-gold); font-size: 14px; }
 
+    /* جدول متناسق يملأ الشاشة بالكامل وبدون مشاكل عرض للموبايل */
     .pricing-table-container {
       margin-top: 40px;
-      overflow-x: auto;
+      width: 100%;
+      overflow-x: hidden;
     }
     .pricing-table {
       width: 100%;
+      table-layout: fixed;
       border-collapse: collapse;
-      text-align: right;
+      text-align: center;
       background: #f8fafc;
       border-radius: 12px;
       overflow: hidden;
@@ -456,16 +459,18 @@
     .pricing-table th {
       background: var(--primary);
       color: var(--white);
-      padding: 14px 18px;
-      font-size: 14px;
+      padding: 14px 10px;
+      font-size: 13.5px;
       font-weight: 700;
+      word-wrap: break-word;
     }
     .pricing-table td {
-      padding: 14px 18px;
-      font-size: 14px;
+      padding: 14px 10px;
+      font-size: 13.5px;
       color: #334155;
       border-bottom: 1px solid var(--border-color);
       font-weight: 600;
+      word-wrap: break-word;
     }
     .pricing-table tr:last-child td { border-bottom: none; }
 
@@ -604,6 +609,7 @@
       .authority-grid { grid-template-columns: repeat(2, 1fr); }
       .hero h1 { font-size: 30px; }
       .nav-links { display: none; }
+      .pricing-table th, .pricing-table td { font-size: 12px; padding: 10px 6px; }
     }
   </style>
 </head>
@@ -941,7 +947,7 @@
   </div>
 
 
-  <!-- صفحة ملف الدورة المستقلة (Brochure View) المحدثة -->
+  <!-- صفحة ملف الدورة المستقلة (Brochure View) -->
   <div id="brochure-view" class="view-section">
     <div class="section-container">
       <a href="#" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والمسارات</a>
@@ -995,23 +1001,24 @@
           </div>
         </div>
 
+        <!-- جدول الرسوم والمعلومات المعدل بالكامل ليمتلئ بالشاشة بانتظام -->
         <div class="pricing-table-container">
           <div class="brochure-section-title" style="margin-bottom: 15px;">معلومات الدورة والرسوم الاستثمارية</div>
           <table class="pricing-table">
             <thead>
               <tr>
-                <th>المدة بالساعة</th>
-                <th>نمط التدريب</th>
-                <th>اللغة</th>
-                <th>الرسوم (USD)</th>
+                <th style="width: 25%;">المدة بالساعة</th>
+                <th style="width: 35%;">نمط التدريب</th>
+                <th style="width: 20%;">اللغة</th>
+                <th style="width: 20%;">الرسوم (USD)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td id="t-hours">16 ساعة تدريبية</td>
-                <td>حضوري أو تفاعلي عن بُعد (Interactive)</td>
-                <td>اللغة العربية</td>
-                <td id="t-price" style="color: #047857; font-weight: 800;">$1,200 (أو ما يعادله بالعملة المحلية)</td>
+                <td id="t-hours">16 ساعة</td>
+                <td>حضوري أو تفاعلي عن بُعد</td>
+                <td>العربية</td>
+                <td id="t-price" style="color: #047857; font-weight: 800;">$1,200</td>
               </tr>
             </tbody>
           </table>
@@ -1019,7 +1026,7 @@
 
         <div class="brochure-actions">
           <a href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج%20التدريبي" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
-          <a href="#" onclick="alert('جاري تحميل ملف الدورة (Brochure PDF) الخاص بـ FA Consulting...'); return false;" class="btn-download">📥 احصل على ملف الدورة (PDF)</a>
+          <a href="https://wa.me/201271221780?text=أرغب%20في%20طلب%20ملف%20الدورة%20PDF" target="_blank" class="btn-download">📥 احصل على ملف الدورة (PDF)</a>
         </div>
       </div>
     </div>
@@ -1052,10 +1059,10 @@
 
   <script>
     const brochureData = {
-      'p1': { title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', hours: '16 ساعة تدريبية', price: '$1,200 (أو ما يعادله بالعملة المحلية)' },
-      'p2': { title: 'الذكاء العاطفي والاجتماعي لصناع القرار', subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', hours: '12 ساعة تدريبية', price: '$950 (أو ما يعادله بالعملة المحلية)' },
-      'p3': { title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', hours: '12 ساعة تدريبية', price: '$950 (أو ما يعادله بالعملة المحلية)' },
-      'p4': { title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', hours: '16 ساعة تدريبية', price: '$1,200 (أو ما يعادله بالعملة المحلية)' }
+      'p1': { title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', hours: '16 ساعة', price: '$1,200' },
+      'p2': { title: 'الذكاء العاطفي والاجتماعي لصناع القرار', subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', hours: '12 ساعة', price: '$950' },
+      'p3': { title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', hours: '12 ساعة', price: '$950' },
+      'p4': { title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', hours: '16 ساعة', price: '$1,200' }
     };
 
     function switchView(viewName) {
