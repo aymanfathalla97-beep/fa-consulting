@@ -324,8 +324,8 @@
     }
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    /* البطاقات البصرية الاحترافية للمسارات */
-    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; margin-bottom: 40px; }
+    /* بطاقات المسارات الرئيسية */
+    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; }
     .track-banner-card {
       position: relative;
       border-radius: 18px;
@@ -378,72 +378,90 @@
       font-weight: 600;
     }
 
-    /* نظام التبويبات الفردية المنفصلة */
-    .track-content-panel {
-      display: none;
-      margin-top: 30px;
-      animation: fadeIn 0.4s ease-in-out;
-    }
-    .track-content-panel.active {
-      display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* نظام عرض صفحة تفاصيل الدورة (عند الضغط على الدورة) */
+    .view-section { display: none; }
+    .view-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    .track-card {
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 30px;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2);
+    }
+    .back-btn:hover { background: var(--primary-light); }
+
+    .course-details-card {
       background: var(--white);
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
+      border-radius: 20px;
+      padding: 45px;
       box-shadow: var(--card-shadow);
-      display: flex;
-      flex-direction: column;
-      max-width: 800px;
-      margin: 0 auto;
+      margin-top: 20px;
     }
-    .track-head {
-      background: linear-gradient(135deg, #0a192f, #112240);
-      color: var(--white);
-      padding: 26px;
+    .course-title-main { font-size: 28px; font-weight: 900; color: var(--primary); margin-bottom: 15px; }
+    .course-desc-main { font-size: 16px; color: #475569; line-height: 1.9; margin-bottom: 35px; }
+
+    .course-info-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 25px;
+      margin-bottom: 35px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       text-align: center;
     }
-    .track-head h3 { font-size: 22px; font-weight: 800; }
-    .track-body { padding: 30px; display: flex; flex-direction: column; gap: 20px; }
-    .program-item { padding-bottom: 20px; border-bottom: 1px dashed var(--border-color); }
-    .program-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .program-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
-    .badge-hours {
-      background: #f8fafc;
-      color: #334155;
-      border: 1px solid #cbd5e1;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 6px;
+    .info-item .label { font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 5px; display: block; }
+    .info-item .val { font-size: 18px; color: var(--primary); font-weight: 800; }
+    .info-item .price-val { color: #047857; font-size: 22px; font-weight: 900; }
+    .info-item .price-val span { font-size: 12px; color: #6b7280; font-weight: 600; display: block; }
+
+    .course-section-heading { font-size: 20px; font-weight: 800; color: var(--primary); margin: 30px 0 15px; border-right: 4px solid var(--accent-gold); padding-right: 12px; }
+    .course-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
+    .course-list li { font-size: 15px; color: #475569; position: relative; padding-right: 20px; line-height: 1.7; }
+    .course-list li::before { content: "✓"; position: absolute; right: 0; color: #047857; font-weight: bold; }
+
+    .course-actions-bar {
+      display: flex;
+      gap: 15px;
+      margin-top: 40px;
+      flex-wrap: wrap;
     }
-    .badge-mode {
-      background: rgba(197, 155, 39, 0.1);
-      color: #92400e;
-      border: 1px solid rgba(197, 155, 39, 0.3);
-      font-size: 11.5px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 6px;
+    .btn-cart {
+      background: #047857;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(4, 120, 87, 0.3);
     }
-    .program-name { font-size: 16px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; display: block; }
-    .program-pricing {
-      font-size: 14.5px;
-      font-weight: 700;
-      color: #047857;
-      background: #ecfdf5;
-      padding: 8px 14px;
-      border-radius: 8px;
-      display: inline-block;
-      border: 1px solid #a7f3d0;
+    .btn-brochure {
+      background: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
-    .program-pricing span { font-size: 11.5px; color: #6b7280; font-weight: 600; display: block; }
 
     .discovery-section {
       background: linear-gradient(135deg, #0a192f 0%, #162a45 100%);
@@ -544,7 +562,7 @@
     .footer-bottom { max-width: 1320px; margin: 0 auto; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 12.5px; }
 
     @media (max-width: 992px) {
-      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
+      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .course-info-box, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
       .authority-grid { grid-template-columns: repeat(2, 1fr); }
       .hero h1 { font-size: 30px; }
       .nav-links { display: none; }
@@ -556,7 +574,7 @@
   <!-- الهيدر -->
   <header>
     <nav class="nav-container">
-      <a href="#" class="logo-container">
+      <a href="#" class="logo-container" onclick="switchView('home')">
         <div class="logo-box">FA</div>
         <div class="logo-block">
           <div class="logo-title">FA <span>CONSULTING</span></div>
@@ -564,492 +582,392 @@
         </div>
       </a>
       <ul class="nav-links">
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#goals">أهدافنا المؤسسية</a></li>
-        <li><a href="#b2b-offer">ماذا تححصل مؤسستكم</a></li>
-        <li><a href="#tracks">برامجنا التدريبية</a></li>
-        <li><a href="#audit">مؤشرات الجودة</a></li>
+        <li><a href="#about" onclick="switchView('home')">من نحن</a></li>
+        <li><a href="#goals" onclick="switchView('home')">أهدافنا المؤسسية</a></li>
+        <li><a href="#b2b-offer" onclick="switchView('home')">ماذا تححصل مؤسستكم</a></li>
+        <li><a href="#tracks" onclick="switchView('home')">برامجنا التدريبية</a></li>
+        <li><a href="#audit" onclick="switchView('home')">مؤشرات الجودة</a></li>
       </ul>
       <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-header">حجز جلسة تشخيص مجانية</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-wrapper">
-      <div>
-        <div class="hero-tag">
-          <span>&#9733; بناء حضور مهني موثوق في قطاع التدريب والاستشارات المؤسسية</span>
-        </div>
-        <h1>
-          صناعة القيادة الاحترافية <br>
-          <span>بخبرة إقليمية رائدة</span>
-        </h1>
-        <p class="hero-desc">
-          حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بمعهد الإدارة العامة بالرياض وعمق أكاديمي متخصص في علم النفس لتشخيص وحل المشكلات التنظيمية.
-        </p>
-        <div class="hero-actions">
-          <a href="#tracks" class="btn-primary">برامجنا التدريبية</a>
-          <a href="#discovery" class="btn-secondary">احجز جلسة تشخيص مؤسسي مجانية</a>
-        </div>
-      </div>
-
-      <!-- بطاقة المستشار -->
-      <div class="founder-card" id="about">
-        <div class="founder-badge-top">القيادة الاستشارية والأكاديمية</div>
-        <div class="founder-header">
-          <img src="dr_fathalla.jpg" alt="د. فتح الله أبو ذكري" class="founder-avatar" onerror="this.src='fathalla.png.png';">
-          <div>
-            <div class="founder-name">د. فتح الله أبو ذكري</div>
-            <div class="founder-tagline">المستشار التنفيذي للمؤسسة</div>
+  <!-- الصفحة الرئيسية (Home View) -->
+  <div id="home-view" class="view-section active">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-wrapper">
+        <div>
+          <div class="hero-tag">
+            <span>&#9733; بناء حضور مهني موثوق في قطاع التدريب والاستشارات المؤسسية</span>
+          </div>
+          <h1>
+            صناعة القيادة الاحترافية <br>
+            <span>بخبرة إقليمية رائدة</span>
+          </h1>
+          <p class="hero-desc">
+            حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بمعهد الإدارة العامة بالرياض وعمق أكاديمي متخصص في علم النفس لتشخيص وحل المشكلات التنظيمية.
+          </p>
+          <div class="hero-actions">
+            <a href="#tracks" class="btn-primary">برامجنا التدريبية</a>
+            <a href="#discovery" class="btn-secondary">احجز جلسة تشخيص مؤسسي مجانية</a>
           </div>
         </div>
-        <ul class="founder-stats-list">
-          <li>
-            <span class="stat-icon">&#10003;</span>
-            <div><strong>عضو هيئة التدريب بمعهد الإدارة العامة بالرياض سابقاً:</strong> لأكثر من 12 عاماً في تدريب القيادات الحكومية والمؤسسية.</div>
-          </li>
-          <li>
-            <span class="stat-icon">&#10003;</span>
-            <div><strong>دكتوراه في علم النفس:</strong> توظيف التشخيص النفسي في معالجة صراعات بيئة العمل ورفع استقرار المنظمات.</div>
-          </li>
-          <li>
-            <span class="stat-icon">&#10003;</span>
-            <div><strong>تصميم وتطوير الحقائب الإدارية:</strong> برامج مصممة خصيصاً لتحقيق عائد مباشر وقابل للقياس على رأس المال البشري.</div>
-          </li>
-        </ul>
+
+        <!-- بطاقة المستشار -->
+        <div class="founder-card" id="about">
+          <div class="founder-badge-top">القيادة الاستشارية والأكاديمية</div>
+          <div class="founder-header">
+            <img src="dr_fathalla.jpg" alt="د. فتح الله أبو ذكري" class="founder-avatar" onerror="this.src='fathalla.png.png';">
+            <div>
+              <div class="founder-name">د. فتح الله أبو ذكري</div>
+              <div class="founder-tagline">المستشار التنفيذي للمؤسسة</div>
+            </div>
+          </div>
+          <ul class="founder-stats-list">
+            <li>
+              <span class="stat-icon">&#10003;</span>
+              <div><strong>عضو هيئة التدريب بمعهد الإدارة العامة بالرياض سابقاً:</strong> لأكثر من 12 عاماً في تدريب القيادات الحكومية والمؤسسية.</div>
+            </li>
+            <li>
+              <span class="stat-icon">&#10003;</span>
+              <div><strong>دكتوراه في علم النفس:</strong> توظيف التشخيص النفسي في معالجة صراعات بيئة العمل ورفع استقرار المنظمات.</div>
+            </li>
+            <li>
+              <span class="stat-icon">&#10003;</span>
+              <div><strong>تصميم وتطوير الحقائب الإدارية:</strong> برامج مصممة خصيصاً لتحقيق عائد مباشر وقابل للقياس على رأس المال البشري.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- شريط الأرقام -->
+    <div class="authority-bar">
+      <div class="authority-grid">
+        <div class="auth-item">
+          <h3>+12</h3>
+          <p>عاماً بمعهد الإدارة العامة بالرياض</p>
+        </div>
+        <div class="auth-item">
+          <h3>96.83%</h3>
+          <p>التقييم العام للمدرب</p>
+        </div>
+        <div class="auth-item">
+          <h3>متخصص</h3>
+          <p>برامج تدريبية متقدمة</p>
+        </div>
+        <div class="auth-item">
+          <h3>B2B</h3>
+          <p>تخصيص كامل لاحتياجات كبرى الشركات</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- شريط الأرقام -->
-  <div class="authority-bar">
-    <div class="authority-grid">
-      <div class="auth-item">
-        <h3>+12</h3>
-        <p>عاماً بمعهد الإدارة العامة بالرياض</p>
+    <!-- قسم من نحن -->
+    <section class="section-container" style="background: #ffffff;">
+      <div class="about-company-box">
+        <h3>من نحن | FA Consulting & Training</h3>
+        <p>شركة متخصصة في التدريب والاستشارات المؤسسية وتطوير الأعمال؛ تركز على تطوير القيادات، السلوك التنظيمي، بيئة العمل، وإدارة الأزمات. نقدم خبرات تراكمية رفيعة المستوى لمساعدة الشركات على بناء بيئة عمل مستقرة وعالية الإنتاجية تحت إشراف نخبة من الخبراء الأكاديميين والمهنيين.</p>
       </div>
-      <div class="auth-item">
-        <h3>96.83%</h3>
-        <p>التقييم العام للمدرب</p>
+    </section>
+
+    <!-- ما الذي تحصله مؤسستكم (B2B Value) -->
+    <section class="section-container" id="b2b-offer" style="padding-top: 0;">
+      <div class="b2b-value-section">
+        <div class="section-header" style="margin-bottom: 25px;">
+          <span class="section-label" style="color: var(--accent-gold-light);">Corporate Value Proposition</span>
+          <h2 class="section-title" style="color: #ffffff;">ما الذي تحصله مؤسستكم؟</h2>
+          <p class="section-desc" style="color: #cbd5e1;">منهجية عمل متكاملة تضمن تحقيق أعلى عائد على الاستثمار التدريبي لفريقكم.</p>
+        </div>
+        <div class="b2b-grid">
+          <div class="b2b-item"><span class="b2b-icon">✓</span> تشخيص الاحتياجات التدريبية بدقة</div>
+          <div class="b2b-item"><span class="b2b-icon">✓</span> تصميم البرنامج وفق احتياجات المؤسسة</div>
+          <div class="b2b-item"><span class="b2b-icon">✓</span> تدريب حضوري أو عن بُعد (Interactive)</div>
+          <div class="b2b-item"><span class="b2b-icon">✓</span> حقائب تدريبية مخصصة واحترافية</div>
+          <div class="b2b-item"><span class="b2b-icon">✓</span> تقييم الأداء قبل وبعد البرنامج</div>
+          <div class="b2b-item"><span class="b2b-icon">✓</span> تقرير ختامى تفصيلي للجهة المستفيدة</div>
+          <div class="b2b-item"><span class="b2b-icon">✓</span> شهادات إتمام للمتدربين برقم تسلسلي</div>
+          <div class="b2b-item"><span class="b2b-icon">✓</span> متابعة وتوصيات تطويرية مستمرة</div>
+        </div>
       </div>
-      <div class="auth-item">
-        <h3>متخصص</h3>
-        <p>برامج تدريبية متقدمة</p>
+    </section>
+
+    <!-- الأهداف المؤسسية -->
+    <section class="section-container" id="goals" style="background: #ffffff;">
+      <div class="section-header">
+        <span class="section-label">Strategic Objectives</span>
+        <h2 class="section-title">رؤيتنا الاستراتيجية وأهدافنا المؤسسية</h2>
+        <p class="section-desc">
+          نرتكز في "FA Consulting" على أطر منهجية ومعايير دقيقة لضمان تحقيق أعلى قيمة مضافة لشركائنا من المؤسسات.
+        </p>
       </div>
-      <div class="auth-item">
-        <h3>B2B</h3>
-        <p>تخصيص كامل لاحتياجات كبرى الشركات</p>
+
+      <div class="goals-grid">
+        <div class="goal-card">
+          <h3>🎯 1. الأهداف التنموية والتعليمية (جودة التدريب)</h3>
+          <ul>
+            <li><strong>تطوير الكفاءات البشرية:</strong> تمكين الأفراد والمؤسسات من اكتساب المهارات الحديثة وسد الفجوات المعرفية.</li>
+            <li><strong>تصميم برامج تدريبية مبتكرة:</strong> تقديم حقائب تدريبية متطورة تواكب متطلبات سوق العمل المتغير.</li>
+            <li><strong>اعتماد منهجيات التعلم التطبيقي:</strong> التركيز على التدريب العملي ونقل الخبرات الفورية بدلاً من التلقين النظري.</li>
+          </ul>
+        </div>
+
+        <div class="goal-card">
+          <h3>💡 2. الأهداف الاستشارية (حلول الأعمال)</h3>
+          <ul>
+            <li><strong>استشارات إدارية وتنظيمية وتطوير مؤسسي:</strong> صياغة استشارات إدارية تدعم المؤسسات في حل مشكلاتها وتطوير أدائها.</li>
+            <li><strong>دعم التحول والتطوير المؤسسي:</strong> مساعدة الشركات على إعادة هيكلة عملياتها وتطوير بيئة العمل.</li>
+            <li><strong>ضمان نتائج ملموسة وقابلة للقياس (ROI):</strong> قياس العائد على الاستثمار للجهات المستفيدة من الاستشارات.</li>
+          </ul>
+        </div>
+
+        <div class="goal-card">
+          <h3>📈 3. الأهداف التسويقية والتنافسية (الانتشار والمكانة)</h3>
+          <ul>
+            <li><strong>بناء علامة تجارية موثوقة:</strong> ترسيخ اسم المؤسسة كمرجع أول في قطاع الاستشارات والتدريب.</li>
+            <li><strong>توسيع قاعدة العملاء:</strong> استهداف قطاعات متنوعة (حكومية، خاصة، غير ربحية).</li>
+            <li><strong>التوسع الجغرافي:</strong> تقديم خدمات التدريب والاستشارات محلياً وإقليمياً، وتفعيل التدريب عن بعد (E-learning).</li>
+          </ul>
+        </div>
+
+        <div class="goal-card">
+          <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
+          <ul>
+            <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد لمنح شهادات موثقة.</li>
+            <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
+            <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- سابقة الأعمال الميدانية -->
+    <section class="section-container" id="field-track" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+      <div class="section-header">
+        <span class="section-label">Proven Track Record</span>
+        <h2 class="section-title">سابقة الأعمال الميدانية والتدريب المؤسسي</h2>
+        <p class="section-desc">توثيق عملي لسنوات من قيادة البرامج الإدارية وتأهيل الكوادر الحكومية والقيادية في كبرى المحافل الرسمية.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+        <div class="field-card">
+          <img src="saudi_reception.jpg" alt="المشاركة والمصافحة" class="field-img">
+          <div class="field-body">
+            <h4>حضور رسمي ومحافل قيادية كبرى</h4>
+            <p>المشاركة الفاعلة في الملتقيات والمؤتمرات الإدارية رفيعة المستوى، وتوجيه الحوارات القيادية حول التحول المؤسسي.</p>
+          </div>
+        </div>
+        <div class="field-card">
+          <img src="trining_group.jpg" alt="إدارة الجلسات التدريبية" class="field-img">
+          <div class="field-body">
+            <h4>إدارة الحلقات التدريبية ومنصات التفاعل</h4>
+            <p>تطبيق أحدث المنهجيات في إدارة القاعات، واستثارة التفكير الإبداعي لدى المدراء لصناعة الحلول الواقعية.</p>
+          </div>
+        </div>
+        <div class="field-card">
+          <img src="graduates_group.jpg" alt="تخريج القيادات" class="field-img">
+          <div class="field-body">
+            <h4>تخريج الدفعات القيادية وفرق العمل</h4>
+            <p>تأهيل مئات الكوادر في برامج المهارات السلوكية، وإدارة النزاعات، وبناء فرق العمل المتكاملة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- مؤشرات الجودة -->
+    <section class="section-container" id="audit" style="background: #ffffff;">
+      <div class="section-header">
+        <span class="section-label">Verified Performance</span>
+        <h2 class="section-title">مؤشرات جودة وتقييمات موثقة</h2>
+        <p class="section-desc">تقارير تقييم رسمية صادرة ضمن نموذج تقييم المتدربين، تعكس كفاءة الأداء ومستوى رضا المشاركين.</p>
+      </div>
+
+      <div class="eval-box">
+        <div class="eval-column">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;">
+              <span class="eval-score">96.83%</span>
+              <span style="color: #94a3b8; font-size: 13.5px; font-weight: 700;">التقييم العام للمدرب</span>
+            </div>
+            <h3 style="font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px;">تقرير تقييم صادر خلال العام التدريبي</h3>
+            <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6;">حقق تقييماً مرتفعاً في عناصر تقييم المدرب وفق نموذج تقييم المتدربين الرسمي.</p>
+          </div>
+          <div class="eval-img-wrapper">
+            <img src="ipa_eval.png" alt="تقرير وحدة دعم الجودة">
+          </div>
+        </div>
+
+        <div class="eval-column">
+          <div>
+            <h4 style="font-size: 16px; color: var(--accent-gold-light); margin-bottom: 8px;">شهادات وانطباعات المتدربين القياديين</h4>
+            <p style="font-size: 13px; color: #e2e8f0; font-style: italic; line-height: 1.6;">"نشكر الدكتور فتح الله أبو ذكري على تعاونه وشرحه الممتاز.. ومن أفضل الدورات التي مررت بها."</p>
+          </div>
+          <div class="testimonial-img-wrapper">
+            <img src="testimonial_trainee.jpg" alt="إشادة المتدربين">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- المسارات التدريبية (عند الضغط على أي دورة تفتح صفحتها المستقلة) -->
+    <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+      <div class="section-header">
+        <span class="section-label">Professional Programs</span>
+        <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
+        <p class="section-desc">اضغط على أي برنامج أدناه لعرض تفاصيله الكاملة، سعره، واستعراض بروفايل الدورة.</p>
+      </div>
+
+      <!-- قائمة الدورات التدريبية الـ 15 الموزعة على 4 مسارات -->
+      <div style="display: flex; flex-direction: column; gap: 40px;">
+        
+        <!-- مسار 1 -->
+        <div>
+          <h3 style="font-size: 20px; font-weight: 800; color: var(--primary); margin-bottom: 20px; border-right: 4px solid var(--accent-gold); padding-right: 10px;">المسار الأول: مهارات الاتصال الفعال والذكاء العاطفي</h3>
+          <div class="tracks-grid">
+            <div class="track-banner-card" onclick="openCourse('c1')">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="دورة 1" class="track-banner-bg">
+              <div class="track-banner-overlay"></div>
+              <div class="track-banner-content">
+                <div class="track-banner-num">البرنامج الأول</div>
+                <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي الفعال</div>
+                <div class="track-banner-details">16 ساعة | $1,200 (أو ما يعادله) | عرض التفاصيل</div>
+              </div>
+            </div>
+            <div class="track-banner-card" onclick="openCourse('c2')">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="دورة 2" class="track-banner-bg">
+              <div class="track-banner-overlay"></div>
+              <div class="track-banner-content">
+                <div class="track-banner-num">البرنامج الثاني</div>
+                <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
+                <div class="track-banner-details">12 ساعة | $950 (أو ما يعادله) | عرض التفاصيل</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- مسار 2 -->
+        <div>
+          <h3 style="font-size: 20px; font-weight: 800; color: var(--primary); margin-bottom: 20px; border-right: 4px solid var(--accent-gold); padding-right: 10px;">المسار الثاني: التعامل مع ضغوط العمل وإدارة الأزمات</h3>
+          <div class="tracks-grid">
+            <div class="track-banner-card" onclick="openCourse('c3')">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="دورة 3" class="track-banner-bg">
+              <div class="track-banner-overlay"></div>
+              <div class="track-banner-content">
+                <div class="track-banner-num">البرنامج الثالث</div>
+                <div class="track-banner-title">استراتيجيات التعامل الفعال مع ضغوط العمل اليومية</div>
+                <div class="track-banner-details">12 ساعة | $950 (أو ما يعادله) | عرض التفاصيل</div>
+              </div>
+            </div>
+            <div class="track-banner-card" onclick="openCourse('c4')">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="دورة 4" class="track-banner-bg">
+              <div class="track-banner-overlay"></div>
+              <div class="track-banner-content">
+                <div class="track-banner-num">البرنامج الرابع</div>
+                <div class="track-banner-title">المرونة النفسية التنظيمية وإدارة الأزمات الطارئة</div>
+                <div class="track-banner-details">12 ساعة | $950 (أو ما يعادله) | عرض التفاصيل</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- جلسة التشخيص -->
+      <div class="discovery-section" id="discovery">
+        <div>
+          <span class="discovery-badge">مبادرة الشراكة المؤسسية</span>
+          <h3>احجز جلسة تشخيص مؤسسي مجانية</h3>
+          <p>جلسة استكشافية لمدة 60 دقيقة مع المستشار التنفيذي لتحديد احتياجات فريقكم التدريبية والتطويرية.</p>
+        </div>
+        <div class="discovery-action-box">
+          <h4 style="color:#fff; margin-bottom:10px;">تواصل مباشر مع الإدارة</h4>
+          <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-booking">احجز جلستك الآن عبر واتساب</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- الشهادات المهنية -->
+    <section class="accred-section" id="certificates">
+      <div class="accred-wrapper">
+        <div class="accred-content">
+          <span class="section-label">Credential & Verification</span>
+          <h2>شهادات إتمام مهنية</h2>
+          <p>شهادة إتمام مهنية صادرة من FA Consulting؛ تُصدر برقم تسلسلي فريد يتيح التحقق من بيانات البرنامج والمتدرب بكل شفافية وموثوقية.</p>
+          <ul class="accred-points">
+            <li><span>✓</span> <div><strong>شهادة إتمام مهنية (Professional Certificate):</strong> توثق إنجاز البرنامج وعدد الساعات الفعلية.</div></li>
+            <li><span>✓</span> <div><strong>رقم تسلسلي فريد (Unique ID):</strong> لكل متدرب لتسهيل توثيق الشهادة.</div></li>
+            <li><span>✓</span> <div><strong>إشراف أكاديمي ومهني:</strong> تصدر الشهادة تحت إشراف المستشار التنفيذي للمؤسسة.</div></li>
+          </ul>
+        </div>
+
+        <div class="cert-mockup">
+          <div class="cert-mockup-tag">SAMPLE CERTIFICATE</div>
+          <h4>FA CONSULTING &amp; TRAINING</h4>
+          <div class="cert-type">Certificate of Completion</div>
+          <div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">نموذج معاينة توضيحي للشهادة المهنية</div>
+          <div class="cert-trainee-box">
+            <div class="cert-trainee-name">[اسم المتدرب / الجهة المستفيدة]</div>
+          </div>
+          <div style="font-size:12px; color:#64748b; margin-bottom:8px;">For Successfully Completing:</div>
+          <div class="cert-prog-title">Strategic Organizational Behavior &amp; Professional Leadership</div>
+          <div class="cert-badges-row">
+            <div>Duration: <strong>16 Hours</strong></div>
+            <div>ID: <strong>FA-2026-8941</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div> <!-- نهاية الصفحة الرئيسية -->
+
+
+  <!-- صفحة تفاصيل الدورة المنفصلة (Course Details View) -->
+  <div id="course-view" class="view-section">
+    <div class="section-container">
+      <a href="#" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والمسارات</a>
+      
+      <div class="course-details-card">
+        <h2 id="det-title" class="course-title-main">عنوان البرنامج التدريبي</h2>
+        <p id="det-desc" class="course-desc-main">وصف تفصيلي واحترافي للبرنامج يوضح القيمة المضافة لمدير الـ HR والمؤسسة المستفيدة.</p>
+
+        <div class="course-info-box">
+          <div class="info-item">
+            <span class="label">مدة البرنامج</span>
+            <span id="det-hours" class="val">16 ساعة</span>
+          </div>
+          <div class="info-item">
+            <span class="label">نمط التدريب</span>
+            <span id="det-mode" class="val">حضوري أو عن بُعد (Interactive)</span>
+          </div>
+          <div class="info-item">
+            <span class="label">الرسوم الاستثمارية</span>
+            <span id="det-price" class="val price-val">$1,200 <span>أو ما يعادله بالعملة المحلية</span></span>
+          </div>
+        </div>
+
+        <div class="course-section-heading">ماذا ستحقق مؤسستكم من البرنامج؟</div>
+        <ul class="course-list">
+          <li>تمكين القيادات العليا والفريق من اكتساب أدوات عملية قابلة للتطبيق الفوري.</li>
+          <li>حل المشكلات التنظيمية ورفع معدلات الإنتاجية والأداء المستدام.</li>
+          <li>تقييم أداء شامل قبل وبعد البرنامج مع تقديم تقرير ختامى للجهة.</li>
+        </ul>
+
+        <div class="course-section-heading">أهداف البرنامج التدريبي:</div>
+        <ul class="course-list">
+          <li>فهم عميق لأحدث المنهجيات الإدارية والسلوكية المرتبطة بجودة بيئة العمل.</li>
+          <li>إدارة صراعات العمل وتحويلها إلى فرص تطور وتحفيز جماعي.</li>
+        </ul>
+
+        <div class="course-actions-bar">
+          <a href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20وتسجيل%20البرنامج%20التدريبي" target="_blank" class="btn-cart">🛒 حجز وتسجيل البرنامج (عبر واتساب الإدارة)</a>
+          <a href="#discovery" class="btn-brochure" onclick="switchView('home')">📥 احصل على ملف البرنامج (Brochure)</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- قسم من نحن -->
-  <section class="section-container" style="background: #ffffff;">
-    <div class="about-company-box">
-      <h3>من نحن | FA Consulting & Training</h3>
-      <p>شركة متخصصة في التدريب والاستشارات المؤسسية وتطوير الأعمال؛ تركز على تطوير القيادات، السلوك التنظيمي، بيئة العمل، وإدارة الأزمات. نقدم خبرات تراكمية رفيعة المستوى لمساعدة الشركات على بناء بيئة عمل مستقرة وعالية الإنتاجية تحت إشراف نخبة من الخبراء الأكاديميين والمهنيين.</p>
-    </div>
-  </section>
-
-  <!-- ما الذي تحصله مؤسستكم (B2B Value) -->
-  <section class="section-container" id="b2b-offer" style="padding-top: 0;">
-    <div class="b2b-value-section">
-      <div class="section-header" style="margin-bottom: 25px;">
-        <span class="section-label" style="color: var(--accent-gold-light);">Corporate Value Proposition</span>
-        <h2 class="section-title" style="color: #ffffff;">ما الذي تحصله مؤسستكم؟</h2>
-        <p class="section-desc" style="color: #cbd5e1;">منهجية عمل متكاملة تضمن تحقيق أعلى عائد على الاستثمار التدريبي لفريقكم.</p>
-      </div>
-      <div class="b2b-grid">
-        <div class="b2b-item"><span class="b2b-icon">✓</span> تشخيص الاحتياجات التدريبية بدقة</div>
-        <div class="b2b-item"><span class="b2b-icon">✓</span> تصميم البرنامج وفق احتياجات المؤسسة</div>
-        <div class="b2b-item"><span class="b2b-icon">✓</span> تدريب حضوري أو عن بُعد (Interactive)</div>
-        <div class="b2b-item"><span class="b2b-icon">✓</span> حقائب تدريبية مخصصة واحترافية</div>
-        <div class="b2b-item"><span class="b2b-icon">✓</span> تقييم الأداء قبل وبعد البرنامج</div>
-        <div class="b2b-item"><span class="b2b-icon">✓</span> تقرير ختامى تفصيلي للجهة المستفيدة</div>
-        <div class="b2b-item"><span class="b2b-icon">✓</span> شهادات إتمام للمتدربين برقم تسلسلي</div>
-        <div class="b2b-item"><span class="b2b-icon">✓</span> متابعة وتوصيات تطويرية مستمرة</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- الأهداف المؤسسية -->
-  <section class="section-container" id="goals" style="background: #ffffff;">
-    <div class="section-header">
-      <span class="section-label">Strategic Objectives</span>
-      <h2 class="section-title">رؤيتنا الاستراتيجية وأهدافنا المؤسسية</h2>
-      <p class="section-desc">
-        نرتكز في "FA Consulting" على أطر منهجية ومعايير دقيقة لضمان تحقيق أعلى قيمة مضافة لشركائنا من المؤسسات.
-      </p>
-    </div>
-
-    <div class="goals-grid">
-      <div class="goal-card">
-        <h3>🎯 1. الأهداف التنموية والتعليمية (جودة التدريب)</h3>
-        <ul>
-          <li><strong>تطوير الكفاءات البشرية:</strong> تمكين الأفراد والمؤسسات من اكتساب المهارات الحديثة وسد الفجوات المعرفية.</li>
-          <li><strong>تصميم برامج تدريبية مبتكرة:</strong> تقديم حقائب تدريبية متطورة تواكب متطلبات سوق العمل المتغير.</li>
-          <li><strong>اعتماد منهجيات التعلم التطبيقي:</strong> التركيز على التدريب العملي ونقل الخبرات الفورية بدلاً من التلقين النظري.</li>
-        </ul>
-      </div>
-
-      <div class="goal-card">
-        <h3>💡 2. الأهداف الاستشارية (حلول الأعمال)</h3>
-        <ul>
-          <li><strong>استشارات إدارية وتنظيمية وتطوير مؤسسي:</strong> صياغة استشارات إدارية تدعم المؤسسات في حل مشكلاتها وتطوير أدائها.</li>
-          <li><strong>دعم التحول والتطوير المؤسسي:</strong> مساعدة الشركات على إعادة هيكلة عملياتها وتطوير بيئة العمل.</li>
-          <li><strong>ضمان نتائج ملموسة وقابلة للقياس (ROI):</strong> قياس العائد على الاستثمار للجهات المستفيدة من الاستشارات.</li>
-        </ul>
-      </div>
-
-      <div class="goal-card">
-        <h3>📈 3. الأهداف التسويقية والتنافسية (الانتشار والمكانة)</h3>
-        <ul>
-          <li><strong>بناء علامة تجارية موثوقة:</strong> ترسيخ اسم المؤسسة كمرجع أول في قطاع الاستشارات والتدريب.</li>
-          <li><strong>توسيع قاعدة العملاء:</strong> استهداف قطاعات متنوعة (حكومية، خاصة، غير ربحية).</li>
-          <li><strong>التوسع الجغرافي:</strong> تقديم خدمات التدريب والاستشارات محلياً وإقليمياً، وتفعيل التدريب عن بعد (E-learning).</li>
-        </ul>
-      </div>
-
-      <div class="goal-card">
-        <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
-        <ul>
-          <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد عالمية لمنح شهادات موثقة.</li>
-          <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
-          <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- سابقة الأعمال الميدانية -->
-  <section class="section-container" id="field-track" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-    <div class="section-header">
-      <span class="section-label">Proven Track Record</span>
-      <h2 class="section-title">سابقة الأعمال الميدانية والتدريب المؤسسي</h2>
-      <p class="section-desc">توثيق عملي لسنوات من قيادة البرامج الإدارية وتأهيل الكوادر الحكومية والقيادية في كبرى المحافل الرسمية.</p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-      <div class="field-card">
-        <img src="saudi_reception.jpg" alt="المشاركة والمصافحة" class="field-img">
-        <div class="field-body">
-          <h4>حضور رسمي ومحافل قيادية كبرى</h4>
-          <p>المشاركة الفاعلة في الملتقيات والمؤتمرات الإدارية رفيعة المستوى، وتوجيه الحوارات القيادية حول التحول المؤسسي.</p>
-        </div>
-      </div>
-      <div class="field-card">
-        <img src="trining_group.jpg" alt="إدارة الجلسات التدريبية" class="field-img">
-        <div class="field-body">
-          <h4>إدارة الحلقات التدريبية ومنصات التفاعل</h4>
-          <p>تطبيق أحدث المنهجيات في إدارة القاعات، واستثارة التفكير الإبداعي لدى المدراء لصناعة الحلول الواقعية.</p>
-        </div>
-      </div>
-      <div class="field-card">
-        <img src="graduates_group.jpg" alt="تخريج القيادات" class="field-img">
-        <div class="field-body">
-          <h4>تخريج الدفعات القيادية وفرق العمل</h4>
-          <p>تأهيل مئات الكوادر في برامج المهارات السلوكية، وإدارة النزاعات، وبناء فرق العمل المتكاملة.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- مؤشرات الجودة -->
-  <section class="section-container" id="audit" style="background: #ffffff;">
-    <div class="section-header">
-      <span class="section-label">Verified Performance</span>
-      <h2 class="section-title">مؤشرات جودة وتقييمات موثقة</h2>
-      <p class="section-desc">تقارير تقييم رسمية صادرة ضمن نموذج تقييم المتدربين، تعكس كفاءة الأداء ومستوى رضا المشاركين.</p>
-    </div>
-
-    <div class="eval-box">
-      <div class="eval-column">
-        <div>
-          <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;">
-            <span class="eval-score">96.83%</span>
-            <span style="color: #94a3b8; font-size: 13.5px; font-weight: 700;">التقييم العام للمدرب</span>
-          </div>
-          <h3 style="font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px;">تقرير تقييم صادر خلال العام التدريبي</h3>
-          <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6;">حقق تقييماً مرتفعاً في عناصر تقييم المدرب وفق نموذج تقييم المتدربين الرسمي.</p>
-        </div>
-        <div class="eval-img-wrapper">
-          <img src="ipa_eval.png" alt="تقرير وحدة دعم الجودة">
-        </div>
-      </div>
-
-      <div class="eval-column">
-        <div>
-          <h4 style="font-size: 16px; color: var(--accent-gold-light); margin-bottom: 8px;">شهادات وانطباعات المتدربين القياديين</h4>
-          <p style="font-size: 13px; color: #e2e8f0; font-style: italic; line-height: 1.6;">"نشكر الدكتور فتح الله أبو ذكري على تعاونه وشرحه الممتاز.. ومن أفضل الدورات التي مررت بها."</p>
-        </div>
-        <div class="testimonial-img-wrapper">
-          <img src="testimonial_trainee.jpg" alt="إشادة المتدربين">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- المسارات التدريبية التفاعلية بنظام التبويبات الفردية -->
-  <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-    <div class="section-header">
-      <span class="section-label">Professional Programs</span>
-      <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
-      <p class="section-desc">اضغط على أي مسار أدناه لعرض تفاصيله وبرامجه وأسعاره بشكل منفصل.</p>
-    </div>
-
-    <!-- كروت المسارات البصرية -->
-    <div class="tracks-grid">
-      <div class="track-banner-card" onclick="showTrack(1)">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="المسار الأول" class="track-banner-bg">
-        <div class="track-banner-overlay"></div>
-        <div class="track-banner-content">
-          <div class="track-banner-num">المسار الأول</div>
-          <div class="track-banner-title">مهارات الاتصال الفعال والذكاء العاطفي</div>
-          <div class="track-banner-details">4 برامج تدريبية | اضغط للعرض</div>
-        </div>
-      </div>
-
-      <div class="track-banner-card" onclick="showTrack(2)">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="المسار الثاني" class="track-banner-bg">
-        <div class="track-banner-overlay"></div>
-        <div class="track-banner-content">
-          <div class="track-banner-num">المسار الثاني</div>
-          <div class="track-banner-title">التعامل مع ضغوط العمل وإدارة الأزمات</div>
-          <div class="track-banner-details">4 برامج تدريبية | اضغط للعرض</div>
-        </div>
-      </div>
-
-      <div class="track-banner-card" onclick="showTrack(3)">
-        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="المسار الثالث" class="track-banner-bg">
-        <div class="track-banner-overlay"></div>
-        <div class="track-banner-content">
-          <div class="track-banner-num">المسار الثالث</div>
-          <div class="track-banner-title">الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</div>
-          <div class="track-banner-details">4 برامج تدريبية | اضغط للعرض</div>
-        </div>
-      </div>
-
-      <div class="track-banner-card" onclick="showTrack(4)">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="المسار الرابع" class="track-banner-bg">
-        <div class="track-banner-overlay"></div>
-        <div class="track-banner-content">
-          <div class="track-banner-num">المسار الرابع</div>
-          <div class="track-banner-title">بيئة العمل الاحترافية وثقافة المنظمات</div>
-          <div class="track-banner-details">3 برامج تدريبية | اضغط للعرض</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- تفاصيل المسار الأول (يظهر افتراضياً) -->
-    <div id="track-panel-1" class="track-content-panel active">
-      <div class="track-card">
-        <div class="track-head">
-          <h3>المسار الأول: مهارات الاتصال الفعال والذكاء العاطفي</h3>
-        </div>
-        <div class="track-body">
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 16 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">1. فنون الاتصال الاستراتيجي والتأثير القيادي الفعال</span>
-            <div class="program-pricing">$1,200 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">2. الذكاء العاطفي والاجتماعي لصناع القرار</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">3. مهارات التواصل المتقدمة ولغة الإقناع المؤسسي</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">4. بناء شبكة علاقات عمل إيجابية ومؤثرة</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- تفاصيل المسار الثاني (مخفي افتراضياً) -->
-    <div id="track-panel-2" class="track-content-panel">
-      <div class="track-card">
-        <div class="track-head">
-          <h3>المسار الثاني: التعامل مع ضغوط العمل وإدارة الأزمات</h3>
-        </div>
-        <div class="track-body">
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">5. استراتيجيات التعامل الفعال مع ضغوط العمل اليومية</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">6. المرونة النفسية التنظيمية وإدارة الأزمات الطارئة</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 14 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">7. إدارة الاحتراق الوظيفي واستعادة التوازن والتحفيز</span>
-            <div class="program-pricing">$1,100 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 10 ساعات</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">8. تقنيات الاسترخاء والتوازن الذهني للقيادات</span>
-            <div class="program-pricing">$850 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- تفاصيل المسار الثالث (مخفي افتراضياً) -->
-    <div id="track-panel-3" class="track-content-panel">
-      <div class="track-card">
-        <div class="track-head">
-          <h3>المسار الثالث: الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</h3>
-        </div>
-        <div class="track-body">
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 16 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">9. السلوك التنظيمي وانعكاسه المباشر على جودة الإنتاج</span>
-            <div class="program-pricing">$1,200 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 14 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">10. ربط كفاءة الأداء المؤسسي بمعايير الجودة الشاملة</span>
-            <div class="program-pricing">$1,100 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">11. تحفيز الفرق لتحقيق أعلى معدلات الإنتاجية والتميز</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">12. تقييم الأداء المؤسسي وتطوير العمليات المستمرة</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- تفاصيل المسار الرابع (مخفي افتراضياً) -->
-    <div id="track-panel-4" class="track-content-panel">
-      <div class="track-card">
-        <div class="track-head">
-          <h3>المسار الرابع: بيئة العمل الاحترافية وثقافة المنظمات</h3>
-        </div>
-        <div class="track-body">
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 10 ساعات</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">13. بناء وتطوير ثقافة تنظيمية فعالة ومستدامة</span>
-            <div class="program-pricing">$850 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">14. ترسيخ معايير بيئة العمل الاحترافية وشراكات العمل</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-          <div class="program-item">
-            <div class="program-header-row">
-              <span class="badge-hours">⏱ 12 ساعة</span>
-              <span class="badge-mode">🖥️ حضوري أو عن بُعد</span>
-            </div>
-            <span class="program-name">15. إدارة الصراعات المؤسسية وخلق بيئة عمل آمنة ومحفزة</span>
-            <div class="program-pricing">$950 <span>أو ما يعادله بالعملة المحلية</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- جلسة التشخيص -->
-    <div class="discovery-section" id="discovery">
-      <div>
-        <span class="discovery-badge">مبادرة الشراكة المؤسسية</span>
-        <h3>احجز جلسة تشخيص مؤسسي مجانية</h3>
-        <p>جلسة استكشافية لمدة 60 دقيقة مع المستشار التنفيذي لتحديد احتياجات فريقكم التدريبية والتطويرية.</p>
-      </div>
-      <div class="discovery-action-box">
-        <h4 style="color:#fff; margin-bottom:10px;">تواصل مباشر مع الإدارة</h4>
-        <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-booking">احجز جلستك الآن عبر واتساب</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- الشهادات المهنية -->
-  <section class="accred-section" id="certificates">
-    <div class="accred-wrapper">
-      <div class="accred-content">
-        <span class="section-label">Credential & Verification</span>
-        <h2>شهادات إتمام مهنية</h2>
-        <p>شهادة إتمام مهنية صادرة من FA Consulting؛ تُصدر برقم تسلسلي فريد يتيح التحقق من بيانات البرنامج والمتدرب بكل شفافية وموثوقية.</p>
-        <ul class="accred-points">
-          <li><span>✓</span> <div><strong>شهادة إتمام مهنية (Professional Certificate):</strong> توثق إنجاز البرنامج وعدد الساعات الفعلية.</div></li>
-          <li><span>✓</span> <div><strong>رقم تسلسلي فريد (Unique ID):</strong> لكل متدرب لتسهيل توثيق الشهادة.</div></li>
-          <li><span>✓</span> <div><strong>إشراف أكاديمي ومهني:</strong> تصدر الشهادة تحت إشراف المستشار التنفيذي للمؤسسة.</div></li>
-        </ul>
-      </div>
-
-      <div class="cert-mockup">
-        <div class="cert-mockup-tag">SAMPLE CERTIFICATE</div>
-        <h4>FA CONSULTING &amp; TRAINING</h4>
-        <div class="cert-type">Certificate of Completion</div>
-        <div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">نموذج معاينة توضيحي للشهادة المهنية</div>
-        <div class="cert-trainee-box">
-          <div class="cert-trainee-name">[اسم المتدرب / الجهة المستفيدة]</div>
-        </div>
-        <div style="font-size:12px; color:#64748b; margin-bottom:8px;">For Successfully Completing:</div>
-        <div class="cert-prog-title">Strategic Organizational Behavior &amp; Professional Leadership</div>
-        <div class="cert-badges-row">
-          <div>Duration: <strong>16 Hours</strong></div>
-          <div>ID: <strong>FA-2026-8941</strong></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- الفوتر -->
   <footer>
@@ -1061,8 +979,8 @@
       <div class="footer-col">
         <h4>المسارات الاستشارية والتدريبية</h4>
         <ul class="footer-links" style="list-style: none;">
-          <li><a href="#tracks">مهارات الاتصال والذكاء العاطفي</a></li>
-          <li><a href="#tracks">الإدارة وجودة الإنتاج</a></li>
+          <li><a href="#tracks" onclick="switchView('home')">مهارات الاتصال والذكاء العاطفي</a></li>
+          <li><a href="#tracks" onclick="switchView('home')">الإدارة وجودة الإنتاج</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1075,19 +993,38 @@
     </div>
   </footer>
 
-  <!-- سكربت التبديل التفاعلي بين المسارات -->
+  <!-- سكربت التحكم في الصفحات المستقلة وتفاصيل الدورات -->
   <script>
-    function showTrack(trackNum) {
-      // إخفاء كل اللوحات
-      const panels = document.querySelectorAll('.track-content-panel');
-      panels.forEach(panel => panel.classList.remove('active'));
+    const coursesData = {
+      'c1': { title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', hours: '16 ساعة', mode: 'حضوري أو عن بُعد', price: '$1,200', desc: 'برنامج تنفيذي متقدم يركز على تمكين صناع القرار من أدوات الاتصال الحديثة، بناء جسور الثقة المؤسسية، وتوجيه الحوارات القيادية نحو أهداف المنظمة بكفاءة عالية.' },
+      'c2': { title: 'الذكاء العاطفي والاجتماعي لصناع القرار', hours: '12 ساعة', mode: 'حضوري أو عن بُعد', price: '$950', desc: 'يستهدف هذا البرنامج تنمية الوعي الذاتي والاجتماعي للقادة، وإدارة الانفعالات وسط ضغوط العمل المؤسسي لخلق بيئة عمل متوازنة.' },
+      'c3': { title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', hours: '12 ساعة', mode: 'حضوري أو عن بُعد', price: '$950', desc: 'تزويد الفرق القيادية بآليات علمية وعملية لإدارة ضغوط العمل المتراكمة، وتقليل معدلات الاحتراق الوظيفي، واستعادة أعلى مستويات الطاقة الإنتاجية.' },
+      'c4': { title: 'المرونة النفسية التنظيمية وإدارة الأزمات الطارئة', hours: '12 ساعة', mode: 'حضوري أو عن بُعد', price: '$950', desc: 'برنامج مخصص لتمكين الشركات من امتلاك مناعة مؤسسية ومرونة عالية في مواجهة التغيرات السوقية المفاجئة وصراعات بيئة العمل.' }
+    };
 
-      // إظهار اللوحة المطلوبة فقط
-      const targetPanel = document.getElementById('track-panel-' + trackNum);
-      if (targetPanel) {
-        targetPanel.classList.add('active');
-        // النزول بسلاسة نحو اللوحة الظاهرة
-        targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    function switchView(viewName) {
+      const homeView = document.getElementById('home-view');
+      const courseView = document.getElementById('course-view');
+
+      if (viewName === 'home') {
+        courseView.classList.remove('active');
+        homeView.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function openCourse(courseId) {
+      const course = coursesData[courseId];
+      if (course) {
+        document.getElementById('det-title').innerText = course.title;
+        document.getElementById('det-desc').innerText = course.desc;
+        document.getElementById('det-hours').innerText = course.hours;
+        document.getElementById('det-mode').innerText = course.mode;
+        document.getElementById('det-price').innerHTML = course.price + ' <span>أو ما يعادله بالعملة المحلية</span>';
+
+        document.getElementById('home-view').classList.remove('active');
+        document.getElementById('course-view').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
   </script>
