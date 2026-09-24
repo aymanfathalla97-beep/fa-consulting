@@ -440,7 +440,6 @@
     .brochure-list li { font-size: 14.5px; color: #475569; position: relative; padding-right: 18px; line-height: 1.7; }
     .brochure-list li::before { content: "▪"; position: absolute; right: 0; color: var(--accent-gold); font-size: 14px; }
 
-    /* جدول متناسق يملأ الشاشة بالكامل وبدون مشاكل عرض للموبايل */
     .pricing-table-container {
       margin-top: 40px;
       width: 100%;
@@ -773,7 +772,7 @@
         <div class="goal-card">
           <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
           <ul>
-            <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد لمنح شهادات موثقة.</li>
+            <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، هيئات اعتماد لمنح شهادات موثقة.</li>
             <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
             <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
           </ul>
@@ -849,12 +848,12 @@
       </div>
     </section>
 
-    <!-- المسارات التدريبية -->
+    <!-- المسارات التدريبية (برامج الـ 4 الأساسية مع بروفايل خاص لكل دورة) -->
     <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
       <div class="section-header">
         <span class="section-label">Professional Programs</span>
         <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
-        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) في صفحة مستقلة.</p>
+        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) الخاص به وتفاصيلها الكاملة.</p>
       </div>
 
       <div class="tracks-grid">
@@ -947,7 +946,7 @@
   </div>
 
 
-  <!-- صفحة ملف الدورة المستقلة (Brochure View) -->
+  <!-- صفحة ملف الدورة المستقلة لكل برنامج (Brochure View) -->
   <div id="brochure-view" class="view-section">
     <div class="section-container">
       <a href="#" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والمسارات</a>
@@ -959,14 +958,14 @@
             <div id="b-subtitle" class="brochure-subtitle">تصنيف البرنامج ومدة التنفيذ</div>
           </div>
           <div>
-            <a href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج%20التدريبي" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج</a>
+            <a id="btn-order-top" href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج</a>
           </div>
         </div>
 
         <div class="brochure-grid-2">
           <div>
             <div class="brochure-section-title">ماذا ستحقق مؤسستكم؟ (Benefits)</div>
-            <ul class="brochure-list">
+            <ul id="b-benefits" class="brochure-list">
               <li>اكتساب مهارات تحليلية وتطبيقية متقدمة لرفع كفاءة العمل اليومي.</li>
               <li>تعلم كيفية كتابة وصياغة تقارير مهنية واحترافية لمجالس الإدارة.</li>
               <li>تحسين القدرة على التواصل الفعال وإدارة صراعات بيئة العمل.</li>
@@ -974,7 +973,7 @@
           </div>
           <div>
             <div class="brochure-section-title">أهداف البرنامج التدريبي (Objectives)</div>
-            <ul class="brochure-list">
+            <ul id="b-objectives" class="brochure-list">
               <li>تطوير الكفاءات القيادية وتمكينهم من أدوات التفكير الاستراتيجي.</li>
               <li>تعلم تقنيات عرض البيانات بشكل جذاب ومؤثر أمام كبار المسؤولين.</li>
               <li>بناء بيئة عمل مستقرة وعالية الإنتاجية تدعم أهداف المنظمة.</li>
@@ -985,7 +984,7 @@
         <div class="brochure-grid-2">
           <div>
             <div class="brochure-section-title">الفئة المستهدفة (Target Audience)</div>
-            <ul class="brochure-list">
+            <ul id="b-audience" class="brochure-list">
               <li>مديرو الإدارات العليا ورؤساء الأقسام التنفيذية.</li>
               <li>المسؤولون والمختصون في أقسام الموارد البشرية (HR).</li>
               <li>القيادات الصاعدة والكفاءات المرشحة لتولي مناصب إشرافية.</li>
@@ -1001,7 +1000,7 @@
           </div>
         </div>
 
-        <!-- جدول الرسوم والمعلومات المعدل بالكامل ليمتلئ بالشاشة بانتظام -->
+        <!-- جدول المواعيد والرسوم المنضبط بالكامل داخل الشاشة -->
         <div class="pricing-table-container">
           <div class="brochure-section-title" style="margin-bottom: 15px;">معلومات الدورة والرسوم الاستثمارية</div>
           <table class="pricing-table">
@@ -1018,15 +1017,15 @@
                 <td id="t-hours">16 ساعة</td>
                 <td>حضوري أو تفاعلي عن بُعد</td>
                 <td>العربية</td>
-                <td id="t-price" style="color: #047857; font-weight: 800;">$1,200</td>
+                <td id="t-price" style="color: #047857; font-weight: 800; direction: ltr; unicode-bidi: embed;">$1,200</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div class="brochure-actions">
-          <a href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج%20التدريبي" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
-          <a href="https://wa.me/201271221780?text=أرغب%20في%20طلب%20ملف%20الدورة%20PDF" target="_blank" class="btn-download">📥 احصل على ملف الدورة (PDF)</a>
+          <a id="btn-order-bottom" href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
+          <a href="#" onclick="alert('جاري معاينة ملف الدورة (Brochure PDF) للطباعة أو التنزيل...'); return false;" class="btn-download">📥 معاينة ملف الدورة (PDF)</a>
         </div>
       </div>
     </div>
@@ -1058,11 +1057,48 @@
   </footer>
 
   <script>
+    // قاعدة بيانات دقيقة ومفصلة لكل دورة لتفتح في صفحة البروفايل الخاصة بها
     const brochureData = {
-      'p1': { title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', hours: '16 ساعة', price: '$1,200' },
-      'p2': { title: 'الذكاء العاطفي والاجتماعي لصناع القرار', subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', hours: '12 ساعة', price: '$950' },
-      'p3': { title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', hours: '12 ساعة', price: '$950' },
-      'p4': { title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', hours: '16 ساعة', price: '$1,200' }
+      'p1': { 
+        title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', 
+        subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', 
+        hours: '16 ساعة', 
+        price: '$1,200',
+        benefits: '<li>اكتساب أدوات الاتصال الحديثة وتوجيه الحوارات القيادية نحو أهداف المنظمة.</li><li>بناء جسور الثقة المؤسسية مع أعضاء مجالس الإدارة والفرق التنفيذية.</li><li>رفع كفاءة التنسيق الإداري وتقليل الفجوات بين الأقسام.</li>',
+        objectives: '<li>تمكين القيادات من صياغة استراتيجيات اتصال فعالة ومؤثرة.</li><li>التمكن من لغة الإقناع المؤسسي والتعامل مع مختلف أنماط الشخصيات.</li><li>تطبيق نماذج الاتصال الحديثة في حل مشكلات العمل.</li>',
+        audience: '<li>رؤساء الأقسام والمدراء التنفيذيون.</li><li>مديرو الموارد البشرية والمسؤولون عن التطوير المؤسسي.</li><li>القيادات الصاعدة والكفاءات الإشرافية.</li>',
+        waText: 'أرغب في حجز برنامج: فنون الاتصال الاستراتيجي والتأثير القيادي الفعال'
+      },
+      'p2': { 
+        title: 'الذكاء العاطفي والاجتماعي لصناع القرار', 
+        subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', 
+        hours: '12 ساعة', 
+        price: '$950',
+        benefits: '<li>تنمية الوعي الذاتي والاجتماعي لمديري الإدارات العليا.</li><li>إدارة الانفعالات الشخصية والجماعية وسط ضغوط العمل الشديدة.</li><li>خلق بيئة عمل مرنة ومحفزة تزيد من ولاء وانتماء الموظفين.</li>',
+        objectives: '<li>فهم أبعاد الذكاء العاطفي وتوظيفه في القيادة الإدارية.</li><li>القدرة على احتواء الأزمات السلوكية وفض النزاعات بحكمة.</li><li>تعزيز مهارات التعاطف والتوجيه الإيجابي لفريق العمل.</li>',
+        audience: '<li>صناع القرار ومجالس الإدارة.</li><li>مديرو الاحتفاظ بالموهوبين والموارد البشرية.</li><li>مشرفو فرق العمل والعمليات.</li>',
+        waText: 'أرغب في حجز برنامج: الذكاء العاطفي والاجتماعي لصناع القرار'
+      },
+      'p3': { 
+        title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', 
+        subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', 
+        hours: '12 ساعة', 
+        price: '$950',
+        benefits: '<li>إدارة أعباء العمل المتراكمة بأعلى كفاءة وأقل إجهاد ذهني.</li><li>الحد من معدلات الاحتراق الوظيفي وحماية رأس المال البشري.</li><li>رفع مستويات التركيز والإنتاجية اليومية للمدراء والموظفين.</li>',
+        objectives: '<li>تحديد مصادر الضغط التنظيمي ووضع خطط استباقية لمعالجتها.</li><li>تطبيق تقنيات الاسترخاء وإدارة الوقت الحديثة للقيادات.</li><li>خلق توازن مستدام بين متطلبات العمل وصحة فريق العمل.</li>',
+        audience: '<li>كافة الإدارات التنفيذية التي تعاني من ضغط تشغيلي عالي.</li><li>فرق خدمة العملاء والعمليات الميدانية.</li><li>المدراء المسؤولون عن إدارة المشاريع.</li>',
+        waText: 'أرغب في حجز برنامج: استراتيجيات التعامل الفعال مع ضغوط العمل اليومية'
+      },
+      'p4': { 
+        title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', 
+        subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', 
+        hours: '16 ساعة', 
+        price: '$1,200',
+        benefits: '<li>فهم التأثير المباشر للسلوك الإداري على جودة ومعدلات الإنتاج.</li><li>إعادة هيكلة الثقافة التنظيمية لتحقيق أقصى توافق مع معايير الجودة.</li><li>خلق دافعية ذاتية لدى الفرق لتحقيق التميز التشغيلي المستدام.</li>',
+        objectives: '<li>تحليل سلوكيات بيئة العمل وربطها بمؤشرات الأداء (KPIs).</li><li>تطوير استراتيجيات تحفيزية ترتبط برفع جودة المخرجات.</li><li>إدارة التغيير السلوكي بمرونة ودون مقاومة تذكر من الفرق.</li>',
+        audience: '<li>مديرو الجودة والتطوير المؤسسي.</li><li>مديرو الإنتاج والعمليات والتشغيل.</li><li>أعضاء لجان التحول والتطوير الإداري.</li>',
+        waText: 'أرغب في حجز برنامج: السلوك التنظيمي وانعكاسه على جودة الإنتاج'
+      }
     };
 
     function switchView(viewName) {
@@ -1083,6 +1119,16 @@
         document.getElementById('b-subtitle').innerText = course.subtitle;
         document.getElementById('t-hours').innerText = course.hours;
         document.getElementById('t-price').innerText = course.price;
+        
+        document.getElementById('b-benefits').innerHTML = course.benefits;
+        document.getElementById('b-objectives').innerHTML = course.objectives;
+        document.getElementById('b-audience').innerHTML = course.audience;
+
+        // ربط أزرار الواتساب برسالة مخصصة لكل دورة تدريبية
+        const encodedText = encodeURIComponent('أرغب في حجز وتسجيل البرنامج: ' + course.title);
+        const waLink = 'https://wa.me/201271221780?text=' + encodedText;
+        document.getElementById('btn-order-top').href = waLink;
+        document.getElementById('btn-order-bottom').href = waLink;
 
         document.getElementById('home-view').classList.remove('active');
         document.getElementById('brochure-view').classList.add('active');
