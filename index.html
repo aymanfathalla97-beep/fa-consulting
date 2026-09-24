@@ -732,27 +732,69 @@
       </div>
     </section>
 
-    <!-- قائمة البرامج التدريبية الشاملة (جميع البرامج بالصور الافتراضية والبروفايل المستقل) -->
+    <!-- قائمة جميع البرامج التدريبية والاستشارية (القديمة + الجديدة + السائح) -->
     <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
       <div class="section-header">
         <span class="section-label">Professional Programs</span>
         <h2 class="section-title">برامجنا التدريبية والاستشارية المعتمدة</h2>
-        <p class="section-desc">اختر أي برنامج أدناه لاستعراض ملف الدورة (Brochure) وتفاصيلها الكاملة بمعايير الإدارة العامة.</p>
+        <p class="section-desc">اختر أي برنامج أدناه لاستعراض ملف الدورة (Brochure) وتفاصيلها الكاملة.</p>
       </div>
 
       <div class="tracks-grid">
-        <button type="button" class="track-banner-card" onclick="openBrochure('change')">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="إدارة التغيير التنظيمي" class="track-banner-bg">
+        <!-- 1. البرامج القديمة -->
+        <button type="button" class="track-banner-card" onclick="openBrochure('p1')">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="الاتصال الاستراتيجي" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
-            <div class="track-banner-num">البرنامج التنفيذي</div>
+            <div class="track-banner-num">المسار الأول</div>
+            <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('p2')">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="الذكاء العاطفي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الأول</div>
+            <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('p3')">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="ضغوط العمل" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الثاني</div>
+            <div class="track-banner-title">استراتيجيات التعامل مع ضغوط العمل اليومية</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('p4')">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="السلوك التنظيمي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الثالث</div>
+            <div class="track-banner-title">السلوك التنظيمي وانعكاسه على جودة الإنتاج</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <!-- 2. البرامج الجديدة المستمدة من الصور -->
+        <button type="button" class="track-banner-card" onclick="openBrochure('change')">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="إدارة التغيير التنظيمي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">التطوير المؤسسي</div>
             <div class="track-banner-title">إدارة التغيير التنظيمي</div>
-            <div class="track-banner-details">28 ساعة | 1,400 دولار | عرض ملف الدورة</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
           </div>
         </button>
 
         <button type="button" class="track-banner-card" onclick="openBrochure('hr_diversity')">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="إدارة التنوع في الموارد البشرية" class="track-banner-bg">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="إدارة التنوع" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
             <div class="track-banner-num">الموارد البشرية</div>
@@ -762,72 +804,82 @@
         </button>
 
         <button type="button" class="track-banner-card" onclick="openBrochure('salary')">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="إدارة الرواتب والمكافآت" class="track-banner-bg">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الرواتب" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
-            <div class="track-banner-num">التعويضات والمكافآت</div>
+            <div class="track-banner-num">التعويضات والحوافز</div>
             <div class="track-banner-title">إدارة الرواتب والمكافآت والحوافز</div>
-            <div class="track-banner-details">60 ساعة | 2,500 دولار | عرض ملف الدورة</div>
+            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض ملف الدورة</div>
           </div>
         </button>
 
         <button type="button" class="track-banner-card" onclick="openBrochure('talents')">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="إدارة المواهب" class="track-banner-bg">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="إدارة المواهب" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
             <div class="track-banner-num">تطوير القيادات</div>
             <div class="track-banner-title">إدارة المواهب والاحتفاظ بالكفاءات</div>
-            <div class="track-banner-details">24 ساعة | 1,200 دولار | عرض ملف الدورة</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
           </div>
         </button>
 
         <button type="button" class="track-banner-card" onclick="openBrochure('crisis')">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="إدارة الأزمات والمخاطر" class="track-banner-bg">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="إدارة الأزمات" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
             <div class="track-banner-num">الإدارة الاستراتيجية</div>
             <div class="track-banner-title">إدارة المخاطر والكوارث والأزمات</div>
-            <div class="track-banner-details">30 ساعة | 1,500 دولار | عرض ملف الدورة</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
           </div>
         </button>
 
         <button type="button" class="track-banner-card" onclick="openBrochure('quality')">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="إدارة الجودة الشاملة" class="track-banner-bg">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="الجودة الشاملة" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
             <div class="track-banner-num">الجودة والتميز</div>
             <div class="track-banner-title">إدارة الجودة الشاملة (TQM)</div>
-            <div class="track-banner-details">30 ساعة | 1,500 دولار | عرض ملف الدورة</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
           </div>
         </button>
 
         <button type="button" class="track-banner-card" onclick="openBrochure('performance')">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الأداء الوظيفي" class="track-banner-bg">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="الأداء الوظيفي" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
             <div class="track-banner-num">تقييم الأداء</div>
             <div class="track-banner-title">إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)</div>
-            <div class="track-banner-details">30 ساعة | 1,500 دولار | عرض ملف الدورة</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
           </div>
         </button>
 
         <button type="button" class="track-banner-card" onclick="openBrochure('relations')">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="إدارة علاقات الموظفين" class="track-banner-bg">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="علاقات الموظفين" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
             <div class="track-banner-num">علاقات العمل</div>
             <div class="track-banner-title">إدارة علاقات الموظفين والاتصال الفعال</div>
-            <div class="track-banner-details">50 ساعة | 2,100 دولار | عرض ملف الدورة</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
           </div>
         </button>
 
         <button type="button" class="track-banner-card" onclick="openBrochure('meetings')">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="إدارة الاجتماعات" class="track-banner-bg">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الاجتماعات" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
             <div class="track-banner-num">المهارات الإدارية</div>
             <div class="track-banner-title">إدارة الاجتماعات الفعالة وصنع القرار</div>
-            <div class="track-banner-details">16 ساعة | 900 دولار | عرض ملف الدورة</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('tourist')">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="خدمة السياح" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">الخدمات والضيافة</div>
+            <div class="track-banner-title">كيفية التعامل مع السائح وتقديم خدمة استثنائية</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
           </div>
         </button>
       </div>
@@ -864,28 +916,21 @@
           </div>
         </div>
 
-        <!-- تخطيط الأعمدة المتناظرة المماثل لصور الدليل التدريبي -->
         <div class="brochure-grid-2">
           <div class="brochure-col-box">
             <h4>ماذا ستحقق مؤسستكم؟ (Benefits)</h4>
-            <ul id="b-benefits">
-              <!-- يتم تعبئتها ديناميكياً -->
-            </ul>
+            <ul id="b-benefits"></ul>
           </div>
           <div class="brochure-col-box">
             <h4>أهداف الدورة (Course Objectives)</h4>
-            <ul id="b-objectives">
-              <!-- يتم تعبئتها ديناميكياً -->
-            </ul>
+            <ul id="b-objectives"></ul>
           </div>
         </div>
 
         <div class="brochure-grid-2">
           <div class="brochure-col-box">
             <h4>الفئة المستهدفة (Target Audience)</h4>
-            <ul id="b-audience">
-              <!-- يتم تعبئتها ديناميكياً -->
-            </ul>
+            <ul id="b-audience"></ul>
           </div>
           <div class="brochure-col-box">
             <h4>منهجية الدورة التدريبية (Course Methodology)</h4>
@@ -897,7 +942,6 @@
           </div>
         </div>
 
-        <!-- جدول المواعيد والرسوم -->
         <div class="pricing-table-container">
           <div style="margin-bottom: 15px; font-size: 18px; font-weight: 800; color: var(--primary);">معلومات الدورة والرسوم الاستثمارية</div>
           <table class="pricing-table">
@@ -911,10 +955,10 @@
             </thead>
             <tbody>
               <tr>
-                <td id="t-hours">28 ساعة</td>
+                <td id="t-hours">16 ساعة</td>
                 <td>حضوري أو تفاعلي عن بُعد (Interactive)</td>
                 <td>العربية</td>
-                <td id="t-price" style="color: #047857; font-weight: 800;">1,400 دولار</td>
+                <td id="t-price" style="color: #047857; font-weight: 800;">1,200 دولار</td>
               </tr>
             </tbody>
           </table>
@@ -939,8 +983,8 @@
       <div class="footer-col">
         <h4>المسارات الاستشارية والتدريبية</h4>
         <ul class="footer-links" style="list-style: none;">
-          <li><a href="#tracks" onclick="switchView('home')">إدارة التغيير وإدارة الأزمات</a></li>
-          <li><a href="#tracks" onclick="switchView('home')">إدارة الموارد البشرية والرواتب</a></li>
+          <li><a href="#tracks" onclick="switchView('home')">القيادة والاتصال الفعال</a></li>
+          <li><a href="#tracks" onclick="switchView('home')">التطوير المؤسسي والموارد البشرية</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -954,88 +998,90 @@
   </footer>
 
   <script>
-    // قاعدة البيانات الشاملة لجميع برامج الـ B2B المستمدة من الأدلة التدريبية
     const brochureData = {
+      'p1': { 
+        title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', hours: '16 ساعة', price: '1,200 دولار',
+        benefits: '<li>اكتساب أدوات الاتصال الحديثة وتوجيه الحوارات القيادية نحو أهداف المنظمة.</li><li>بناء جسور الثقة المؤسسية مع أعضاء مجالس الإدارة والفرق التنفيذية.</li>',
+        objectives: '<li>تمكين القيادات من صياغة استراتيجيات اتصال فعالة ومؤثرة.</li><li>التمكن من لغة الإقناع المؤسسي والتعامل مع مختلف أنماط الشخصيات.</li>',
+        audience: '<li>رؤساء الأقسام والمدراء التنفيذيون.</li><li>مديرو الموارد البشرية والمسؤولون عن التطوير المؤسسي.</li>'
+      },
+      'p2': { 
+        title: 'الذكاء العاطفي والاجتماعي لصناع القرار', subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', hours: '12 ساعة', price: '950 دولار',
+        benefits: '<li>تنمية الوعي الذاتي والاجتماعي لمديري الإدارات العليا.</li><li>إدارة الانفعالات الشخصية والجماعية وسط ضغوط العمل الشديدة.</li>',
+        objectives: '<li>فهم أبعاد الذكاء العاطفي وتوظيفه في القيادة الإدارية.</li><li>القدرة على احتواء الأزمات السلوكية وفض النزاعات بحكمة.</li>',
+        audience: '<li>صناع القرار ومجالس الإدارة.</li><li>مديرو الاحتفاظ بالموهوبين والموارد البشرية.</li>'
+      },
+      'p3': { 
+        title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', hours: '12 ساعة', price: '950 دولار',
+        benefits: '<li>إدارة أعباء العمل المتراكمة بأعلى كفاءة وأقل إجهاد ذهني.</li><li>الحد من معدلات الاحتراق الوظيفي وحماية رأس المال البشري.</li>',
+        objectives: '<li>تحديد مصادر الضغط التنظيمي ووضع خطط استباقية لمعالجتها.</li><li>تطبيق تقنيات الاسترخاء وإدارة الوقت الحديثة للقيادات.</li>',
+        audience: '<li>كافة الإدارات التنفيذية التي تعاني من ضغط تشغيلي عالي.</li><li>فرق خدمة العملاء والعمليات الميدانية.</li>'
+      },
+      'p4': { 
+        title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', hours: '16 ساعة', price: '1,200 دولار',
+        benefits: '<li>فهم التأثير المباشر للسلوك الإداري على جودة ومعدلات الإنتاج.</li><li>إعادة هيكلة الثقافة التنظيمية لتحقيق أقصى توافق مع معايير الجودة.</li>',
+        objectives: '<li>تحليل سلوكيات بيئة العمل وربطها بمؤشرات الأداء (KPIs).</li><li>تطوير استراتيجيات تحفيزية ترتبط برفع جودة المخرجات.</li>',
+        audience: '<li>مديرو الجودة والتطوير المؤسسي.</li><li>مديرو الإنتاج والعمليات والتشغيل.</li>'
+      },
       'change': { 
-        title: 'إدارة التغيير التنظيمي', 
-        subtitle: 'البرنامج التنفيذي | معهد الإدارة العامة ومقاييس التدريب', 
-        hours: '28 ساعة', 
-        price: '1,400 دولار',
-        benefits: '<li>تنمية معارف ومهارات المشاركين في إدارة التغيير في المنظمات بكفاءة وفاعلية.</li><li>معرفة المفاهيم الأساسية لإدارة التغيير التنظيمي وعناصره بدقة.</li><li>تطبيق استراتيجيات ونماذج التغيير بفاعلية تامة ومواجهة المقاومة.</li>',
-        objectives: '<li>تحديد المجالات الرئيسية التي يستهدفها التغيير وأنواعه.</li><li>تطبيق أساليب فعالة لمواجهة مقاومة التغيير التنظيمي.</li><li>إدارة مراحل الانتقال المؤسسي بثبات وأمان.</li>',
-        audience: '<li>مديرو التطوير المؤسسي وإعادة الهيكلة.</li><li>مديرو الإدارات التنفيذية والقيادات العليا.</li><li>أعضاء لجان التحول الإداري.</li>'
+        title: 'إدارة التغيير التنظيمي', subtitle: 'التطوير المؤسسي | معهد الإدارة العامة', hours: '16 ساعة', price: '1,200 دولار',
+        benefits: '<li>تنمية معارف ومهارات المشاركين في إدارة التغيير في المنظمات بكفاءة وفاعلية.</li><li>معرفة المفاهيم الأساسية لإدارة التغيير التنظيمي وعناصره بدقة.</li>',
+        objectives: '<li>تحديد المجالات الرئيسية التي يستهدفها التغيير وأنواعه.</li><li>تطبيق أساليب فعالة لمواجهة مقاومة التغيير التنظيمي.</li>',
+        audience: '<li>مديرو التطوير المؤسسي وإعادة الهيكلة.</li><li>مديرو الإدارات التنفيذية والقيادات العليا.</li>'
       },
       'hr_diversity': { 
-        title: 'إدارة التنوع في الموارد البشرية', 
-        subtitle: 'الموارد البشرية | بيئة العمل المؤسسي', 
-        hours: '12 ساعة', 
-        price: '950 دولار',
-        benefits: '<li>إكساب المتدربين مهارة إدارة تنوع الموارد البشرية بكفاءة وفاعلية.</li><li>إدراك دور إدارة التنوع في رفع مستويات الابتكار والإنتاجية.</li><li>تطبيق أدوات قياس ومستوى إدارة تنوع الموارد البشرية في المنظمة.</li>',
-        objectives: '<li>ذكر مفهوم إدارة تنوع الموارد البشرية بيسر وسهولة.</li><li>تحديد أسس تفعيل دور إدارة التنوع في بيئة العمل.</li><li>بناء سياسات عامة تتبنى مفهوم تنوع القوى العاملة.</li>',
+        title: 'إدارة التنوع في الموارد البشرية', subtitle: 'الموارد البشرية | بيئة العمل المؤسسي', hours: '12 ساعة', price: '950 دولار',
+        benefits: '<li>إكساب المتدربين مهارة إدارة تنوع الموارد البشرية بكفاءة وفاعلية.</li><li>إدراك دور إدارة التنوع في رفع مستويات الابتكار والإنتاجية.</li>',
+        objectives: '<li>ذكر مفهوم إدارة تنوع الموارد البشرية بيسر وسهولة.</li><li>تحديد أسس تفعيل دور إدارة التنوع في بيئة العمل.</li>',
         audience: '<li>موظفو ومسؤولو الموارد البشرية.</li><li>مديرو الشؤون الإدارية وشؤون الأفراد.</li>'
       },
       'salary': { 
-        title: 'إدارة الرواتب والمكافآت والحوافز', 
-        subtitle: 'التعويضات والمكافآت | مركز الأعمال والاحتراف', 
-        hours: '60 ساعة', 
-        price: '2,500 دولار',
-        benefits: '<li>تنمية قدرات ومعارف ومدربي التعويضات في مجال إدارة الرواتب والمكافآت.</li><li>تطبيق منهجية وطرق تقييم الوظائف بمهنية عالية.</li><li>تصميم هياكل الرواتب والأجور ونظم الحوافز المبنية على الأداء.</li>',
-        objectives: '<li>تحديد بدقة مفهوم إدارة الرواتب والمكافآت والحوافز.</li><li>تصميم نظام تعويضات متكامل يقلل معدلات دوران العمل.</li><li>التعرف على الأخطاء الشائعة في تصميم نظم المكافآت.</li>',
+        title: 'إدارة الرواتب والمكافآت والحوافز', subtitle: 'التعويضات والمكافآت | مركز الأعمال والاحتراف', hours: '20 ساعة', price: '1,500 دولار',
+        benefits: '<li>تنمية قدرات ومعارف المتدربين في مجال إدارة الرواتب والمكافآت.</li><li>تطبيق منهجية وطرق تقييم الوظائف بمهنية عالية.</li>',
+        objectives: '<li>تصميم هياكل الرواتب والأجور ونظم الحوافز المبنية على الأداء.</li><li>التعرف على الأخطاء الشائعة في تصميم نظم المكافآت.</li>',
         audience: '<li>موظفو وممارسو الموارد البشرية (شؤون الموظفين).</li><li>محللو التعويضات والمزايا الوظيفية.</li>'
       },
       'talents': { 
-        title: 'إدارة المواهب والاحتفاظ بالكفاءات', 
-        subtitle: 'تطوير القيادات | إدارة الموارد البشرية', 
-        hours: '24 ساعة', 
-        price: '1,200 دولار',
-        benefits: '<li>تنمية معارف وقدرات المتدربين في عمليات ومراحل إدارة المواهب.</li><li>التعرف على أفضل ممارسات إدارة المواهب بمختلف عملياتها.</li><li>تطبيق أساليب تطوير الاحتفاظ بالمواهب بكفاءة وفاعلية.</li>',
-        objectives: '<li>التعرف على مفهوم إدارة المواهب بيسر وسهولة.</li><li>تقييم أداء المواهب وفق أسس علمية دقيقة.</li><li>تطبيق استراتيجيات الاحتفاظ بالكفاءات القيادية.</li>',
+        title: 'إدارة المواهب والاحتفاظ بالكفاءات', subtitle: 'تطوير القيادات | إدارة الموارد البشرية', hours: '16 ساعة', price: '1,200 دولار',
+        benefits: '<li>تنمية معارف وقدرات المتدربين في عمليات ومراحل إدارة المواهب.</li><li>التعرف على أفضل ممارسات إدارة المواهب بمختلف عملياتها.</li>',
+        objectives: '<li>تقييم أداء المواهب وفق أسس علمية دقيقة.</li><li>تطبيق استراتيجيات الاحتفاظ بالكفاءات القيادية.</li>',
         audience: '<li>مديرو إدارات المواهب والتطوير.</li><li>مسؤولو استقطاب الكفاءات والموارد البشرية.</li>'
       },
       'crisis': { 
-        title: 'إدارة المخاطر والكوارث والأزمات', 
-        subtitle: 'الإدارة الاستراتيجية | استجابة فعالة للمتغيرات', 
-        hours: '30 ساعة', 
-        price: '1,500 دولار',
-        benefits: '<li>تمكين المشاركين من تحديد المخاطر المحتملة، تقييمها، وتخفيف أثرها.</li><li>وضع خطط استجابة فعالة للأزمات باستخدام النماذج العلمية الحديثة.</li><li>تنظيم فرق العمل لضمان استجابة منسقة وفعالة أثناء الطوارئ.</li>',
-        objectives: '<li>تطوير خطط استجابة سريعة للأزمات الطارئة.</li><li>التواصل الفعال أثناء إدارة الأزمات وتحقيق القيادة الآمنة.</li><li>تطبيق تقنيات التفكير الإبداعي والحديث لتسهيل إدارة الأزمة.</li>',
+        title: 'إدارة المخاطر والكوارث والأزمات', subtitle: 'الإدارة الاستراتيجية | استجابة فعالة للمتغيرات', hours: '16 ساعة', price: '1,200 دولار',
+        benefits: '<li>تمكين المشاركين من تحديد المخاطر المحتملة، تقييمها، وتخفيف أثرها.</li><li>وضع خطط استجابة فعالة للأزمات باستخدام النماذج العلمية الحديثة.</li>',
+        objectives: '<li>تطوير خطط استجابة سريعة للأزمات الطارئة.</li><li>التواصل الفعال أثناء إدارة الأزمات وتحقيق القيادة الآمنة.</li>',
         audience: '<li>مديرو الخط الأول والمشرفون ورؤساء الأقسام.</li><li>أعضاء لجان إدارة الأزمات والطوارئ.</li>'
       },
       'quality': { 
-        title: 'إدارة الجودة الشاملة (TQM)', 
-        subtitle: 'الجودة والتميز | معايير الأداء المؤسسي', 
-        hours: '30 ساعة', 
-        price: '1,500 دولار',
-        benefits: '<li>إكساب المتدربين المهارات اللازمة في إدارة الجودة الشاملة بكفاءة وفاعلية.</li><li>التعرف على المعايير الدولية والخطوات الصحيحة للتقييم والتميز.</li><li>تطبيق أدوات الجودة السبع لضبط وتحسين العمليات المستمرة.</li>',
-        objectives: '<li>التعرف على مفاهيم إدارة الجودة الشاملة يسر وسهولة.</li><li>تحديد العناصر الأساسية في إدارة الجودة بدقة وإتقان.</li><li>تطبيق مراحل تطبيق إدارة الجودة في الجهات الحكومية والخاصة.</li>',
+        title: 'إدارة الجودة الشاملة (TQM)', subtitle: 'الجودة والتميز | معايير الأداء المؤسسي', hours: '16 ساعة', price: '1,200 دولار',
+        benefits: '<li>إكساب المتدربين المهارات اللازمة في إدارة الجودة الشاملة بكفاءة وفاعلية.</li><li>التعرف على المعايير الدولية والخطوات الصحيحة للتقييم والتميز.</li>',
+        objectives: '<li>تحديد العناصر الأساسية في إدارة الجودة بدقة وإتقان.</li><li>تطبيق مراحل تطبيق إدارة الجودة في الجهات الحكومية والخاصة.</li>',
         audience: '<li>مسؤولو قطاع الجودة والتميز المؤسسي.</li><li>موكلو قطاع الإنتاج والخدمات.</li>'
       },
       'performance': { 
-        title: 'إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)', 
-        subtitle: 'تقييم الأداء | قياس العائد والإنتاجية', 
-        hours: '30 ساعة', 
-        price: '1,500 دولار',
-        benefits: '<li>اكساب المتدرب مهارات إدارة الأداء الوظيفي باحترافية وكفاءة عالية.</li><li>معرفة طرق تقييم الأداء الوظيفي ومؤشرات القياس الرئيسية.</li><li>ربط نتائج التقييم بخطط التطوير والتحفيز المؤسسي.</li>',
-        objectives: '<li>تخطيط الأداء ووضع المستهدفات الاستراتيجية والتشغيلية.</li><li>تصميم نماذج تقييم أداء موضوعية وفعالة.</li><li>بناء نظام متابعة دوري لتحقيق مستهدفات المنظمة.</li>',
+        title: 'إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)', subtitle: 'تقييم الأداء | قياس العائد والإنتاجية', hours: '16 ساعة', price: '1,200 دولار',
+        benefits: '<li>اكساب المتدرب مهارات إدارة الأداء الوظيفي باحترافية وكفاءة عالية.</li><li>معرفة طرق تقييم الأداء الوظيفي ومؤشرات القياس الرئيسية.</li>',
+        objectives: '<li>تخطيط الأداء ووضع المستهدفات الاستراتيجية والتشغيلية.</li><li>تصميم نماذج تقييم أداء موضوعية وفعالة.</li>',
         audience: '<li>موظفو ومسؤولو الموارد البشرية والمدراء التنفيذيون.</li>'
       },
       'relations': { 
-        title: 'إدارة علاقات الموظفين والاتصال الفعال', 
-        subtitle: 'علاقات العمل | بيئة عمل آمنة ومحفزة', 
-        hours: '50 ساعة', 
-        price: '2,100 دولار',
-        benefits: '<li>تنمية مهارات المدربين في إدارة علاقات الموظفين بكفاءة وفاعلية.</li><li>تطوير مهارات الاتصال الفعال والذكاء العاطفي في بيئة العمل.</li><li>إدارة النزاعات والصراعات الوظيفية باحترافية تامة.</li>',
-        objectives: '<li>فهم مفهوم وأهمية إدارة علاقات الموظفين بدقة.</li><li>إدارة النزاع في بيئة العمل باحترافية تامة.</li><li>التعامل الفعال مع ضغوط العمل والمستفيدين بمهارة.</li>',
+        title: 'إدارة علاقات الموظفين والاتصال الفعال', subtitle: 'علاقات العمل | بيئة عمل آمنة ومحفزة', hours: '16 ساعة', price: '1,200 دولار',
+        benefits: '<li>تنمية مهارات المدربين في إدارة علاقات الموظفين بكفاءة وفاعلية.</li><li>تطوير مهارات الاتصال الفعال والذكاء العاطفي في بيئة العمل.</li>',
+        objectives: '<li>فهم مفهوم وأهمية إدارة علاقات الموظفين بدقة.</li><li>إدارة النزاع في بيئة العمل باحترافية تامة.</li>',
         audience: '<li>موظفو الموارد البشرية وعلاقات العمل.</li>'
       },
       'meetings': { 
-        title: 'إدارة الاجتماعات الفعالة وصنع القرار', 
-        subtitle: 'المهارات الإدارية | تحسين الإنتاجية الجماعية', 
-        hours: '16 ساعة', 
-        price: '900 دولار',
-        benefits: '<li>إتقان المفاهيم الأساسية لإدارة الاجتماعات الناجحة.</li><li>تنظيم مراحل التخطيط والحضور والتقييم والمتابعة للاجتماعات.</li><li>توظيف أساليب الإدارة الحديثة لتحويل مخرجات الاجتماعات لقرارات تنفيذية.</li>',
+        title: 'إدارة الاجتماعات الفعالة وصنع القرار', subtitle: 'المهارات الإدارية | تحسين الإنتاجية الجماعية', hours: '12 ساعة', price: '950 دولار',
+        benefits: '<li>إتقان المفاهيم الأساسية لإدارة الاجتماعات الناجحة.</li><li>تنظيم مراحل التخطيط والحضور والتقييم والمتابعة للاجتماعات.</li>',
         objectives: '<li>تجنب الهدر الزمني والتشغيلي في الاجتماعات الروتينية.</li><li>تفعيل المشاركة الفعالة للاجتماعات الافتراضية والواقعية.</li>',
         audience: '<li>القادة ومديرو الإدارات ورؤساء الأقسام.</li>'
+      },
+      'tourist': { 
+        title: 'كيفية التعامل مع السائح وتقديم خدمة استثنائية', subtitle: 'الخدمات والضيافة | التميز في خدمة العملاء', hours: '12 ساعة', price: '950 دولار',
+        benefits: '<li>إكساب العاملين في قطاع الضيافة والسياحة مهارات التعامل الراقي مع السائح.</li><li>فهم أنماط السلوك السياحي وتلبية التوقعات باحترافية.</li>',
+        objectives: '<li>تطبيق مهارات الاستماع الفعال وحل المشكلات الفورية للعملاء والسياح.</li><li>ترسيخ الصورة الذهنية الاحترافية للمؤسسة السياحية أو الخدمية.</li>',
+        audience: '<li>العاملون في قطاع السياحة والفنادق والخدمات العامة.</li><li>ممثلو خدمة العملاء والاستقبال.</li>'
       }
     };
 
