@@ -325,7 +325,7 @@
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
     /* البطاقات البصرية الاحترافية للمسارات */
-    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; margin-bottom: 60px; }
+    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; margin-bottom: 40px; }
     .track-banner-card {
       position: relative;
       border-radius: 18px;
@@ -337,6 +337,7 @@
       flex-direction: column;
       justify-content: flex-end;
       text-decoration: none;
+      cursor: pointer;
     }
     .track-banner-card:hover {
       transform: translateY(-6px);
@@ -377,13 +378,20 @@
       font-weight: 600;
     }
 
-    /* تفاصيل البرامج داخل المسار مع الأسعار وطريقة الحضور */
-    .tracks-details-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      margin-top: 50px;
+    /* نظام التبويبات الفردية المنفصلة */
+    .track-content-panel {
+      display: none;
+      margin-top: 30px;
+      animation: fadeIn 0.4s ease-in-out;
     }
+    .track-content-panel.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .track-card {
       background: var(--white);
       border: 1px solid var(--border-color);
@@ -392,15 +400,18 @@
       box-shadow: var(--card-shadow);
       display: flex;
       flex-direction: column;
+      max-width: 800px;
+      margin: 0 auto;
     }
     .track-head {
       background: linear-gradient(135deg, #0a192f, #112240);
       color: var(--white);
       padding: 26px;
+      text-align: center;
     }
-    .track-head h3 { font-size: 19px; font-weight: 800; }
-    .track-body { padding: 26px; display: flex; flex-direction: column; gap: 20px; }
-    .program-item { padding-bottom: 18px; border-bottom: 1px dashed var(--border-color); }
+    .track-head h3 { font-size: 22px; font-weight: 800; }
+    .track-body { padding: 30px; display: flex; flex-direction: column; gap: 20px; }
+    .program-item { padding-bottom: 20px; border-bottom: 1px dashed var(--border-color); }
     .program-item:last-child { border-bottom: none; padding-bottom: 0; }
     .program-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
     .badge-hours {
@@ -421,18 +432,18 @@
       padding: 3px 10px;
       border-radius: 6px;
     }
-    .program-name { font-size: 15.5px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; display: block; }
+    .program-name { font-size: 16px; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; display: block; }
     .program-pricing {
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 700;
       color: #047857;
       background: #ecfdf5;
-      padding: 6px 12px;
-      border-radius: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
       display: inline-block;
       border: 1px solid #a7f3d0;
     }
-    .program-pricing span { font-size: 11px; color: #6b7280; font-weight: 600; display: block; }
+    .program-pricing span { font-size: 11.5px; color: #6b7280; font-weight: 600; display: block; }
 
     .discovery-section {
       background: linear-gradient(135deg, #0a192f 0%, #162a45 100%);
@@ -533,7 +544,7 @@
     .footer-bottom { max-width: 1320px; margin: 0 auto; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 12.5px; }
 
     @media (max-width: 992px) {
-      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .tracks-details-container, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
+      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
       .authority-grid { grid-template-columns: repeat(2, 1fr); }
       .hero h1 { font-size: 30px; }
       .nav-links { display: none; }
@@ -703,7 +714,7 @@
       <div class="goal-card">
         <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
         <ul>
-          <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد لمنح شهادات موثقة.</li>
+          <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد عالمية لمنح شهادات موثقة.</li>
           <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
           <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
         </ul>
@@ -779,60 +790,60 @@
     </div>
   </section>
 
-  <!-- المسارات التدريبية التفاعلية مع تفاصيل الأسعار ونمط التدضور -->
+  <!-- المسارات التدريبية التفاعلية بنظام التبويبات الفردية -->
   <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
     <div class="section-header">
       <span class="section-label">Professional Programs</span>
       <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
-      <p class="section-desc">اضغط على أي مسار أدناه للاطلاع على محتوياته التفصيلية، أسعاره، ونمط التدريب.</p>
+      <p class="section-desc">اضغط على أي مسار أدناه لعرض تفاصيله وبرامجه وأسعاره بشكل منفصل.</p>
     </div>
 
+    <!-- كروت المسارات البصرية -->
     <div class="tracks-grid">
-      <a href="#track-1-details" class="track-banner-card">
+      <div class="track-banner-card" onclick="showTrack(1)">
         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="المسار الأول" class="track-banner-bg">
         <div class="track-banner-overlay"></div>
         <div class="track-banner-content">
           <div class="track-banner-num">المسار الأول</div>
           <div class="track-banner-title">مهارات الاتصال الفعال والذكاء العاطفي</div>
-          <div class="track-banner-details">4 برامج تدريبية | مدة البرامج: 12 - 16 ساعة</div>
+          <div class="track-banner-details">4 برامج تدريبية | اضغط للعرض</div>
         </div>
-      </a>
+      </div>
 
-      <a href="#track-2-details" class="track-banner-card">
+      <div class="track-banner-card" onclick="showTrack(2)">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="المسار الثاني" class="track-banner-bg">
         <div class="track-banner-overlay"></div>
         <div class="track-banner-content">
           <div class="track-banner-num">المسار الثاني</div>
           <div class="track-banner-title">التعامل مع ضغوط العمل وإدارة الأزمات</div>
-          <div class="track-banner-details">4 برامج تدريبية | مدة البرامج: 10 - 14 ساعة</div>
+          <div class="track-banner-details">4 برامج تدريبية | اضغط للعرض</div>
         </div>
-      </a>
+      </div>
 
-      <a href="#track-3-details" class="track-banner-card">
+      <div class="track-banner-card" onclick="showTrack(3)">
         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="المسار الثالث" class="track-banner-bg">
         <div class="track-banner-overlay"></div>
         <div class="track-banner-content">
           <div class="track-banner-num">المسار الثالث</div>
           <div class="track-banner-title">الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</div>
-          <div class="track-banner-details">4 برامج تدريبية | مدة البرامج: 12 - 16 ساعة</div>
+          <div class="track-banner-details">4 برامج تدريبية | اضغط للعرض</div>
         </div>
-      </a>
+      </div>
 
-      <a href="#track-4-details" class="track-banner-card">
+      <div class="track-banner-card" onclick="showTrack(4)">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="المسار الرابع" class="track-banner-bg">
         <div class="track-banner-overlay"></div>
         <div class="track-banner-content">
           <div class="track-banner-num">المسار الرابع</div>
           <div class="track-banner-title">بيئة العمل الاحترافية وثقافة المنظمات</div>
-          <div class="track-banner-details">3 برامج تدريبية | مدة البرامج: 10 - 12 ساعة</div>
+          <div class="track-banner-details">3 برامج تدريبية | اضغط للعرض</div>
         </div>
-      </a>
+      </div>
     </div>
 
-    <!-- تفاصيل البرامج الشاملة (الأسعار - الساعات - نمط التدريب) -->
-    <div class="tracks-details-container">
-      <!-- المسار الأول -->
-      <div class="track-card" id="track-1-details">
+    <!-- تفاصيل المسار الأول (يظهر افتراضياً) -->
+    <div id="track-panel-1" class="track-content-panel active">
+      <div class="track-card">
         <div class="track-head">
           <h3>المسار الأول: مهارات الاتصال الفعال والذكاء العاطفي</h3>
         </div>
@@ -871,9 +882,11 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- المسار الثاني -->
-      <div class="track-card" id="track-2-details">
+    <!-- تفاصيل المسار الثاني (مخفي افتراضياً) -->
+    <div id="track-panel-2" class="track-content-panel">
+      <div class="track-card">
         <div class="track-head">
           <h3>المسار الثاني: التعامل مع ضغوط العمل وإدارة الأزمات</h3>
         </div>
@@ -912,9 +925,11 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- المسار الثالث -->
-      <div class="track-card" id="track-3-details">
+    <!-- تفاصيل المسار الثالث (مخفي افتراضياً) -->
+    <div id="track-panel-3" class="track-content-panel">
+      <div class="track-card">
         <div class="track-head">
           <h3>المسار الثالث: الإدارة والسلوك التنظيمي المرتبط بجودة الإنتاج</h3>
         </div>
@@ -953,9 +968,11 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- المسار الرابع -->
-      <div class="track-card" id="track-4-details">
+    <!-- تفاصيل المسار الرابع (مخفي افتراضياً) -->
+    <div id="track-panel-4" class="track-content-panel">
+      <div class="track-card">
         <div class="track-head">
           <h3>المسار الرابع: بيئة العمل الاحترافية وثقافة المنظمات</h3>
         </div>
@@ -1057,5 +1074,22 @@
       <p>&copy; 2026 FA Consulting & Training. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
+
+  <!-- سكربت التبديل التفاعلي بين المسارات -->
+  <script>
+    function showTrack(trackNum) {
+      // إخفاء كل اللوحات
+      const panels = document.querySelectorAll('.track-content-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      // إظهار اللوحة المطلوبة فقط
+      const targetPanel = document.getElementById('track-panel-' + trackNum);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        // النزول بسلاسة نحو اللوحة الظاهرة
+        targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
 </body>
 </html>
