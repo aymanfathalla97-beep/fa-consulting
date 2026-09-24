@@ -22,7 +22,7 @@
       --card-shadow-hover: 0 25px 50px -15px rgba(2, 12, 27, 0.12);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.8; font-size: 15.5px; }
+    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.9; font-size: 16px; }
     
     header {
       background: rgba(10, 25, 47, 0.98);
@@ -324,13 +324,13 @@
     }
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    /* بطاقات المسارات */
-    .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; }
+    /* شبكة البرامج التدريبية */
+    .tracks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
     .track-banner-card {
       position: relative;
       border-radius: 18px;
       overflow: hidden;
-      height: 300px;
+      height: 280px;
       box-shadow: var(--card-shadow);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
@@ -338,6 +338,10 @@
       justify-content: flex-end;
       text-decoration: none;
       cursor: pointer;
+      background: none;
+      border: none;
+      text-align: right;
+      width: 100%;
     }
     .track-banner-card:hover {
       transform: translateY(-6px);
@@ -361,24 +365,24 @@
     .track-banner-content {
       position: relative;
       z-index: 3;
-      padding: 30px;
+      padding: 24px;
       color: #fff;
+      width: 100%;
     }
-    .track-banner-num { font-size: 11.5px; font-weight: 800; color: var(--accent-gold-light); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1.2px; }
-    .track-banner-title { font-size: 21px; font-weight: 800; margin-bottom: 12px; line-height: 1.4; }
+    .track-banner-num { font-size: 11px; font-weight: 800; color: var(--accent-gold-light); text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1px; }
+    .track-banner-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
     .track-banner-details {
-      font-size: 14px;
+      font-size: 13px;
       color: #cbd5e1;
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(5px);
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 6px 12px;
+      border-radius: 6px;
       display: inline-block;
-      margin-top: 6px;
       font-weight: 600;
     }
 
-    /* عرض صفحة ملف الدورة (Brochure View) تماماً مثل الصور الإحترافية */
+    /* عرض صفحة ملف الدورة (Brochure View) */
     .view-section { display: none; }
     .view-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -395,6 +399,8 @@
       text-decoration: none;
       margin-bottom: 30px;
       font-size: 14px;
+      cursor: pointer;
+      border: none;
     }
     .back-btn:hover { background: var(--primary-light); }
 
@@ -419,7 +425,6 @@
     .brochure-title { font-size: 28px; font-weight: 900; color: var(--primary); }
     .brochure-subtitle { font-size: 15px; color: var(--text-muted); font-weight: 600; margin-top: 6px; }
 
-    /* تصميم الأعمدة المتناظرة (زي الصور بالضبط) */
     .brochure-grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -459,7 +464,6 @@
       font-size: 14px;
     }
 
-    /* جدول المواعيد والأسعار المتناسق بالكامل */
     .pricing-table-container {
       margin-top: 40px;
       width: 100%;
@@ -728,190 +732,104 @@
       </div>
     </section>
 
-    <section class="section-container" id="b2b-offer" style="padding-top: 0;">
-      <div class="b2b-value-section">
-        <div class="section-header" style="margin-bottom: 25px;">
-          <span class="section-label" style="color: var(--accent-gold-light);">Corporate Value Proposition</span>
-          <h2 class="section-title" style="color: #ffffff;">ما الذي تحصله مؤسستكم؟</h2>
-          <p class="section-desc" style="color: #cbd5e1;">منهجية عمل متكاملة تضمن تحقيق أعلى عائد على الاستثمار التدريبي لفريقكم.</p>
-        </div>
-        <div class="b2b-grid">
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تشخيص الاحتياجات التدريبية بدقة</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تصميم البرنامج وفق احتياجات المؤسسة</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تدريب حضوري أو عن بُعد (Interactive)</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> حقائب تدريبية مخصصة واحترافية</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تقييم الأداء قبل وبعد البرنامج</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تقرير ختامى تفصيلي للجهة المستفيدة</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> شهادات إتمام للمتدربين برقم تسلسلي</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> متابعة وتوصيات تطويرية مستمرة</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-container" id="goals" style="background: #ffffff;">
-      <div class="section-header">
-        <span class="section-label">Strategic Objectives</span>
-        <h2 class="section-title">رؤيتنا الاستراتيجية وأهدافنا المؤسسية</h2>
-        <p class="section-desc">
-          نرتكز في "FA Consulting" على أطر منهجية ومعايير دقيقة لضمان تحقيق أعلى قيمة مضافة لشركائنا من المؤسسات.
-        </p>
-      </div>
-
-      <div class="goals-grid">
-        <div class="goal-card">
-          <h3>🎯 1. الأهداف التنموية والتعليمية (جودة التدريب)</h3>
-          <ul>
-            <li><strong>تطوير الكفاءات البشرية:</strong> تمكين الأفراد والمؤسسات من اكتساب المهارات الحديثة وسد الفجوات المعرفية.</li>
-            <li><strong>تصميم برامج تدريبية مبتكرة:</strong> تقديم حقائب تدريبية متطورة تواكب متطلبات سوق العمل المتغير.</li>
-            <li><strong>اعتماد منهجيات التعلم التطبيقي:</strong> التركيز على التدريب العملي ونقل الخبرات الفورية بدلاً من التلقين النظري.</li>
-          </ul>
-        </div>
-
-        <div class="goal-card">
-          <h3>💡 2. الأهداف الاستشارية (حلول الأعمال)</h3>
-          <ul>
-            <li><strong>استشارات إدارية وتنظيمية وتطوير مؤسسي:</strong> صياغة استشارات إدارية تدعم المؤسسات في حل مشكلاتها وتطوير أدائها.</li>
-            <li><strong>دعم التحول والتطوير المؤسسي:</strong> مساعدة الشركات على إعادة هيكلة عملياتها وتطوير بيئة العمل.</li>
-            <li><strong>ضمان نتائج ملموسة وقابلة للقياس (ROI):</strong> قياس العائد على الاستثمار للجهات المستفيدة من الاستشارات.</li>
-          </ul>
-        </div>
-
-        <div class="goal-card">
-          <h3>📈 3. الأهداف التسويقية والتنافسية (الانتشار والمكانة)</h3>
-          <ul>
-            <li><strong>بناء علامة تجارية موثوقة:</strong> ترسيخ اسم المؤسسة كمرجع أول في قطاع الاستشارات والتدريب.</li>
-            <li><strong>توسيع قاعدة العملاء:</strong> استهداف قطاعات متنوعة (حكومية، خاصة، غير ربحية).</li>
-            <li><strong>التوسع الجغرافي:</strong> تقديم خدمات التدريب والاستشارات محلياً وإقليمياً، وتفعيل التدريب عن بعد (E-learning).</li>
-          </ul>
-        </div>
-
-        <div class="goal-card">
-          <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
-          <ul>
-            <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، هيئات اعتماد لمنح شهادات موثقة.</li>
-            <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
-            <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- سابقة الأعمال الميدانية -->
-    <section class="section-container" id="field-track" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-      <div class="section-header">
-        <span class="section-label">Proven Track Record</span>
-        <h2 class="section-title">سابقة الأعمال الميدانية والتدريب المؤسسي</h2>
-        <p class="section-desc">توثيق عملي لسنوات من قيادة البرامج الإدارية وتأهيل الكوادر الحكومية والقيادية في كبرى المحافل الرسمية.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-        <div class="field-card">
-          <img src="saudi_reception.jpg" alt="المشاركة والمصافحة" class="field-img">
-          <div class="field-body">
-            <h4>حضور رسمي ومحافل قيادية كبرى</h4>
-            <p>المشاركة الفاعلة في الملتقيات والمؤتمرات الإدارية رفيعة المستوى، وتوجيه الحوارات القيادية حول التحول المؤسسي.</p>
-          </div>
-        </div>
-        <div class="field-card">
-          <img src="trining_group.jpg" alt="إدارة الجلسات التدريبية" class="field-img">
-          <div class="field-body">
-            <h4>إدارة الحلقات التدريبية ومنصات التفاعل</h4>
-            <p>تطبيق أحدث المنهجيات في إدارة القاعات، واستثارة التفكير الإبداعي لدى المدراء لصناعة الحلول الواقعية.</p>
-          </div>
-        </div>
-        <div class="field-card">
-          <img src="graduates_group.jpg" alt="تخريج القيادات" class="field-img">
-          <div class="field-body">
-            <h4>تخريج الدفعات القيادية وفرق العمل</h4>
-            <p>تأهيل مئات الكوادر في برامج المهارات السلوكية، وإدارة النزاعات، وبناء فرق العمل المتكاملة.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- مؤشرات الجودة -->
-    <section class="section-container" id="audit" style="background: #ffffff;">
-      <div class="section-header">
-        <span class="section-label">Verified Performance</span>
-        <h2 class="section-title">مؤشرات جودة وتقييمات موثقة</h2>
-        <p class="section-desc">تقارير تقييم رسمية صادرة ضمن نموذج تقييم المتدربين، تعكس كفاءة الأداء ومستوى رضا المشاركين.</p>
-      </div>
-
-      <div class="eval-box">
-        <div class="eval-column">
-          <div>
-            <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;">
-              <span class="eval-score">96.83%</span>
-              <span style="color: #94a3b8; font-size: 13.5px; font-weight: 700;">التقييم العام للمدرب</span>
-            </div>
-            <h3 style="font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px;">تقرير تقييم صادر خلال العام التدريبي</h3>
-            <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6;">حقق تقييماً مرتفعاً في عناصر تقييم المدرب وفق نموذج تقييم المتدربين الرسمي.</p>
-          </div>
-          <div class="eval-img-wrapper">
-            <img src="ipa_eval.png" alt="تقرير وحدة دعم الجودة">
-          </div>
-        </div>
-
-        <div class="eval-column">
-          <div>
-            <h4 style="font-size: 16px; color: var(--accent-gold-light); margin-bottom: 8px;">شهادات وانطباعات المتدربين القياديين</h4>
-            <p style="font-size: 13px; color: #e2e8f0; font-style: italic; line-height: 1.6;">"نشكر الدكتور فتح الله أبو ذكري على تعاونه وشرحه الممتاز.. ومن أفضل الدورات التي مررت بها."</p>
-          </div>
-          <div class="testimonial-img-wrapper">
-            <img src="testimonial_trainee.jpg" alt="إشادة المتدربين">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- المسارات التدريبية -->
+    <!-- قائمة البرامج التدريبية الشاملة (جميع البرامج بالصور الافتراضية والبروفايل المستقل) -->
     <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
       <div class="section-header">
         <span class="section-label">Professional Programs</span>
-        <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
-        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) وتفاصيلها الكاملة.</p>
+        <h2 class="section-title">برامجنا التدريبية والاستشارية المعتمدة</h2>
+        <p class="section-desc">اختر أي برنامج أدناه لاستعراض ملف الدورة (Brochure) وتفاصيلها الكاملة بمعايير الإدارة العامة.</p>
       </div>
 
       <div class="tracks-grid">
-        <div class="track-banner-card" onclick="openBrochure('p1'); return false;">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="برنامج 1" class="track-banner-bg">
+        <button type="button" class="track-banner-card" onclick="openBrochure('change')">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="إدارة التغيير التنظيمي" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
-            <div class="track-banner-num">المسار الأول</div>
-            <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي الفعال</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة (Brochure)</div>
+            <div class="track-banner-num">البرنامج التنفيذي</div>
+            <div class="track-banner-title">إدارة التغيير التنظيمي</div>
+            <div class="track-banner-details">28 ساعة | 1,400 دولار | عرض ملف الدورة</div>
           </div>
-        </div>
+        </button>
 
-        <div class="track-banner-card" onclick="openBrochure('p2'); return false;">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="برنامج 2" class="track-banner-bg">
+        <button type="button" class="track-banner-card" onclick="openBrochure('hr_diversity')">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="إدارة التنوع في الموارد البشرية" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
-            <div class="track-banner-num">المسار الثاني</div>
-            <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة (Brochure)</div>
+            <div class="track-banner-num">الموارد البشرية</div>
+            <div class="track-banner-title">إدارة التنوع في الموارد البشرية</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
           </div>
-        </div>
+        </button>
 
-        <div class="track-banner-card" onclick="openBrochure('p3'); return false;">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="برنامج 3" class="track-banner-bg">
+        <button type="button" class="track-banner-card" onclick="openBrochure('salary')">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="إدارة الرواتب والمكافآت" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
-            <div class="track-banner-num">المسار الثالث</div>
-            <div class="track-banner-title">استراتيجيات التعامل الفعال مع ضغوط العمل اليومية</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة (Brochure)</div>
+            <div class="track-banner-num">التعويضات والمكافآت</div>
+            <div class="track-banner-title">إدارة الرواتب والمكافآت والحوافز</div>
+            <div class="track-banner-details">60 ساعة | 2,500 دولار | عرض ملف الدورة</div>
           </div>
-        </div>
+        </button>
 
-        <div class="track-banner-card" onclick="openBrochure('p4'); return false;">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="برنامج 4" class="track-banner-bg">
+        <button type="button" class="track-banner-card" onclick="openBrochure('talents')">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="إدارة المواهب" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
-            <div class="track-banner-num">المسار الرابع</div>
-            <div class="track-banner-title">السلوك التنظيمي وانعكاسه على جودة الإنتاج</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة (Brochure)</div>
+            <div class="track-banner-num">تطوير القيادات</div>
+            <div class="track-banner-title">إدارة المواهب والاحتفاظ بالكفاءات</div>
+            <div class="track-banner-details">24 ساعة | 1,200 دولار | عرض ملف الدورة</div>
           </div>
-        </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('crisis')">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="إدارة الأزمات والمخاطر" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">الإدارة الاستراتيجية</div>
+            <div class="track-banner-title">إدارة المخاطر والكوارث والأزمات</div>
+            <div class="track-banner-details">30 ساعة | 1,500 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('quality')">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="إدارة الجودة الشاملة" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">الجودة والتميز</div>
+            <div class="track-banner-title">إدارة الجودة الشاملة (TQM)</div>
+            <div class="track-banner-details">30 ساعة | 1,500 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('performance')">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الأداء الوظيفي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">تقييم الأداء</div>
+            <div class="track-banner-title">إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)</div>
+            <div class="track-banner-details">30 ساعة | 1,500 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('relations')">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="إدارة علاقات الموظفين" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">علاقات العمل</div>
+            <div class="track-banner-title">إدارة علاقات الموظفين والاتصال الفعال</div>
+            <div class="track-banner-details">50 ساعة | 2,100 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('meetings')">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="إدارة الاجتماعات" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المهارات الإدارية</div>
+            <div class="track-banner-title">إدارة الاجتماعات الفعالة وصنع القرار</div>
+            <div class="track-banner-details">16 ساعة | 900 دولار | عرض ملف الدورة</div>
+          </div>
+        </button>
       </div>
 
       <div class="discovery-section" id="discovery">
@@ -927,45 +845,13 @@
       </div>
     </section>
 
-    <!-- الشهادات المهنية -->
-    <section class="accred-section" id="certificates">
-      <div class="accred-wrapper">
-        <div class="accred-content">
-          <span class="section-label">Credential & Verification</span>
-          <h2>شهادات إتمام مهنية</h2>
-          <p>شهادة إتمام مهنية صادرة من FA Consulting؛ تُصدر برقم تسلسلي فريد يتيح التحقق من بيانات البرنامج والمتدرب بكل شفافية وموثوقية.</p>
-          <ul class="accred-points">
-            <li><span>✓</span> <div><strong>شهادة إتمام مهنية (Professional Certificate):</strong> توثق إنجاز البرنامج وعدد الساعات الفعلية.</div></li>
-            <li><span>✓</span> <div><strong>رقم تسلسلي فريد (Unique ID):</strong> لكل متدرب لتسهيل توثيق الشهادة.</div></li>
-            <li><span>✓</span> <div><strong>إشراف أكاديمي ومهني:</strong> تصدر الشهادة تحت إشراف المستشار التنفيذي للمؤسسة.</div></li>
-          </ul>
-        </div>
-
-        <div class="cert-mockup">
-          <div class="cert-mockup-tag">SAMPLE CERTIFICATE</div>
-          <h4>FA CONSULTING &amp; TRAINING</h4>
-          <div class="cert-type">Certificate of Completion</div>
-          <div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">نموذج معاينة توضيحي للشهادة المهنية</div>
-          <div class="cert-trainee-box">
-            <div class="cert-trainee-name">[اسم المتدرب / الجهة المستفيدة]</div>
-          </div>
-          <div style="font-size:12px; color:#64748b; margin-bottom:8px;">For Successfully Completing:</div>
-          <div class="cert-prog-title">Strategic Organizational Behavior &amp; Professional Leadership</div>
-          <div class="cert-badges-row">
-            <div>Duration: <strong>16 Hours</strong></div>
-            <div>ID: <strong>FA-2026-8941</strong></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </div>
 
 
-  <!-- صفحة ملف الدورة المستقلة لكل برنامج (Brochure View) متطابقة تماماً للصور -->
+  <!-- صفحة ملف الدورة المستقلة لكل برنامج (Brochure View) -->
   <div id="brochure-view" class="view-section">
     <div class="section-container">
-      <a href="#" class="back-btn" onclick="switchView('home'); return false;">← العودة إلى الرئيسية والمسارات</a>
+      <button type="button" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والبرامج</button>
       
       <div class="brochure-card">
         <div class="brochure-header">
@@ -978,22 +864,18 @@
           </div>
         </div>
 
-        <!-- تخطيط الأعمدة المتناظرة المماثل تماماً لكتيبات الشركات الكبرى -->
+        <!-- تخطيط الأعمدة المتناظرة المماثل لصور الدليل التدريبي -->
         <div class="brochure-grid-2">
           <div class="brochure-col-box">
-            <h4>ماذا ستحقق مؤسستكم؟ (What Will I Benefit?)</h4>
+            <h4>ماذا ستحقق مؤسستكم؟ (Benefits)</h4>
             <ul id="b-benefits">
-              <li>اكتساب مهارات تحليلية وتطبيقية متقدمة لرفع كفاءة العمل اليومي.</li>
-              <li>تعلم كيفية كتابة وصياغة تقارير مهنية واحترافية لمجالس الإدارة.</li>
-              <li>تحسين القدرة على التواصل الفعال وإدارة صراعات بيئة العمل.</li>
+              <!-- يتم تعبئتها ديناميكياً -->
             </ul>
           </div>
           <div class="brochure-col-box">
             <h4>أهداف الدورة (Course Objectives)</h4>
             <ul id="b-objectives">
-              <li>تطوير الكفاءات القيادية وتمكينهم من أدوات التفكير الاستراتيجي.</li>
-              <li>تعلم تقنيات عرض البيانات بشكل جذاب ومؤثر أمام كبار المسؤولين.</li>
-              <li>بناء بيئة عمل مستقرة وعالية الإنتاجية تدعم أهداف المنظمة.</li>
+              <!-- يتم تعبئتها ديناميكياً -->
             </ul>
           </div>
         </div>
@@ -1002,9 +884,7 @@
           <div class="brochure-col-box">
             <h4>الفئة المستهدفة (Target Audience)</h4>
             <ul id="b-audience">
-              <li>مديرو الإدارات العليا ورؤساء الأقسام التنفيذية.</li>
-              <li>المسؤولون والمختصون في أقسام الموارد البشرية (HR).</li>
-              <li>القيادات الصاعدة والكفاءات المرشحة لتولي مناصب إشرافية.</li>
+              <!-- يتم تعبئتها ديناميكياً -->
             </ul>
           </div>
           <div class="brochure-col-box">
@@ -1017,24 +897,24 @@
           </div>
         </div>
 
-        <!-- جدول المواعيد والرسوم المنضبط بالكامل -->
+        <!-- جدول المواعيد والرسوم -->
         <div class="pricing-table-container">
-          <div class="brochure-section-title" style="margin-bottom: 15px;">معلومات الدورة والرسوم الاستثمارية</div>
+          <div style="margin-bottom: 15px; font-size: 18px; font-weight: 800; color: var(--primary);">معلومات الدورة والرسوم الاستثمارية</div>
           <table class="pricing-table">
             <thead>
               <tr>
-                <th style="width: 25%;">المدة بالساعة</th>
-                <th style="width: 35%;">نمط التدريب</th>
-                <th style="width: 20%;">اللغة</th>
-                <th style="width: 20%;">الرسوم (USD)</th>
+                <th>المدة بالساعة</th>
+                <th>نمط التدريب</th>
+                <th>اللغة</th>
+                <th>الرسوم</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td id="t-hours">16 ساعة</td>
+                <td id="t-hours">28 ساعة</td>
                 <td>حضوري أو تفاعلي عن بُعد (Interactive)</td>
                 <td>العربية</td>
-                <td id="t-price" style="color: #047857; font-weight: 800;">1,200 دولار</td>
+                <td id="t-price" style="color: #047857; font-weight: 800;">1,400 دولار</td>
               </tr>
             </tbody>
           </table>
@@ -1042,7 +922,7 @@
 
         <div class="brochure-actions">
           <a id="btn-order-bottom" href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
-          <a href="https://wa.me/201271221780?text=أرغب%20في%20طلب%20ملف%20الدورة%20PDF" target="_blank" class="btn-download">📥 احصل على ملف الدورة (PDF)</a>
+          <a href="https://wa.me/201271221780?text=أرغب%20في%20طلب%20ملف%20الدورة%20PDF" target="_blank" class="btn-download">📥 طلب ملف الدورة (PDF)</a>
         </div>
       </div>
     </div>
@@ -1059,8 +939,8 @@
       <div class="footer-col">
         <h4>المسارات الاستشارية والتدريبية</h4>
         <ul class="footer-links" style="list-style: none;">
-          <li><a href="#tracks" onclick="switchView('home')">مهارات الاتصال والذكاء العاطفي</a></li>
-          <li><a href="#tracks" onclick="switchView('home')">الإدارة وجودة الإنتاج</a></li>
+          <li><a href="#tracks" onclick="switchView('home')">إدارة التغيير وإدارة الأزمات</a></li>
+          <li><a href="#tracks" onclick="switchView('home')">إدارة الموارد البشرية والرواتب</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1074,43 +954,88 @@
   </footer>
 
   <script>
-    // قاعدة بيانات الدورات الأربع لملء تفاصيل البروفايل (Brochure) لكل دورة بدقة
+    // قاعدة البيانات الشاملة لجميع برامج الـ B2B المستمدة من الأدلة التدريبية
     const brochureData = {
-      'p1': { 
-        title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', 
-        subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', 
-        hours: '16 ساعة', 
-        price: '1,200 دولار',
-        benefits: '<li>اكتساب أدوات الاتصال الحديثة وتوجيه الحوارات القيادية نحو أهداف المنظمة.</li><li>بناء جسور الثقة المؤسسية مع أعضاء مجالس الإدارة والفرق التنفيذية.</li><li>رفع كفاءة التنسيق الإداري وتقليل الفجوات بين الأقسام.</li>',
-        objectives: '<li>تمكين القيادات من صياغة استراتيجيات اتصال فعالة ومؤثرة.</li><li>التمكن من لغة الإقناع المؤسسي والتعامل مع مختلف أنماط الشخصيات.</li><li>تطبيق نماذج الاتصال الحديثة في حل مشكلات العمل.</li>',
-        audience: '<li>رؤساء الأقسام والمدراء التنفيذيون.</li><li>مديرو الموارد البشرية والمسؤولون عن التطوير المؤسسي.</li><li>القيادات الصاعدة والكفاءات الإشرافية.</li>'
+      'change': { 
+        title: 'إدارة التغيير التنظيمي', 
+        subtitle: 'البرنامج التنفيذي | معهد الإدارة العامة ومقاييس التدريب', 
+        hours: '28 ساعة', 
+        price: '1,400 دولار',
+        benefits: '<li>تنمية معارف ومهارات المشاركين في إدارة التغيير في المنظمات بكفاءة وفاعلية.</li><li>معرفة المفاهيم الأساسية لإدارة التغيير التنظيمي وعناصره بدقة.</li><li>تطبيق استراتيجيات ونماذج التغيير بفاعلية تامة ومواجهة المقاومة.</li>',
+        objectives: '<li>تحديد المجالات الرئيسية التي يستهدفها التغيير وأنواعه.</li><li>تطبيق أساليب فعالة لمواجهة مقاومة التغيير التنظيمي.</li><li>إدارة مراحل الانتقال المؤسسي بثبات وأمان.</li>',
+        audience: '<li>مديرو التطوير المؤسسي وإعادة الهيكلة.</li><li>مديرو الإدارات التنفيذية والقيادات العليا.</li><li>أعضاء لجان التحول الإداري.</li>'
       },
-      'p2': { 
-        title: 'الذكاء العاطفي والاجتماعي لصناع القرار', 
-        subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', 
+      'hr_diversity': { 
+        title: 'إدارة التنوع في الموارد البشرية', 
+        subtitle: 'الموارد البشرية | بيئة العمل المؤسسي', 
         hours: '12 ساعة', 
         price: '950 دولار',
-        benefits: '<li>تنمية الوعي الذاتي والاجتماعي لمديري الإدارات العليا.</li><li>إدارة الانفعالات الشخصية والجماعية وسط ضغوط العمل الشديدة.</li><li>خلق بيئة عمل مرنة ومحفزة تزيد من ولاء وانتماء الموظفين.</li>',
-        objectives: '<li>فهم أبعاد الذكاء العاطفي وتوظيفه في القيادة الإدارية.</li><li>القدرة على احتواء الأزمات السلوكية وفض النزاعات بحكمة.</li><li>تعزيز مهارات التعاطف والتوجيه الإيجابي لفريق العمل.</li>',
-        audience: '<li>صناع القرار ومجالس الإدارة.</li><li>مديرو الاحتفاظ بالموهوبين والموارد البشرية.</li><li>مشرفو فرق العمل والعمليات.</li>'
+        benefits: '<li>إكساب المتدربين مهارة إدارة تنوع الموارد البشرية بكفاءة وفاعلية.</li><li>إدراك دور إدارة التنوع في رفع مستويات الابتكار والإنتاجية.</li><li>تطبيق أدوات قياس ومستوى إدارة تنوع الموارد البشرية في المنظمة.</li>',
+        objectives: '<li>ذكر مفهوم إدارة تنوع الموارد البشرية بيسر وسهولة.</li><li>تحديد أسس تفعيل دور إدارة التنوع في بيئة العمل.</li><li>بناء سياسات عامة تتبنى مفهوم تنوع القوى العاملة.</li>',
+        audience: '<li>موظفو ومسؤولو الموارد البشرية.</li><li>مديرو الشؤون الإدارية وشؤون الأفراد.</li>'
       },
-      'p3': { 
-        title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', 
-        subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', 
-        hours: '12 ساعة', 
-        price: '950 دولار',
-        benefits: '<li>إدارة أعباء العمل المتراكمة بأعلى كفاءة وأقل إجهاد ذهني.</li><li>الحد من معدلات الاحتراق الوظيفي وحماية رأس المال البشري.</li><li>رفع مستويات التركيز والإنتاجية اليومية للمدراء والموظفين.</li>',
-        objectives: '<li>تحديد مصادر الضغط التنظيمي ووضع خطط استباقية لمعالجتها.</li><li>تطبيق تقنيات الاسترخاء وإدارة الوقت الحديثة للقيادات.</li><li>خلق توازن مستدام بين متطلبات العمل وصحة فريق العمل.</li>',
-        audience: '<li>كافة الإدارات التنفيذية التي تعاني من ضغط تشغيلي عالي.</li><li>فرق خدمة العملاء والعمليات الميدانية.</li><li>المدراء المسؤولون عن إدارة المشاريع.</li>'
+      'salary': { 
+        title: 'إدارة الرواتب والمكافآت والحوافز', 
+        subtitle: 'التعويضات والمكافآت | مركز الأعمال والاحتراف', 
+        hours: '60 ساعة', 
+        price: '2,500 دولار',
+        benefits: '<li>تنمية قدرات ومعارف ومدربي التعويضات في مجال إدارة الرواتب والمكافآت.</li><li>تطبيق منهجية وطرق تقييم الوظائف بمهنية عالية.</li><li>تصميم هياكل الرواتب والأجور ونظم الحوافز المبنية على الأداء.</li>',
+        objectives: '<li>تحديد بدقة مفهوم إدارة الرواتب والمكافآت والحوافز.</li><li>تصميم نظام تعويضات متكامل يقلل معدلات دوران العمل.</li><li>التعرف على الأخطاء الشائعة في تصميم نظم المكافآت.</li>',
+        audience: '<li>موظفو وممارسو الموارد البشرية (شؤون الموظفين).</li><li>محللو التعويضات والمزايا الوظيفية.</li>'
       },
-      'p4': { 
-        title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', 
-        subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', 
-        hours: '16 ساعة', 
+      'talents': { 
+        title: 'إدارة المواهب والاحتفاظ بالكفاءات', 
+        subtitle: 'تطوير القيادات | إدارة الموارد البشرية', 
+        hours: '24 ساعة', 
         price: '1,200 دولار',
-        benefits: '<li>فهم التأثير المباشر للسلوك الإداري على جودة ومعدلات الإنتاج.</li><li>إعادة هيكلة الثقافة التنظيمية لتحقيق أقصى توافق مع معايير الجودة.</li><li>خلق دافعية ذاتية لدى الفرق لتحقيق التميز التشغيلي المستدام.</li>',
-        objectives: '<li>تحليل سلوكيات بيئة العمل وربطها بمؤشرات الأداء (KPIs).</li><li>تطوير استراتيجيات تحفيزية ترتبط برفع جودة المخرجات.</li><li>إدارة التغيير السلوكي بمرونة ودون مقاومة تذكر من الفرق.</li>',
-        audience: '<li>مديرو الجودة والتطوير المؤسسي.</li><li>مديرو الإنتاج والعمليات والتشغيل.</li><li>أعضاء لجان التحول والتطوير الإداري.</li>'
+        benefits: '<li>تنمية معارف وقدرات المتدربين في عمليات ومراحل إدارة المواهب.</li><li>التعرف على أفضل ممارسات إدارة المواهب بمختلف عملياتها.</li><li>تطبيق أساليب تطوير الاحتفاظ بالمواهب بكفاءة وفاعلية.</li>',
+        objectives: '<li>التعرف على مفهوم إدارة المواهب بيسر وسهولة.</li><li>تقييم أداء المواهب وفق أسس علمية دقيقة.</li><li>تطبيق استراتيجيات الاحتفاظ بالكفاءات القيادية.</li>',
+        audience: '<li>مديرو إدارات المواهب والتطوير.</li><li>مسؤولو استقطاب الكفاءات والموارد البشرية.</li>'
+      },
+      'crisis': { 
+        title: 'إدارة المخاطر والكوارث والأزمات', 
+        subtitle: 'الإدارة الاستراتيجية | استجابة فعالة للمتغيرات', 
+        hours: '30 ساعة', 
+        price: '1,500 دولار',
+        benefits: '<li>تمكين المشاركين من تحديد المخاطر المحتملة، تقييمها، وتخفيف أثرها.</li><li>وضع خطط استجابة فعالة للأزمات باستخدام النماذج العلمية الحديثة.</li><li>تنظيم فرق العمل لضمان استجابة منسقة وفعالة أثناء الطوارئ.</li>',
+        objectives: '<li>تطوير خطط استجابة سريعة للأزمات الطارئة.</li><li>التواصل الفعال أثناء إدارة الأزمات وتحقيق القيادة الآمنة.</li><li>تطبيق تقنيات التفكير الإبداعي والحديث لتسهيل إدارة الأزمة.</li>',
+        audience: '<li>مديرو الخط الأول والمشرفون ورؤساء الأقسام.</li><li>أعضاء لجان إدارة الأزمات والطوارئ.</li>'
+      },
+      'quality': { 
+        title: 'إدارة الجودة الشاملة (TQM)', 
+        subtitle: 'الجودة والتميز | معايير الأداء المؤسسي', 
+        hours: '30 ساعة', 
+        price: '1,500 دولار',
+        benefits: '<li>إكساب المتدربين المهارات اللازمة في إدارة الجودة الشاملة بكفاءة وفاعلية.</li><li>التعرف على المعايير الدولية والخطوات الصحيحة للتقييم والتميز.</li><li>تطبيق أدوات الجودة السبع لضبط وتحسين العمليات المستمرة.</li>',
+        objectives: '<li>التعرف على مفاهيم إدارة الجودة الشاملة يسر وسهولة.</li><li>تحديد العناصر الأساسية في إدارة الجودة بدقة وإتقان.</li><li>تطبيق مراحل تطبيق إدارة الجودة في الجهات الحكومية والخاصة.</li>',
+        audience: '<li>مسؤولو قطاع الجودة والتميز المؤسسي.</li><li>موكلو قطاع الإنتاج والخدمات.</li>'
+      },
+      'performance': { 
+        title: 'إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)', 
+        subtitle: 'تقييم الأداء | قياس العائد والإنتاجية', 
+        hours: '30 ساعة', 
+        price: '1,500 دولار',
+        benefits: '<li>اكساب المتدرب مهارات إدارة الأداء الوظيفي باحترافية وكفاءة عالية.</li><li>معرفة طرق تقييم الأداء الوظيفي ومؤشرات القياس الرئيسية.</li><li>ربط نتائج التقييم بخطط التطوير والتحفيز المؤسسي.</li>',
+        objectives: '<li>تخطيط الأداء ووضع المستهدفات الاستراتيجية والتشغيلية.</li><li>تصميم نماذج تقييم أداء موضوعية وفعالة.</li><li>بناء نظام متابعة دوري لتحقيق مستهدفات المنظمة.</li>',
+        audience: '<li>موظفو ومسؤولو الموارد البشرية والمدراء التنفيذيون.</li>'
+      },
+      'relations': { 
+        title: 'إدارة علاقات الموظفين والاتصال الفعال', 
+        subtitle: 'علاقات العمل | بيئة عمل آمنة ومحفزة', 
+        hours: '50 ساعة', 
+        price: '2,100 دولار',
+        benefits: '<li>تنمية مهارات المدربين في إدارة علاقات الموظفين بكفاءة وفاعلية.</li><li>تطوير مهارات الاتصال الفعال والذكاء العاطفي في بيئة العمل.</li><li>إدارة النزاعات والصراعات الوظيفية باحترافية تامة.</li>',
+        objectives: '<li>فهم مفهوم وأهمية إدارة علاقات الموظفين بدقة.</li><li>إدارة النزاع في بيئة العمل باحترافية تامة.</li><li>التعامل الفعال مع ضغوط العمل والمستفيدين بمهارة.</li>',
+        audience: '<li>موظفو الموارد البشرية وعلاقات العمل.</li>'
+      },
+      'meetings': { 
+        title: 'إدارة الاجتماعات الفعالة وصنع القرار', 
+        subtitle: 'المهارات الإدارية | تحسين الإنتاجية الجماعية', 
+        hours: '16 ساعة', 
+        price: '900 دولار',
+        benefits: '<li>إتقان المفاهيم الأساسية لإدارة الاجتماعات الناجحة.</li><li>تنظيم مراحل التخطيط والحضور والتقييم والمتابعة للاجتماعات.</li><li>توظيف أساليب الإدارة الحديثة لتحويل مخرجات الاجتماعات لقرارات تنفيذية.</li>',
+        objectives: '<li>تجنب الهدر الزمني والتشغيلي في الاجتماعات الروتينية.</li><li>تفعيل المشاركة الفعالة للاجتماعات الافتراضية والواقعية.</li>',
+        audience: '<li>القادة ومديرو الإدارات ورؤساء الأقسام.</li>'
       }
     };
 
