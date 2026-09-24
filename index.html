@@ -324,8 +324,15 @@
     }
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    /* شبكة البرامج التدريبية */
-    .tracks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    /* شبكة البرامج التدريبية (في المنتصف وبشكل متناسق فخم) */
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     .track-banner-card {
       position: relative;
       border-radius: 18px;
@@ -382,7 +389,7 @@
       font-weight: 600;
     }
 
-    /* صفحة البروفايل (Brochure View) */
+    /* صفحة البروفايل (Brochure View) بدون زر التحميل المزعج وبشكل متناسق */
     .view-section { display: none; }
     .view-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -511,18 +518,6 @@
       align-items: center;
       gap: 10px;
       box-shadow: 0 4px 15px rgba(4, 120, 87, 0.3);
-    }
-    .btn-download {
-      background: var(--primary);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 800;
-      text-decoration: none;
-      font-size: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .discovery-section {
@@ -669,7 +664,7 @@
             <span>بخبرة إقليمية رائدة</span>
           </h1>
           <p class="hero-desc">
-            حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بمعهد الإدارة العامة بالرياض وعمق أكاديمي متخصص في علم النفس لتشخيص وحل المشكلات التنظيمية.
+            تقديم حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بمملكة العربية السعودية وعمق أكاديمي متخصص في علم النفس لتشخيص وحل المشكلات التنظيمية.
           </p>
           <div class="hero-actions">
             <a href="#tracks" class="btn-primary">برامجنا التدريبية</a>
@@ -689,7 +684,7 @@
           <ul class="founder-stats-list">
             <li>
               <span class="stat-icon">&#10003;</span>
-              <div><strong>عضو هيئة التدريب بمعهد الإدارة العامة بالرياض سابقاً:</strong> لأكثر من 12 عاماً في تدريب القيادات الحكومية والمؤسسية.</div>
+              <div><strong>عضو هيئة التدريب في المملكة العربية السعودية سابقاً:</strong> لأكثر من 12 عاماً في تدريب القيادات الحكومية والمؤسسية.</div>
             </li>
             <li>
               <span class="stat-icon">&#10003;</span>
@@ -708,7 +703,7 @@
       <div class="authority-grid">
         <div class="auth-item">
           <h3>+12</h3>
-          <p>عاماً بمعهد الإدارة العامة بالرياض</p>
+          <p>عاماً في التدريب التنفيذي بالمملكة العربية السعودية</p>
         </div>
         <div class="auth-item">
           <h3>96.83%</h3>
@@ -729,7 +724,7 @@
     <section class="section-container" style="background: #ffffff;">
       <div class="about-company-box">
         <h3>من نحن | FA Consulting & Training</h3>
-        <p>شركة متخصصة في التدريب والاستشارات المؤسسية وتطوير الأعمال؛ تركز على تطوير القيادات، السلوك التنظيمي، بيئة العمل، وإدارة الأزمات. نقدم خبرات تراكمية رفيعة المستوى لمساعدة الشركات على بناء بيئة عمل مستقرة وعالية الإنتاجية تحت إشراف نخبة من الخبراء الأكاديميين والمهنيين.</p>
+        <p>شركة متخصصة في التدريب والاستشارات المؤسسية وتطوير الأعمال؛ تركز على تطوير القيادات، السلوك التنظيمي، بيئة العمل، وإدارة الأزمات. نقدم خبرات تراكمية رفيعة المستوى لمساعدة الشركات في المملكة العربية السعودية على بناء بيئة عمل مستقرة وعالية الإنتاجية تحت إشراف نخبة من الخبراء الأكاديميين والمهنيين.</p>
       </div>
     </section>
 
@@ -795,7 +790,7 @@
         <div class="goal-card">
           <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
           <ul>
-            <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، هيئات اعتماد لمنح شهادات موثقة.</li>
+            <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد في المملكة العربية السعودية لمنح شهادات موثقة.</li>
             <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
             <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
           </ul>
@@ -816,7 +811,7 @@
           <img src="saudi_reception.jpg" alt="المشاركة والمصافحة" class="field-img">
           <div class="field-body">
             <h4>حضور رسمي ومحافل قيادية كبرى</h4>
-            <p>المشاركة الفاعلة في الملتقيات والمؤتمرات الإدارية رفيعة المستوى، وتوجيه الحوارات القيادية حول التحول المؤسسي.</p>
+            <p>المشاركة الفاعلة في الملتقيات والمؤتمرات الإدارية رفيعة المستوى، وتوجيه الحوارات القيادية حول التحول المؤسسي بالمملكة.</p>
           </div>
         </div>
         <div class="field-card">
@@ -871,170 +866,7 @@
       </div>
     </section>
 
-    <!-- جميع برامج المؤسسة (القديمة + الجديدة + السائح) بساعات مضبوطة من 12 إلى 20 ساعة -->
-    <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-      <div class="section-header">
-        <span class="section-label">Professional Programs</span>
-        <h2 class="section-title">برامجنا التدريبية والاستشارية المعتمدة</h2>
-        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) وتفاصيلها الكاملة.</p>
-      </div>
-
-      <div class="tracks-grid">
-        <button type="button" class="track-banner-card" onclick="openBrochure('p1')">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="الاتصال الاستراتيجي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المسار الأول</div>
-            <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('p2')">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="الذكاء العاطفي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المسار الأول</div>
-            <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
-            <div class="track-banner-details">14 ساعة | 1,050 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('p3')">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="ضغوط العمل" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المسار الثاني</div>
-            <div class="track-banner-title">استراتيجيات التعامل مع ضغوط العمل اليومية</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('p4')">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="السلوك التنظيمي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المسار الثالث</div>
-            <div class="track-banner-title">السلوك التنظيمي وانعكاسه على جودة الإنتاج</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('change')">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="إدارة التغيير التنظيمي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">التطوير المؤسسي</div>
-            <div class="track-banner-title">إدارة التغيير التنظيمي</div>
-            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('hr_diversity')">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="إدارة التنوع" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">الموارد البشرية</div>
-            <div class="track-banner-title">إدارة التنوع في الموارد البشرية</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('salary')">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الرواتب" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">التعويضات والحوافز</div>
-            <div class="track-banner-title">إدارة الرواتب والمكافآت والحوافز</div>
-            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('talents')">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="إدارة المواهب" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">تطوير القيادات</div>
-            <div class="track-banner-title">إدارة المواهب والاحتفاظ بالكفاءات</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('crisis')">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="إدارة الأزمات" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">الإدارة الاستراتيجية</div>
-            <div class="track-banner-title">إدارة المخاطر والكوارث والأزمات</div>
-            <div class="track-banner-details">18 ساعة | 1,350 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('quality')">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="الجودة الشاملة" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">الجودة والتميز</div>
-            <div class="track-banner-title">إدارة الجودة الشاملة (TQM)</div>
-            <div class="track-banner-details">18 ساعة | 1,350 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('performance')">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="الأداء الوظيفي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">تقييم الأداء</div>
-            <div class="track-banner-title">إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('relations')">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="علاقات الموظفين" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">علاقات العمل</div>
-            <div class="track-banner-title">إدارة علاقات الموظفين والاتصال الفعال</div>
-            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('meetings')">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الاجتماعات" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المهارات الإدارية</div>
-            <div class="track-banner-title">إدارة الاجتماعات الفعالة وصنع القرار</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('tourist')">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="خدمة السياح" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">الخدمات والضيافة</div>
-            <div class="track-banner-title">كيفية التعامل مع السائح وتقديم خدمة استثنائية</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة</div>
-          </div>
-        </button>
-      </div>
-
-      <div class="discovery-section" id="discovery">
-        <div>
-          <span class="discovery-badge">مبادرة الشراكة المؤسسية</span>
-          <h3>احجز جلسة تشخيص مؤسسي مجانية</h3>
-          <p>جلسة استكشافية لمدة 60 دقيقة مع المستشار التنفيذي لتحديد احتياجات فريقكم التدريبية والتطويرية.</p>
-        </div>
-        <div class="discovery-action-box">
-          <h4 style="color:#fff; margin-bottom:10px;">تواصل مباشر مع الإدارة</h4>
-          <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-booking">احجز جلستك الآن عبر واتساب</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- الشهادات المهنية المعتمدة -->
+    <!-- الشهادات المهنية -->
     <section class="accred-section" id="certificates">
       <div class="accred-wrapper">
         <div class="accred-content">
@@ -1066,10 +898,173 @@
       </div>
     </section>
 
+    <!-- قائمة جميع البرامج التدريبية والاستشارية (في المنتصف) -->
+    <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+      <div class="section-header">
+        <span class="section-label">Professional Programs</span>
+        <h2 class="section-title">برامجنا التدريبية والاستشارية المعتمدة</h2>
+        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض تفاصيله الكاملة والالتحاق به.</p>
+      </div>
+
+      <div class="tracks-grid">
+        <button type="button" class="track-banner-card" onclick="openBrochure('p1')">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="الاتصال الاستراتيجي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الأول</div>
+            <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('p2')">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="الذكاء العاطفي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الأول</div>
+            <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
+            <div class="track-banner-details">14 ساعة | 1,050 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('p3')">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="ضغوط العمل" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الثاني</div>
+            <div class="track-banner-title">استراتيجيات التعامل مع ضغوط العمل اليومية</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('p4')">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="السلوك التنظيمي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الثالث</div>
+            <div class="track-banner-title">السلوك التنظيمي وانعكاسه على جودة الإنتاج</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('change')">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="إدارة التغيير التنظيمي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">التطوير المؤسسي</div>
+            <div class="track-banner-title">إدارة التغيير التنظيمي</div>
+            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('hr_diversity')">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="إدارة التنوع" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">الموارد البشرية</div>
+            <div class="track-banner-title">إدارة التنوع في الموارد البشرية</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('salary')">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الرواتب" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">التعويضات والحوافز</div>
+            <div class="track-banner-title">إدارة الرواتب والمكافآت والحوافز</div>
+            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('talents')">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="إدارة المواهب" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">تطوير القيادات</div>
+            <div class="track-banner-title">إدارة المواهب والاحتفاظ بالكفاءات</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('crisis')">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="إدارة الأزمات" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">الإدارة الاستراتيجية</div>
+            <div class="track-banner-title">إدارة المخاطر والكوارث والأزمات</div>
+            <div class="track-banner-details">18 ساعة | 1,350 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('quality')">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="الجودة الشاملة" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">الجودة والتميز</div>
+            <div class="track-banner-title">إدارة الجودة الشاملة (TQM)</div>
+            <div class="track-banner-details">18 ساعة | 1,350 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('performance')">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="الأداء الوظيفي" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">تقييم الأداء</div>
+            <div class="track-banner-title">إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('relations')">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="علاقات الموظفين" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">علاقات العمل</div>
+            <div class="track-banner-title">إدارة علاقات الموظفين والاتصال الفعال</div>
+            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('meetings')">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الاجتماعات" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المهارات الإدارية</div>
+            <div class="track-banner-title">إدارة الاجتماعات الفعالة وصنع القرار</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+
+        <button type="button" class="track-banner-card" onclick="openBrochure('tourist')">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="خدمة السياح" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">الخدمات والضيافة</div>
+            <div class="track-banner-title">كيفية التعامل مع السائح وتقديم خدمة استثنائية</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض التفاصيل</div>
+          </div>
+        </button>
+      </div>
+
+      <div class="discovery-section" id="discovery">
+        <div>
+          <span class="discovery-badge">مبادرة الشراكة المؤسسية</span>
+          <h3>احجز جلسة تشخيص مؤسسي مجانية</h3>
+          <p>جلسة استكشافية لمدة 60 دقيقة مع المستشار التنفيذي لتحديد احتياجات فريقكم التدريبية والتطويرية.</p>
+        </div>
+        <div class="discovery-action-box">
+          <h4 style="color:#fff; margin-bottom:10px;">تواصل مباشر مع الإدارة</h4>
+          <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-booking">احجز جلستك الآن عبر واتساب</a>
+        </div>
+      </div>
+    </section>
+
   </div>
 
 
-  <!-- صفحة ملف الدورة المستقلة لكل برنامج (Brochure View) -->
+  <!-- صفحة تفاصيل الدورة (Brochure View) -->
   <div id="brochure-view" class="view-section">
     <div class="section-container">
       <button type="button" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والبرامج</button>
@@ -1135,7 +1130,6 @@
 
         <div class="brochure-actions">
           <a id="btn-order-bottom" href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
-          <a href="https://wa.me/201271221780?text=أرغب%20في%20طلب%20ملف%20الدورة%20PDF" target="_blank" class="btn-download">📥 طلب ملف الدورة (PDF)</a>
         </div>
       </div>
     </div>
