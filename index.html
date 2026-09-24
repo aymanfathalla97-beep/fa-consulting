@@ -324,7 +324,7 @@
     }
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    /* بطاقات المسارات الرئيسية */
+    /* بطاقات المسارات */
     .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; }
     .track-banner-card {
       position: relative;
@@ -378,7 +378,7 @@
       font-weight: 600;
     }
 
-    /* نظام عرض صفحة تفاصيل الدورة (عند الضغط على الدورة) */
+    /* عرض صفحة تفاصيل الدورة (Brochure View المماثل لموقع الطويل) */
     .view-section { display: none; }
     .view-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -395,49 +395,88 @@
       text-decoration: none;
       margin-bottom: 30px;
       font-size: 14px;
-      box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2);
     }
     .back-btn:hover { background: var(--primary-light); }
 
-    .course-details-card {
+    .brochure-card {
       background: var(--white);
       border: 1px solid var(--border-color);
       border-radius: 20px;
-      padding: 45px;
+      padding: 50px;
       box-shadow: var(--card-shadow);
       margin-top: 20px;
     }
-    .course-title-main { font-size: 28px; font-weight: 900; color: var(--primary); margin-bottom: 15px; }
-    .course-desc-main { font-size: 16px; color: #475569; line-height: 1.9; margin-bottom: 35px; }
-
-    .course-info-box {
-      background: #f8fafc;
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 25px;
+    .brochure-header {
+      border-bottom: 2px solid var(--accent-gold);
+      padding-bottom: 25px;
       margin-bottom: 35px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
       gap: 20px;
-      text-align: center;
     }
-    .info-item .label { font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 5px; display: block; }
-    .info-item .val { font-size: 18px; color: var(--primary); font-weight: 800; }
-    .info-item .price-val { color: #047857; font-size: 22px; font-weight: 900; }
-    .info-item .price-val span { font-size: 12px; color: #6b7280; font-weight: 600; display: block; }
+    .brochure-title { font-size: 30px; font-weight: 900; color: var(--primary); }
+    .brochure-subtitle { font-size: 15px; color: var(--text-muted); font-weight: 600; margin-top: 6px; }
 
-    .course-section-heading { font-size: 20px; font-weight: 800; color: var(--primary); margin: 30px 0 15px; border-right: 4px solid var(--accent-gold); padding-right: 12px; }
-    .course-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
-    .course-list li { font-size: 15px; color: #475569; position: relative; padding-right: 20px; line-height: 1.7; }
-    .course-list li::before { content: "✓"; position: absolute; right: 0; color: #047857; font-weight: bold; }
+    .brochure-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 35px;
+    }
+    .brochure-section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-right: 4px solid var(--accent-gold);
+      padding-right: 10px;
+    }
+    .brochure-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .brochure-list li { font-size: 14.5px; color: #475569; position: relative; padding-right: 18px; line-height: 1.7; }
+    .brochure-list li::before { content: "▪"; position: absolute; right: 0; color: var(--accent-gold); font-size: 14px; }
 
-    .course-actions-bar {
+    /* جدول المواعيد والأسعار مثل موقع الطويل */
+    .pricing-table-container {
+      margin-top: 40px;
+      overflow-x: auto;
+    }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      background: #f8fafc;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+    .pricing-table th {
+      background: var(--primary);
+      color: var(--white);
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .pricing-table td {
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #334155;
+      border-bottom: 1px solid var(--border-color);
+      font-weight: 600;
+    }
+    .pricing-table tr:last-child td { border-bottom: none; }
+
+    .brochure-actions {
       display: flex;
       gap: 15px;
-      margin-top: 40px;
+      margin-top: 45px;
       flex-wrap: wrap;
     }
-    .btn-cart {
+    .btn-register {
       background: #047857;
       color: white;
       padding: 14px 28px;
@@ -450,7 +489,7 @@
       gap: 10px;
       box-shadow: 0 4px 15px rgba(4, 120, 87, 0.3);
     }
-    .btn-brochure {
+    .btn-download {
       background: var(--primary);
       color: white;
       padding: 14px 28px;
@@ -562,7 +601,7 @@
     .footer-bottom { max-width: 1320px; margin: 0 auto; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 12.5px; }
 
     @media (max-width: 992px) {
-      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .course-info-box, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
+      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .brochure-grid-2, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
       .authority-grid { grid-template-columns: repeat(2, 1fr); }
       .hero h1 { font-size: 30px; }
       .nav-links { display: none; }
@@ -811,67 +850,54 @@
       </div>
     </section>
 
-    <!-- المسارات التدريبية (عند الضغط على أي دورة تفتح صفحتها المستقلة) -->
+    <!-- المسارات التدريبية الرئيسية -->
     <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
       <div class="section-header">
         <span class="section-label">Professional Programs</span>
         <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
-        <p class="section-desc">اضغط على أي برنامج أدناه لعرض تفاصيله الكاملة، سعره، واستعراض بروفايل الدورة.</p>
+        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) وتفاصيلها الكاملة.</p>
       </div>
 
-      <!-- قائمة الدورات التدريبية الـ 15 الموزعة على 4 مسارات -->
-      <div style="display: flex; flex-direction: column; gap: 40px;">
-        
-        <!-- مسار 1 -->
-        <div>
-          <h3 style="font-size: 20px; font-weight: 800; color: var(--primary); margin-bottom: 20px; border-right: 4px solid var(--accent-gold); padding-right: 10px;">المسار الأول: مهارات الاتصال الفعال والذكاء العاطفي</h3>
-          <div class="tracks-grid">
-            <div class="track-banner-card" onclick="openCourse('c1')">
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="دورة 1" class="track-banner-bg">
-              <div class="track-banner-overlay"></div>
-              <div class="track-banner-content">
-                <div class="track-banner-num">البرنامج الأول</div>
-                <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي الفعال</div>
-                <div class="track-banner-details">16 ساعة | $1,200 (أو ما يعادله) | عرض التفاصيل</div>
-              </div>
-            </div>
-            <div class="track-banner-card" onclick="openCourse('c2')">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="دورة 2" class="track-banner-bg">
-              <div class="track-banner-overlay"></div>
-              <div class="track-banner-content">
-                <div class="track-banner-num">البرنامج الثاني</div>
-                <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
-                <div class="track-banner-details">12 ساعة | $950 (أو ما يعادله) | عرض التفاصيل</div>
-              </div>
-            </div>
+      <div class="tracks-grid">
+        <div class="track-banner-card" onclick="openBrochure('p1')">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="برنامج 1" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الأول</div>
+            <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي الفعال</div>
+            <div class="track-banner-details">16 ساعة | $1,200 | عرض ملف الدورة (Brochure)</div>
           </div>
         </div>
 
-        <!-- مسار 2 -->
-        <div>
-          <h3 style="font-size: 20px; font-weight: 800; color: var(--primary); margin-bottom: 20px; border-right: 4px solid var(--accent-gold); padding-right: 10px;">المسار الثاني: التعامل مع ضغوط العمل وإدارة الأزمات</h3>
-          <div class="tracks-grid">
-            <div class="track-banner-card" onclick="openCourse('c3')">
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="دورة 3" class="track-banner-bg">
-              <div class="track-banner-overlay"></div>
-              <div class="track-banner-content">
-                <div class="track-banner-num">البرنامج الثالث</div>
-                <div class="track-banner-title">استراتيجيات التعامل الفعال مع ضغوط العمل اليومية</div>
-                <div class="track-banner-details">12 ساعة | $950 (أو ما يعادله) | عرض التفاصيل</div>
-              </div>
-            </div>
-            <div class="track-banner-card" onclick="openCourse('c4')">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="دورة 4" class="track-banner-bg">
-              <div class="track-banner-overlay"></div>
-              <div class="track-banner-content">
-                <div class="track-banner-num">البرنامج الرابع</div>
-                <div class="track-banner-title">المرونة النفسية التنظيمية وإدارة الأزمات الطارئة</div>
-                <div class="track-banner-details">12 ساعة | $950 (أو ما يعادله) | عرض التفاصيل</div>
-              </div>
-            </div>
+        <div class="track-banner-card" onclick="openBrochure('p2')">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="برنامج 2" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الثاني</div>
+            <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
+            <div class="track-banner-details">12 ساعة | $950 | عرض ملف الدورة (Brochure)</div>
           </div>
         </div>
 
+        <div class="track-banner-card" onclick="openBrochure('p3')">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="برنامج 3" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الثالث</div>
+            <div class="track-banner-title">استراتيجيات التعامل الفعال مع ضغوط العمل اليومية</div>
+            <div class="track-banner-details">12 ساعة | $950 | عرض ملف الدورة (Brochure)</div>
+          </div>
+        </div>
+
+        <div class="track-banner-card" onclick="openBrochure('p4')">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="برنامج 4" class="track-banner-bg">
+          <div class="track-banner-overlay"></div>
+          <div class="track-banner-content">
+            <div class="track-banner-num">المسار الرابع</div>
+            <div class="track-banner-title">السلوك التنظيمي وانعكاسه على جودة الإنتاج</div>
+            <div class="track-banner-details">16 ساعة | $1,200 | عرض ملف الدورة (Brochure)</div>
+          </div>
+        </div>
       </div>
 
       <!-- جلسة التشخيص -->
@@ -923,46 +949,86 @@
   </div> <!-- نهاية الصفحة الرئيسية -->
 
 
-  <!-- صفحة تفاصيل الدورة المنفصلة (Course Details View) -->
-  <div id="course-view" class="view-section">
+  <!-- صفحة ملف الدورة (Brochure View المماثل لموقع الطويل) -->
+  <div id="brochure-view" class="view-section">
     <div class="section-container">
       <a href="#" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والمسارات</a>
       
-      <div class="course-details-card">
-        <h2 id="det-title" class="course-title-main">عنوان البرنامج التدريبي</h2>
-        <p id="det-desc" class="course-desc-main">وصف تفصيلي واحترافي للبرنامج يوضح القيمة المضافة لمدير الـ HR والمؤسسة المستفيدة.</p>
-
-        <div class="course-info-box">
-          <div class="info-item">
-            <span class="label">مدة البرنامج</span>
-            <span id="det-hours" class="val">16 ساعة</span>
+      <div class="brochure-card">
+        <div class="brochure-header">
+          <div>
+            <h2 id="b-title" class="brochure-title">عنوان البرنامج التدريبي التنفيذي</h2>
+            <div id="b-subtitle" class="brochure-subtitle">تصنيف البرنامج ومدة التنفيذ</div>
           </div>
-          <div class="info-item">
-            <span class="label">نمط التدريب</span>
-            <span id="det-mode" class="val">حضوري أو عن بُعد (Interactive)</span>
-          </div>
-          <div class="info-item">
-            <span class="label">الرسوم الاستثمارية</span>
-            <span id="det-price" class="val price-val">$1,200 <span>أو ما يعادله بالعملة المحلية</span></span>
+          <div>
+            <a href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج%20التدريبي" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج</a>
           </div>
         </div>
 
-        <div class="course-section-heading">ماذا ستحقق مؤسستكم من البرنامج؟</div>
-        <ul class="course-list">
-          <li>تمكين القيادات العليا والفريق من اكتساب أدوات عملية قابلة للتطبيق الفوري.</li>
-          <li>حل المشكلات التنظيمية ورفع معدلات الإنتاجية والأداء المستدام.</li>
-          <li>تقييم أداء شامل قبل وبعد البرنامج مع تقديم تقرير ختامى للجهة.</li>
-        </ul>
+        <div class="brochure-grid-2">
+          <div>
+            <div class="brochure-section-title">ماذا ستحقق مؤسستكم؟ (Benefits)</div>
+            <ul class="brochure-list">
+              <li>اكتساب مهارات تحليلية وتطبيقية متقدمة لرفع كفاءة العمل اليومي.</li>
+              <li>تعلم كيفية كتابة وصياغة تقارير مهنية واحترافية لمجالس الإدارة.</li>
+              <li>تحسين القدرة على التواصل الفعال وإدارة صراعات بيئة العمل.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="brochure-section-title">أهداف البرنامج التدريبي (Objectives)</div>
+            <ul class="brochure-list">
+              <li>تطوير الكفاءات القيادية وتمكينهم من أدوات التفكير الاستراتيجي.</li>
+              <li>تعلم تقنيات عرض البيانات بشكل جذاب ومؤثر أمام كبار المسؤولين.</li>
+              <li>بناء بيئة عمل مستقرة وعالية الإنتاجية تدعم أهداف المنظمة.</li>
+            </ul>
+          </div>
+        </div>
 
-        <div class="course-section-heading">أهداف البرنامج التدريبي:</div>
-        <ul class="course-list">
-          <li>فهم عميق لأحدث المنهجيات الإدارية والسلوكية المرتبطة بجودة بيئة العمل.</li>
-          <li>إدارة صراعات العمل وتحويلها إلى فرص تطور وتحفيز جماعي.</li>
-        </ul>
+        <div class="brochure-grid-2">
+          <div>
+            <div class="brochure-section-title">الفئة المستهدفة (Target Audience)</div>
+            <ul class="brochure-list">
+              <li>مديرو الإدارات العليا ورؤساء الأقسام التنفيذية.</li>
+              <li>المسؤولون والمختصون في أقسام الموارد البشرية (HR).</li>
+              <li>القيادات الصاعدة والكفاءات المرشحة لتولي مناصب إشرافية.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="brochure-section-title">منهجية الدورة التدريبية (Methodology)</div>
+            <ul class="brochure-list">
+              <li>الحالات الدراسية والعملية الواقعية المستمدة من كبرى المؤسسات.</li>
+              <li>ورش عمل تفاعلية وجلسات عصف ذهني لحل مشكلات المنظمة.</li>
+              <li>التعلم التجريبي والتقييم المستمر للأداء قبل وبعد البرنامج.</li>
+            </ul>
+          </div>
+        </div>
 
-        <div class="course-actions-bar">
-          <a href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20وتسجيل%20البرنامج%20التدريبي" target="_blank" class="btn-cart">🛒 حجز وتسجيل البرنامج (عبر واتساب الإدارة)</a>
-          <a href="#discovery" class="btn-brochure" onclick="switchView('home')">📥 احصل على ملف البرنامج (Brochure)</a>
+        <!-- جدول المواعيد والأسعار مثل موقع الطويل -->
+        <div class="pricing-table-container">
+          <div class="brochure-section-title" style="margin-bottom: 15px;">معلومات الدورة والرسوم الاستثمارية</div>
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>المدة الساعاتية</th>
+                <th>نمط التدريب</th>
+                <th>اللغة</th>
+                <th>الرسوم (USD)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="t-hours">16 ساعة</td>
+                <td>حضوري أو تفاعلي عن بُعد (Interactive)</td>
+                <td>اللغة العربية / الإنجليزية</td>
+                <td id="t-price" style="color: #047857; font-weight: 800;">$1,200 (أو ما يعادله بالعملة المحلية)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="brochure-actions">
+          <a href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج%20التدريبي" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
+          <a href="#" onclick="alert('تم تجهيز ملف البروفايل (Brochure) للتنزيل الفوري.'); return false;" class="btn-download">📥 احصل على ملف الدورة (PDF)</a>
         </div>
       </div>
     </div>
@@ -993,37 +1059,36 @@
     </div>
   </footer>
 
-  <!-- سكربت التحكم في الصفحات المستقلة وتفاصيل الدورات -->
+  <!-- سكربت التحكم في صفحات البروفايل (Brochure) -->
   <script>
-    const coursesData = {
-      'c1': { title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', hours: '16 ساعة', mode: 'حضوري أو عن بُعد', price: '$1,200', desc: 'برنامج تنفيذي متقدم يركز على تمكين صناع القرار من أدوات الاتصال الحديثة، بناء جسور الثقة المؤسسية، وتوجيه الحوارات القيادية نحو أهداف المنظمة بكفاءة عالية.' },
-      'c2': { title: 'الذكاء العاطفي والاجتماعي لصناع القرار', hours: '12 ساعة', mode: 'حضوري أو عن بُعد', price: '$950', desc: 'يستهدف هذا البرنامج تنمية الوعي الذاتي والاجتماعي للقادة، وإدارة الانفعالات وسط ضغوط العمل المؤسسي لخلق بيئة عمل متوازنة.' },
-      'c3': { title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', hours: '12 ساعة', mode: 'حضوري أو عن بُعد', price: '$950', desc: 'تزويد الفرق القيادية بآليات علمية وعملية لإدارة ضغوط العمل المتراكمة، وتقليل معدلات الاحتراق الوظيفي، واستعادة أعلى مستويات الطاقة الإنتاجية.' },
-      'c4': { title: 'المرونة النفسية التنظيمية وإدارة الأزمات الطارئة', hours: '12 ساعة', mode: 'حضوري أو عن بُعد', price: '$950', desc: 'برنامج مخصص لتمكين الشركات من امتلاك مناعة مؤسسية ومرونة عالية في مواجهة التغيرات السوقية المفاجئة وصراعات بيئة العمل.' }
+    const brochureData = {
+      'p1': { title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', hours: '16 ساعة تدريبية', price: '$1,200 (أو ما يعادله بالعملة المحلية)' },
+      'p2': { title: 'الذكاء العاطفي والاجتماعي لصناع القرار', subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', hours: '12 ساعة تدريبية', price: '$950 (أو ما يعادله بالعملة المحلية)' },
+      'p3': { title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', hours: '12 ساعة تدريبية', price: '$950 (أو ما يعادله بالعملة المحلية)' },
+      'p4': { title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', hours: '16 ساعة تدريبية', price: '$1,200 (أو ما يعادله بالعملة المحلية)' }
     };
 
     function switchView(viewName) {
       const homeView = document.getElementById('home-view');
-      const courseView = document.getElementById('course-view');
+      const brochureView = document.getElementById('brochure-view');
 
       if (viewName === 'home') {
-        courseView.classList.remove('active');
+        brochureView.classList.remove('active');
         homeView.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
-    function openCourse(courseId) {
-      const course = coursesData[courseId];
+    function openBrochure(courseId) {
+      const course = brochureData[courseId];
       if (course) {
-        document.getElementById('det-title').innerText = course.title;
-        document.getElementById('det-desc').innerText = course.desc;
-        document.getElementById('det-hours').innerText = course.hours;
-        document.getElementById('det-mode').innerText = course.mode;
-        document.getElementById('det-price').innerHTML = course.price + ' <span>أو ما يعادله بالعملة المحلية</span>';
+        document.getElementById('b-title').innerText = course.title;
+        document.getElementById('b-subtitle').innerText = course.subtitle;
+        document.getElementById('t-hours').innerText = course.hours;
+        document.getElementById('t-price').innerText = course.price;
 
         document.getElementById('home-view').classList.remove('active');
-        document.getElementById('course-view').classList.add('active');
+        document.getElementById('brochure-view').classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
