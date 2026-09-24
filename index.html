@@ -7,690 +7,94 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0a192f;
-      --primary-light: #112240;
-      --accent-gold: #c59b27;
-      --accent-gold-light: #e5b842;
-      --text-dark: #0f172a;
-      --text-muted: #64748b;
-      --bg-light: #f8fafc;
-      --white: #ffffff;
-      --border-color: #e2e8f0;
-      --card-shadow: 0 15px 35px -10px rgba(2, 12, 27, 0.06);
-      --card-shadow-hover: 0 25px 50px -15px rgba(2, 12, 27, 0.12);
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js Framework CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            cinzel: ['Cinzel', 'serif'],
+          },
+          colors: {
+            primary: '#0a192f',
+            'primary-light': '#112240',
+            gold: '#c59b27',
+            'gold-light': '#e5b842',
+          }
+        }
+      }
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.9; font-size: 16px; }
-    
-    header {
-      background: rgba(10, 25, 47, 0.98);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-    }
-    .nav-container {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 18px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      text-decoration: none;
-    }
-    .logo-box {
-      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-      color: #071220;
-      font-family: 'Cinzel', serif;
-      font-weight: 900;
-      font-size: 18px;
-      width: 46px;
-      height: 46px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);
-    }
-    .logo-block { display: flex; flex-direction: column; }
-    .logo-title {
-      font-family: 'Cinzel', serif;
-      font-size: 21px;
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: 1px;
-      line-height: 1.1;
-    }
-    .logo-title span { color: var(--accent-gold); }
-    .logo-subtitle {
-      font-size: 9.5px;
-      font-weight: 600;
-      color: #94a3b8;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-      align-items: center;
-    }
-    .nav-links a {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-size: 14.5px;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent-gold-light); }
-    .btn-header {
-      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-      color: #0a192f;
-      padding: 11px 22px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 14px;
-      box-shadow: 0 4px 12px rgba(197, 155, 39, 0.2);
-    }
-
-    .hero {
-      background: radial-gradient(circle at 80% 20%, #1e3a5f 0%, #0a192f 65%, #050c18 100%);
-      color: var(--white);
-      padding: 110px 24px 120px;
-    }
-    .hero-wrapper {
-      max-width: 1320px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .hero-tag {
-      display: inline-flex;
-      background: rgba(197, 155, 39, 0.12);
-      border: 1px solid rgba(197, 155, 39, 0.35);
-      color: var(--accent-gold-light);
-      padding: 8px 18px;
-      border-radius: 30px;
-      font-size: 13.5px;
-      font-weight: 700;
-      margin-bottom: 28px;
-    }
-    .hero h1 {
-      font-size: 42px;
-      line-height: 1.35;
-      font-weight: 900;
-      margin-bottom: 24px;
-    }
-    .hero h1 span {
-      background: linear-gradient(135deg, #ffffff 40%, var(--accent-gold-light) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-desc {
-      font-size: 16.5px;
-      color: #94a3b8;
-      line-height: 1.9;
-      margin-bottom: 40px;
-    }
-    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-      color: #071220;
-      padding: 15px 30px;
-      border-radius: 10px;
-      font-size: 15.5px;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 8px 25px rgba(197, 155, 39, 0.3);
-    }
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--white);
-      padding: 15px 26px;
-      border-radius: 10px;
-      font-size: 15.5px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    
-    .founder-card {
-      background: rgba(17, 34, 64, 0.75);
-      border: 1px solid rgba(197, 155, 39, 0.3);
-      border-radius: 20px;
-      padding: 34px 28px;
-      backdrop-filter: blur(16px);
-      position: relative;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-    }
-    .founder-badge-top {
-      position: absolute;
-      top: -14px;
-      right: 28px;
-      background: var(--accent-gold);
-      color: #071220;
-      font-size: 11.5px;
-      font-weight: 800;
-      padding: 4px 14px;
-      border-radius: 20px;
-    }
-    .founder-header {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 20px;
-      margin-bottom: 20px;
-    }
-    .founder-avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: top center;
-      border: 2px solid var(--accent-gold);
-      box-shadow: 0 0 18px rgba(197, 155, 39, 0.35);
-      flex-shrink: 0;
-    }
-    .founder-name { font-size: 21px; font-weight: 800; color: #ffffff; }
-    .founder-tagline { font-size: 12.5px; color: var(--accent-gold-light); font-weight: 600; }
-    .founder-stats-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .founder-stats-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: #cbd5e1; line-height: 1.7; }
-    .stat-icon { color: var(--accent-gold); font-weight: bold; font-size: 16px; }
-    
-    .authority-bar {
-      background: var(--primary-light);
-      padding: 40px 24px;
-      color: var(--white);
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    .authority-grid {
-      max-width: 1320px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      text-align: center;
-    }
-    .auth-item h3 { font-family: 'Cinzel', serif; font-size: 36px; color: var(--accent-gold-light); font-weight: 900; }
-    .auth-item p { font-size: 13.5px; color: #94a3b8; font-weight: 600; margin-top: 6px; }
-    
-    .section-container { max-width: 1320px; margin: 0 auto; padding: 100px 24px; }
-    .section-header { text-align: center; max-width: 820px; margin: 0 auto 60px; }
-    .section-label { font-size: 13px; font-weight: 800; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 10px; display: block; letter-spacing: 1.5px; }
-    .section-title { font-size: 36px; font-weight: 900; color: var(--primary); margin-bottom: 16px; line-height: 1.3; }
-    .section-desc { font-size: 16.5px; color: var(--text-muted); line-height: 1.8; }
-    
-    .about-company-box {
-      background: #f8fafc;
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 50px;
-      margin-bottom: 40px;
-      box-shadow: var(--card-shadow);
-    }
-    .about-company-box h3 { font-size: 24px; color: var(--primary); margin-bottom: 20px; font-weight: 800; }
-    .about-company-box p { font-size: 16px; color: #475569; line-height: 1.9; }
-
-    .b2b-value-section {
-      background: linear-gradient(135deg, #0a192f, #112240);
-      color: #fff;
-      padding: 80px 40px;
-      border-radius: 20px;
-      margin: 60px 0;
-      border: 1px solid rgba(197, 155, 39, 0.3);
-      box-shadow: 0 20px 40px rgba(2, 12, 27, 0.2);
-    }
-    .b2b-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 1150px;
-      margin: 40px auto 0;
-    }
-    .b2b-item {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 24px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 15.5px;
-      font-weight: 700;
-    }
-    .b2b-icon { color: var(--accent-gold); font-size: 22px; }
-
-    .goals-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .goal-card {
-      background: var(--white);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 34px;
-      box-shadow: var(--card-shadow);
-      border-right: 5px solid var(--accent-gold);
-    }
-    .goal-card h3 { font-size: 19px; font-weight: 800; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-    .goal-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .goal-card ul li { font-size: 14.5px; color: #475569; position: relative; padding-right: 20px; line-height: 1.7; }
-    .goal-card ul li::before { content: "▪"; position: absolute; right: 0; color: var(--accent-gold); font-size: 16px; }
-
-    .field-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); }
-    .field-img { width: 100%; height: 240px; object-fit: cover; display: block; }
-    .field-body { padding: 26px; }
-    .field-body h4 { font-size: 17px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
-    .field-body p { font-size: 14px; color: #475569; line-height: 1.8; }
-
-    .eval-box {
-      background: #0a192f;
-      color: #fff;
-      border-radius: 20px;
-      padding: 45px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: stretch;
-      border: 1px solid rgba(197, 155, 39, 0.3);
-    }
-    .eval-column {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: rgba(255,255,255,0.04);
-      padding: 28px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .eval-score { font-size: 46px; font-weight: 900; color: var(--accent-gold-light); font-family: 'Montserrat', sans-serif; line-height: 1; }
-    .eval-img-wrapper, .testimonial-img-wrapper {
-      width: 100%; height: 210px; border-radius: 10px; overflow: hidden; margin-top: 18px; background: #050c18; border: 1px solid rgba(255,255,255,0.1);
-    }
-    .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
-
-    /* شبكة البرامج (في المنتصف وبشكل متناسق) */
-    .tracks-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .track-banner-card {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-      height: 280px;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      text-decoration: none;
-      cursor: pointer;
-      background: none;
-      border: none;
-      text-align: right;
-      width: 100%;
-    }
-    .track-banner-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--card-shadow-hover);
-    }
-    .track-banner-bg {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover;
-      z-index: 1;
-      filter: brightness(0.55);
-      transition: transform 0.5s ease;
-    }
-    .track-banner-card:hover .track-banner-bg { transform: scale(1.05); }
-    .track-banner-overlay {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(180deg, rgba(10,25,47,0.1) 20%, rgba(10,25,47,0.92) 90%);
-      z-index: 2;
-    }
-    .track-banner-content {
-      position: relative;
-      z-index: 3;
-      padding: 24px;
-      color: #fff;
-      width: 100%;
-    }
-    .track-banner-num { font-size: 11px; font-weight: 800; color: var(--accent-gold-light); text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1px; }
-    .track-banner-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
-    .track-banner-details {
-      font-size: 13px;
-      color: #cbd5e1;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(5px);
-      padding: 6px 12px;
-      border-radius: 6px;
-      display: inline-block;
-      font-weight: 600;
-    }
-
-    /* صفحة البروفايل (Brochure View) */
-    .view-section { display: none; }
-    .view-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary);
-      color: var(--white);
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      margin-bottom: 30px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-    }
-    .back-btn:hover { background: var(--primary-light); }
-
-    .brochure-card {
-      background: var(--white);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 50px;
-      box-shadow: var(--card-shadow);
-      margin-top: 20px;
-    }
-    .brochure-header {
-      border-bottom: 2px solid var(--accent-gold);
-      padding-bottom: 25px;
-      margin-bottom: 35px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .brochure-title { font-size: 28px; font-weight: 900; color: var(--primary); }
-    .brochure-subtitle { font-size: 15px; color: var(--text-muted); font-weight: 600; margin-top: 6px; }
-
-    .brochure-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-bottom: 30px;
-      background: #f8fafc;
-      padding: 24px;
-      border-radius: 14px;
-      border: 1px solid var(--border-color);
-    }
-    .brochure-col-box h4 {
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 12px;
-      border-right: 4px solid var(--accent-gold);
-      padding-right: 10px;
-    }
-    .brochure-col-box ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .brochure-col-box ul li {
-      font-size: 14px;
-      color: #475569;
-      position: relative;
-      padding-right: 18px;
-      line-height: 1.7;
-    }
-    .brochure-col-box ul li::before {
-      content: "▪";
-      position: absolute;
-      right: 0;
-      color: var(--accent-gold);
-      font-size: 14px;
-    }
-
-    .pricing-table-container {
-      margin-top: 40px;
-      width: 100%;
-    }
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
-      background: #f8fafc;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-    }
-    .pricing-table th {
-      background: var(--primary);
-      color: var(--white);
-      padding: 14px 12px;
-      font-size: 13.5px;
-      font-weight: 700;
-    }
-    .pricing-table td {
-      padding: 14px 12px;
-      font-size: 14px;
-      color: #334155;
-      border-bottom: 1px solid var(--border-color);
-      font-weight: 600;
-    }
-    .pricing-table tr:last-child td { border-bottom: none; }
-
-    .brochure-actions {
-      display: flex;
-      gap: 15px;
-      margin-top: 45px;
-      flex-wrap: wrap;
-    }
-    .btn-register {
-      background: #047857;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 800;
-      text-decoration: none;
-      font-size: 15px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 15px rgba(4, 120, 87, 0.3);
-    }
-
-    .discovery-section {
-      background: linear-gradient(135deg, #0a192f 0%, #162a45 100%);
-      color: var(--white);
-      border-radius: 20px;
-      padding: 55px 40px;
-      border: 1px solid rgba(197, 155, 39, 0.3);
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 40px;
-      align-items: center;
-      margin-top: 60px;
-    }
-    .discovery-badge {
-      background: rgba(197, 155, 39, 0.2);
-      color: var(--accent-gold-light);
-      border: 1px solid rgba(197, 155, 39, 0.4);
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 12.5px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-    .discovery-section h3 { font-size: 26px; font-weight: 900; margin-bottom: 14px; }
-    .discovery-section p { font-size: 15px; color: #cbd5e1; line-height: 1.8; margin-bottom: 22px; }
-    .discovery-action-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 28px;
-      border-radius: 16px;
-      text-align: center;
-    }
-    .btn-booking {
-      display: block;
-      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-      color: #071220;
-      padding: 14px 20px;
-      border-radius: 10px;
-      font-weight: 800;
-      text-decoration: none;
-      font-size: 15px;
-    }
-    
-    .accred-section {
-      background: var(--bg-light);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      padding: 100px 24px;
-    }
-    .accred-wrapper {
-      max-width: 1320px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .accred-content h2 { font-size: 32px; font-weight: 900; color: var(--primary); margin-bottom: 18px; }
-    .accred-content p { font-size: 16px; color: var(--text-muted); line-height: 1.9; margin-bottom: 26px; }
-    .accred-points { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .accred-points li { display: flex; gap: 12px; font-size: 14.5px; color: var(--text-dark); font-weight: 600; }
-    
-    .cert-mockup {
-      background: var(--white);
-      border: 8px double var(--primary);
-      border-radius: 16px;
-      padding: 32px 24px;
-      box-shadow: var(--card-shadow);
-      text-align: center;
-      position: relative;
-    }
-    .cert-mockup-tag {
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--primary);
-      color: var(--white);
-      font-size: 11.5px;
-      font-weight: 800;
-      padding: 5px 18px;
-      border-radius: 20px;
-    }
-    .cert-mockup h4 { font-family: 'Cinzel', serif; font-size: 17px; color: var(--primary); margin: 12px 0 4px; }
-    .cert-type { font-size: 9.5px; color: #b45309; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
-    .cert-trainee-box { border-bottom: 2px solid var(--accent-gold); display: inline-block; padding: 0 20px 6px; margin-bottom: 12px; }
-    .cert-trainee-name { font-size: 15.5px; font-weight: 700; color: #64748b; font-style: italic; }
-    .cert-prog-title { font-size: 13px; font-weight: 700; color: #0f172a; background: #f1f5f9; padding: 8px; border-radius: 6px; margin-bottom: 18px; }
-    .cert-badges-row { display: flex; justify-content: space-around; border-top: 1px solid var(--border-color); padding-top: 14px; font-size: 11.5px; color: var(--text-muted); font-weight: 700; }
-    
-    footer { background: #050c18; color: #94a3b8; padding: 70px 24px 35px; }
-    .footer-grid { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 45px; }
-    .footer-col h4 { color: var(--white); font-size: 16px; font-weight: 800; margin-bottom: 18px; }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .footer-links a { color: #94a3b8; text-decoration: none; font-size: 14px; }
-    .footer-links a:hover { color: var(--accent-gold-light); }
-    .footer-bottom { max-width: 1320px; margin: 0 auto; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 12.5px; }
-
-    @media (max-width: 992px) {
-      .hero-wrapper, .accred-wrapper, .discovery-section, .tracks-grid, .brochure-grid-2, .footer-grid, .eval-box, .goals-grid, .b2b-grid { grid-template-columns: 1fr; }
-      .authority-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero h1 { font-size: 30px; }
-      .nav-links { display: none; }
-      .pricing-table th, .pricing-table td { font-size: 12px; padding: 10px 6px; }
-    }
-  </style>
+  </script>
 </head>
-<body>
+<body class="font-cairo bg-white text-slate-900 antialiased" x-data="appState()">
 
   <!-- الهيدر -->
-  <header>
-    <nav class="nav-container">
-      <a href="#" class="logo-container" onclick="switchView('home'); return false;">
-        <div class="logo-box">FA</div>
-        <div class="logo-block">
-          <div class="logo-title">FA <span>CONSULTING</span></div>
-          <div class="logo-subtitle">Executive Training & Leadership</div>
+  <header class="bg-[#0a192f]/98 sticky top-0 z-50 border-b border-white/10 backdrop-blur-md">
+    <nav class="max-w-[1320px] mx-auto px-8 py-4 flex justify-between items-center">
+      <a href="#" @click.prevent="currentView = 'home'; window.scrollTo({top:0, behavior:'smooth'})" class="flex items-center gap-4 text-decoration-none">
+        <div class="bg-gradient-to-br from-gold to-gold-light text-[#071220] font-cinzel font-black text-lg w-12 h-12 flex items-center justify-center rounded-xl shadow-lg shadow-amber-900/30">FA</div>
+        <div class="flex flex-col">
+          <div class="font-cinzel text-xl font-black text-white tracking-wide leading-none">FA <span class="text-gold">CONSULTING</span></div>
+          <div class="text-[10px] font-semibold text-slate-400 tracking-widest uppercase">Executive Training & Leadership</div>
         </div>
       </a>
-      <ul class="nav-links">
-        <li><a href="#about" onclick="switchView('home')">من نحن</a></li>
-        <li><a href="#goals" onclick="switchView('home')">أهدافنا المؤسسية</a></li>
-        <li><a href="#b2b-offer" onclick="switchView('home')">ماذا تححصل مؤسستكم</a></li>
-        <li><a href="#tracks" onclick="switchView('home')">برامجنا التدريبية</a></li>
-        <li><a href="#audit" onclick="switchView('home')">مؤشرات الجودة</a></li>
+      <ul class="hidden md:flex gap-7 list-none items-center">
+        <li><a href="#about" @click="currentView = 'home'" class="text-slate-300 text-sm font-semibold hover:text-gold-light transition">من نحن</a></li>
+        <li><a href="#goals" @click="currentView = 'home'" class="text-slate-300 text-sm font-semibold hover:text-gold-light transition">أهدافنا المؤسسية</a></li>
+        <li><a href="#b2b-offer" @click="currentView = 'home'" class="text-slate-300 text-sm font-semibold hover:text-gold-light transition">ماذا تححصل مؤسستكم</a></li>
+        <li><a href="#tracks" @click="currentView = 'home'" class="text-slate-300 text-sm font-semibold hover:text-gold-light transition">برامجنا التدريبية</a></li>
+        <li><a href="#audit" @click="currentView = 'home'" class="text-slate-300 text-sm font-semibold hover:text-gold-light transition">مؤشرات الجودة</a></li>
       </ul>
-      <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-header">حجز جلسة تشخيص مجانية</a>
+      <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="bg-gradient-to-br from-gold to-gold-light text-primary px-5 py-2.5 rounded-lg font-bold text-sm shadow-md">حجز جلسة تشخيص مجانية</a>
     </nav>
   </header>
 
-  <!-- الصفحة الرئيسية (Home View) -->
-  <div id="home-view" class="view-section active">
+  <!-- الصفحة الرئيسية -->
+  <div x-show="currentView === 'home'" x-transition>
     
-    <section class="hero">
-      <div class="hero-wrapper">
+    <section class="bg-[radial-gradient(circle_at_80%_20%,_#1e3a5f_0%,_#0a192f_65%,_#050c18_100%)] text-white py-28 px-6">
+      <div class="max-w-[1320px] mx-auto grid md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
         <div>
-          <div class="hero-tag">
-            <span>&#9733; بناء حضور مهني موثوق في قطاع التدريب والاستشارات المؤسسية</span>
+          <div class="inline-flex bg-amber-900/20 border border-amber-900/40 text-gold-light px-5 py-2 rounded-full text-sm font-bold mb-7">
+            ★ بناء حضور مهني موثوق في قطاع التدريب والاستشارات المؤسسية
           </div>
-          <h1>
+          <h1 class="text-4xl md:text-5xl font-black leading-tight mb-6">
             صناعة القيادة الاحترافية <br>
-            <span>بخبرة إقليمية رائدة</span>
+            <span class="bg-gradient-to-r from-white via-white to-gold-light text-transparent bg-clip-text">بخبرة إقليمية رائدة</span>
           </h1>
-          <p class="hero-desc">
+          <p class="text-lg text-slate-400 leading-relaxed mb-10">
             تقديم حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بالمملكة العربية السعودية وعمق أكاديمي متخصص في علم النفس لتشخيص وحل المشكلات التنظيمية.
           </p>
-          <div class="hero-actions">
-            <a href="#tracks" class="btn-primary">برامجنا التدريبية</a>
-            <a href="#discovery" class="btn-secondary">احجز جلسة تشخيص مؤسسي مجانية</a>
+          <div class="flex gap-5 flex-wrap">
+            <a href="#tracks" class="bg-gradient-to-br from-gold to-gold-light text-primary px-8 py-4 rounded-xl font-extrabold text-base shadow-xl">برامجنا التدريبية</a>
+            <a href="#discovery" class="bg-white/5 border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-white/10 transition">احجز جلسة تشخيص مؤسسي مجانية</a>
           </div>
         </div>
 
-        <div class="founder-card" id="about">
-          <div class="founder-badge-top">القيادة الاستشارية والأكاديمية</div>
-          <div class="founder-header">
-            <img src="dr_fathalla.jpg" alt="د. فتح الله أبو ذكري" class="founder-avatar" onerror="this.src='fathalla.png.png';">
+        <div class="bg-[#112240]/75 border border-amber-900/30 rounded-3xl p-8 backdrop-blur-md relative shadow-2xl" id="about">
+          <div class="absolute -top-4 right-8 bg-gold text-primary text-xs font-black px-4 py-1 rounded-full">القيادة الاستشارية والأكاديمية</div>
+          <div class="flex items-center gap-5 border-b border-white/10 pb-6 mb-6">
+            <img src="dr_fathalla.jpg" alt="د. فتح الله أبو ذكري" class="w-20 h-20 rounded-full object-cover border-2 border-gold shadow-md" onerror="this.src='fathalla.png.png';">
             <div>
-              <div class="founder-name">د. فتح الله أبو ذكري</div>
-              <div class="founder-tagline">المستشار التنفيذي للمؤسسة</div>
+              <div class="text-xl font-bold text-white">د. فتح الله أبو ذكري</div>
+              <div class="text-xs text-gold-light font-semibold">المستشار التنفيذي للمؤسسة</div>
             </div>
           </div>
-          <ul class="founder-stats-list">
-            <li>
-              <span class="stat-icon">&#10003;</span>
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="text-gold font-bold">✓</span>
               <div><strong>عضو هيئة التدريب في المملكة العربية السعودية سابقاً:</strong> لأكثر من 12 عاماً في تدريب القيادات الحكومية والمؤسسية.</div>
             </li>
-            <li>
-              <span class="stat-icon">&#10003;</span>
+            <li class="flex items-start gap-3">
+              <span class="text-gold font-bold">✓</span>
               <div><strong>دكتوراه في علم النفس:</strong> توظيف التشخيص النفسي في معالجة صراعات بيئة العمل ورفع استقرار المنظمات.</div>
             </li>
-            <li>
-              <span class="stat-icon">&#10003;</span>
+            <li class="flex items-start gap-3">
+              <span class="text-gold font-bold">✓</span>
               <div><strong>تصميم وتطوير الحقائب الإدارية:</strong> برامج مصممة خصيصاً لتحقيق عائد مباشر وقابل للقياس على رأس المال البشري.</div>
             </li>
           </ul>
@@ -698,586 +102,245 @@
       </div>
     </section>
 
-    <div class="authority-bar">
-      <div class="authority-grid">
-        <div class="auth-item">
-          <h3>+12</h3>
-          <p>عاماً في التدريب التنفيذي بالمملكة العربية السعودية</p>
-        </div>
-        <div class="auth-item">
-          <h3>96.83%</h3>
-          <p>التقييم العام للمدرب</p>
-        </div>
-        <div class="auth-item">
-          <h3>متخصص</h3>
-          <p>برامج تدريبية متقدمة</p>
-        </div>
-        <div class="auth-item">
-          <h3>B2B</h3>
-          <p>تخصيص كامل لاحتياجات كبرى الشركات</p>
-        </div>
+    <div class="bg-primary-light py-10 px-6 border-t border-b border-white/10">
+      <div class="max-w-[1320px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+        <div><h3 class="font-cinzel text-4xl font-black text-gold-light">+12</h3><p class="text-xs text-slate-400 font-bold mt-2">عاماً في التدريب التنفيذي بالمملكة</p></div>
+        <div><h3 class="font-cinzel text-4xl font-black text-gold-light">96.83%</h3><p class="text-xs text-slate-400 font-bold mt-2">التقييم العام للمدرب</p></div>
+        <div><h3 class="font-cinzel text-4xl font-black text-gold-light">متخصص</h3><p class="text-xs text-slate-400 font-bold mt-2">برامج تدريبية متقدمة</p></div>
+        <div><h3 class="font-cinzel text-4xl font-black text-gold-light">B2B</h3><p class="text-xs text-slate-400 font-bold mt-2">تخصيص كامل لاحتياجات الشركات</p></div>
       </div>
     </div>
 
-    <!-- قسم من نحن -->
-    <section class="section-container" style="background: #ffffff;">
-      <div class="about-company-box">
-        <h3>من نحن | FA Consulting & Training</h3>
-        <p>شركة متخصصة في التدريب والاستشارات المؤسسية وتطوير الأعمال؛ تركز على تطوير القيادات، السلوك التنظيمي، بيئة العمل، وإدارة الأزمات. نقدم خبرات تراكمية رفيعة المستوى لمساعدة الشركات في المملكة العربية السعودية على بناء بيئة عمل مستقرة وعالية الإنتاجية تحت إشراف نخبة من الخبراء الأكاديميين والمهنيين.</p>
+    <section class="max-w-[1320px] mx-auto py-24 px-6 bg-white">
+      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-12 shadow-sm">
+        <h3 class="text-2xl font-black text-primary mb-5">من نحن | FA Consulting & Training</h3>
+        <p class="text-slate-600 leading-relaxed">شركة متخصصة في التدريب والاستشارات المؤسسية وتطوير الأعمال؛ تركز على تطوير القيادات، السلوك التنظيمي، بيئة العمل، وإدارة الأزمات. نقدم خبرات تراكمية رفيعة المستوى لمساعدة الشركات في المملكة العربية السعودية على بناء بيئة عمل مستقرة وعالية الإنتاجية تحت إشراف نخبة من الخبراء الأكاديميين والمهنيين.</p>
       </div>
     </section>
 
-    <!-- ما الذي تحصله مؤسستكم (B2B Value) -->
-    <section class="section-container" id="b2b-offer" style="padding-top: 0;">
-      <div class="b2b-value-section">
-        <div class="section-header" style="margin-bottom: 25px;">
-          <span class="section-label" style="color: var(--accent-gold-light);">Corporate Value Proposition</span>
-          <h2 class="section-title" style="color: #ffffff;">ما الذي تحصله مؤسستكم؟</h2>
-          <p class="section-desc" style="color: #cbd5e1;">منهجية عمل متكاملة تضمن تحقيق أعلى عائد على الاستثمار التدريبي لفريقكم.</p>
-        </div>
-        <div class="b2b-grid">
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تشخيص الاحتياجات التدريبية بدقة</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تصميم البرنامج وفق احتياجات المؤسسة</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تدريب حضوري أو عن بُعد (Interactive)</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> حقائب تدريبية مخصصة واحترافية</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تقييم الأداء قبل وبعد البرنامج</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> تقرير ختامى تفصيلي للجهة المستفيدة</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> شهادات إتمام للمتدربين برقم تسلسلي</div>
-          <div class="b2b-item"><span class="b2b-icon">✓</span> متابعة وتوصيات تطويرية مستمرة</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- الأهداف المؤسسية -->
-    <section class="section-container" id="goals" style="background: #ffffff;">
-      <div class="section-header">
-        <span class="section-label">Strategic Objectives</span>
-        <h2 class="section-title">رؤيتنا الاستراتيجية وأهدافنا المؤسسية</h2>
-        <p class="section-desc">
-          نرتكز في "FA Consulting" على أطر منهجية ومعايير دقيقة لضمان تحقيق أعلى قيمة مضافة لشركائنا من المؤسسات.
-        </p>
-      </div>
-
-      <div class="goals-grid">
-        <div class="goal-card">
-          <h3>🎯 1. الأهداف التنموية والتعليمية (جودة التدريب)</h3>
-          <ul>
-            <li><strong>تطوير الكفاءات البشرية:</strong> تمكين الأفراد والمؤسسات من اكتساب المهارات الحديثة وسد الفجوات المعرفية.</li>
-            <li><strong>تصميم برامج تدريبية مبتكرة:</strong> تقديم حقائب تدريبية متطورة تواكب متطلبات سوق العمل المتغير.</li>
-            <li><strong>اعتماد منهجيات التعلم التطبيقي:</strong> التركيز على التدريب العملي ونقل الخبرات الفورية بدلاً من التلقين النظري.</li>
-          </ul>
+    <!-- قائمة جميع البرامج الـ 15 (تتوسط الشاشة وبشكل متناسق) -->
+    <section class="bg-slate-50 py-24 px-6 border-t border-b border-slate-200" id="tracks">
+      <div class="max-w-[1320px] mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-extrabold text-gold uppercase tracking-widest mb-3 block">Professional Programs</span>
+          <h2 class="text-3xl font-black text-primary mb-4">برامجنا التدريبية والاستشارية المعتمدة</h2>
+          <p class="text-slate-600 text-sm">اختر أي برنامج أدناه لاستعراض تفاصيله الكاملة والالتحاق به.</p>
         </div>
 
-        <div class="goal-card">
-          <h3>💡 2. الأهداف الاستشارية (حلول الأعمال)</h3>
-          <ul>
-            <li><strong>استشارات إدارية وتنظيمية وتطوير مؤسسي:</strong> صياغة استشارات إدارية تدعم المؤسسات في حل مشكلاتها وتطوير أدائها.</li>
-            <li><strong>دعم التحول والتطوير المؤسسي:</strong> مساعدة الشركات على إعادة هيكلة عملياتها وتطوير بيئة العمل.</li>
-            <li><strong>ضمان نتائج ملموسة وقابلة للقياس (ROI):</strong> قياس العائد على الاستثمار للجهات المستفيدة من الاستشارات.</li>
-          </ul>
+        <!-- شبكة البرامج في المنتصف -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center max-w-[1200px] mx-auto">
+          <template x-for="(course, key) in courses" :key="key">
+            <button type="button" @click="selectCourse(key)" class="group relative rounded-2xl overflow-hidden h-72 shadow-md hover:-translate-y-1.5 hover:shadow-xl transition text-right bg-slate-900 border-0 p-0 cursor-pointer">
+              <img :src="course.img" alt="" class="absolute inset-0 w-full h-full object-cover brightness-[0.55] group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent"></div>
+              <div class="relative z-10 p-6 h-full flex flex-col justify-end text-white">
+                <div class="text-[11px] font-extrabold text-gold-light uppercase tracking-wider mb-1.5" x-text="course.num"></div>
+                <div class="text-base font-extrabold mb-3 leading-snug" x-text="course.title"></div>
+                <div class="bg-white/15 backdrop-blur-sm text-slate-200 px-3 py-1.5 rounded-md text-xs inline-block font-bold w-fit" x-text="course.hours + ' ساعة | ' + course.price + ' | عرض التفاصيل'"></div>
+              </div>
+            </button>
+          </template>
         </div>
 
-        <div class="goal-card">
-          <h3>📈 3. الأهداف التسويقية والتنافسية (الانتشار والمكانة)</h3>
-          <ul>
-            <li><strong>بناء علامة تجارية موثوقة:</strong> ترسيخ اسم المؤسسة كمرجع أول في قطاع الاستشارات والتدريب.</li>
-            <li><strong>توسيع قاعدة العملاء:</strong> استهداف قطاعات متنوعة (حكومية، خاصة، غير ربحية).</li>
-            <li><strong>التوسع الجغرافي:</strong> تقديم خدمات التدريب والاستشارات محلياً وإقليمياً، وتفعيل التدريب عن بعد (E-learning).</li>
-          </ul>
-        </div>
-
-        <div class="goal-card">
-          <h3>🤝 4. أهداف الشراكات والاستدامة (النمو المستقبلي)</h3>
-          <ul>
-            <li><strong>عقد شراكات استراتيجية:</strong> التعاون مع جامعات، ومراكز دولية، وهيئات اعتماد في المملكة العربية السعودية لمنح شهادات موثقة.</li>
-            <li><strong>استقطاب نخبة من الخبراء:</strong> بناء شبكة قوية من المستشارين والمدربين ذوي الخبرة والكفاءة العالية.</li>
-            <li><strong>الاستدامة المالية:</strong> تحقيق نمو ربحي مستدام يضمن تطوير أدوات المؤسسة وبنيتها التحتية الرقمية.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- سابقة الأعمال الميدانية -->
-    <section class="section-container" id="field-track" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-      <div class="section-header">
-        <span class="section-label">Proven Track Record</span>
-        <h2 class="section-title">سابقة الأعمال الميدانية والتدريب المؤسسي</h2>
-        <p class="section-desc">توثيق عملي لسنوات من قيادة البرامج الإدارية وتأهيل الكوادر الحكومية والقيادية في كبرى المحافل الرسمية.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-        <div class="field-card">
-          <img src="saudi_reception.jpg" alt="المشاركة والمصافحة" class="field-img">
-          <div class="field-body">
-            <h4>حضور رسمي ومحافل قيادية كبرى</h4>
-            <p>المشاركة الفاعلة في الملتقيات والمؤتمرات الإدارية رفيعة المستوى، وتوجيه الحوارات القيادية حول التحول المؤسسي بالمملكة.</p>
-          </div>
-        </div>
-        <div class="field-card">
-          <img src="trining_group.jpg" alt="إدارة الجلسات التدريبية" class="field-img">
-          <div class="field-body">
-            <h4>إدارة الحلقات التدريبية ومنصات التفاعل</h4>
-            <p>تطبيق أحدث المنهجيات في إدارة القاعات، واستثارة التفكير الإبداعي لدى المدراء لصناعة الحلول الواقعية.</p>
-          </div>
-        </div>
-        <div class="field-card">
-          <img src="graduates_group.jpg" alt="تخريج القيادات" class="field-img">
-          <div class="field-body">
-            <h4>تخريج الدفعات القيادية وفرق العمل</h4>
-            <p>تأهيل مئات الكوادر في برامج المهارات السلوكية، وإدارة النزاعات، وبناء فرق العمل المتكاملة.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- مؤشرات الجودة والتقييمات -->
-    <section class="section-container" id="audit" style="background: #ffffff;">
-      <div class="section-header">
-        <span class="section-label">Verified Performance</span>
-        <h2 class="section-title">مؤشرات جودة وتقييمات موثقة</h2>
-        <p class="section-desc">تقارير تقييم رسمية صادرة ضمن نموذج تقييم المتدربين، تعكس كفاءة الأداء ومستوى رضا المشاركين.</p>
-      </div>
-
-      <div class="eval-box">
-        <div class="eval-column">
+        <div class="bg-gradient-to-r from-primary to-[#162a45] text-white rounded-3xl p-12 border border-amber-900/30 grid md:grid-cols-[1.3fr_0.7fr] gap-8 items-center mt-20 max-w-[1200px] mx-auto" id="discovery">
           <div>
-            <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;">
-              <span class="eval-score">96.83%</span>
-              <span style="color: #94a3b8; font-size: 13.5px; font-weight: 700;">التقييم العام للمدرب</span>
-            </div>
-            <h3 style="font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px;">تقرير تقييم صادر خلال العام التدريبي</h3>
-            <p style="font-size: 13px; color: #cbd5e1; line-height: 1.6;">حقق تقييماً مرتفعاً في عناصر تقييم المدرب وفق نموذج تقييم المتدربين الرسمي.</p>
+            <span class="bg-amber-900/30 text-gold-light border border-amber-900/50 px-4 py-1.5 rounded-full text-xs font-bold inline-block mb-4">مبادرة الشراكة المؤسسية</span>
+            <h3 class="text-2xl font-black mb-3">احجز جلسة تشخيص مؤسسي مجانية</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">جلسة استكشافية لمدة 60 دقيقة مع المستشار التنفيذي لتحديد احتياجات فريقكم التدريبية والتطويرية.</p>
           </div>
-          <div class="eval-img-wrapper">
-            <img src="ipa_eval.png" alt="تقرير وحدة دعم الجودة">
-          </div>
-        </div>
-
-        <div class="eval-column">
-          <div>
-            <h4 style="font-size: 16px; color: var(--accent-gold-light); margin-bottom: 8px;">شهادات وانطباعات المتدربين القياديين</h4>
-            <p style="font-size: 13px; color: #e2e8f0; font-style: italic; line-height: 1.6;">"نشكر الدكتور فتح الله أبو ذكري على تعاونه وشرحه الممتاز.. ومن أفضل الدورات التي مررت بها."</p>
-          </div>
-          <div class="testimonial-img-wrapper">
-            <img src="testimonial_trainee.jpg" alt="إشادة المتدربين">
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl text-center">
+            <h4 class="text-white font-bold text-sm mb-4">تواصل مباشر مع الإدارة</h4>
+            <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="block bg-gradient-to-br from-gold to-gold-light text-primary py-3 rounded-xl font-extrabold text-sm shadow-md hover:scale-105 transition">احجز جلستك الآن عبر واتساب</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- الشهادات المهنية المعتمدة -->
-    <section class="accred-section" id="certificates">
-      <div class="accred-wrapper">
-        <div class="accred-content">
-          <span class="section-label">Credential & Verification</span>
-          <h2>شهادات إتمام مهنية</h2>
-          <p>شهادة إتمام مهنية صادرة من FA Consulting؛ تُصدر برقم تسلسلي فريد يتيح التحقق من بيانات البرنامج والمتدرب بكل شفافية وموثوقية.</p>
-          <ul class="accred-points">
-            <li><span>✓</span> <div><strong>شهادة إتمام مهنية (Professional Certificate):</strong> توثق إنجاز البرنامج وعدد الساعات الفعلية.</div></li>
-            <li><span>✓</span> <div><strong>رقم تسلسلي فريد (Unique ID):</strong> لكل متدرب لتسهيل توثيق الشهادة.</div></li>
-            <li><span>✓</span> <div><strong>إشراف أكاديمي ومهني:</strong> تصدر الشهادة تحت إشراف المستشار التنفيذي للمؤسسة.</div></li>
-          </ul>
-        </div>
+  </div>
 
-        <div class="cert-mockup">
-          <div class="cert-mockup-tag">SAMPLE CERTIFICATE</div>
-          <h4>FA CONSULTING &amp; TRAINING</h4>
-          <div class="cert-type">Certificate of Completion</div>
-          <div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">نموذج معاينة توضيحي للشهادة المهنية</div>
-          <div class="cert-trainee-box">
-            <div class="cert-trainee-name">[اسم المتدرب / الجهة المستفيدة]</div>
-          </div>
-          <div style="font-size:12px; color:#64748b; margin-bottom:8px;">For Successfully Completing:</div>
-          <div class="cert-prog-title">Strategic Organizational Behavior &amp; Professional Leadership</div>
-          <div class="cert-badges-row">
-            <div>Duration: <strong>16 Hours</strong></div>
-            <div>ID: <strong>FA-2026-8941</strong></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- قائمة جميع البرامج التدريبية (في المنتصف وبشكل متناسق) -->
-    <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-      <div class="section-header">
-        <span class="section-label">Professional Programs</span>
-        <h2 class="section-title">برامجنا التدريبية والاستشارية المعتمدة</h2>
-        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض تفاصيله الكاملة والالتحاق به.</p>
-      </div>
-
-      <div class="tracks-grid">
-        <button type="button" class="track-banner-card" onclick="openBrochure('p1')">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="الاتصال الاستراتيجي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المسار الأول</div>
-            <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('p2')">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="الذكاء العاطفي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المسار الأول</div>
-            <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
-            <div class="track-banner-details">14 ساعة | 1,050 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('p3')">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="ضغوط العمل" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المسار الثاني</div>
-            <div class="track-banner-title">استراتيجيات التعامل مع ضغوط العمل اليومية</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('p4')">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="السلوك التنظيمي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المسار الثالث</div>
-            <div class="track-banner-title">السلوك التنظيمي وانعكاسه على جودة الإنتاج</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('change')">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="إدارة التغيير التنظيمي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">التطوير المؤسسي</div>
-            <div class="track-banner-title">إدارة التغيير التنظيمي</div>
-            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('hr_diversity')">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="إدارة التنوع" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">الموارد البشرية</div>
-            <div class="track-banner-title">إدارة التنوع في الموارد البشرية</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('salary')">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الرواتب" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">التعويضات والحوافز</div>
-            <div class="track-banner-title">إدارة الرواتب والمكافآت والحوافز</div>
-            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('talents')">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="إدارة المواهب" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">تطوير القيادات</div>
-            <div class="track-banner-title">إدارة المواهب والاحتفاظ بالكفاءات</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('crisis')">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="إدارة الأزمات" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">الإدارة الاستراتيجية</div>
-            <div class="track-banner-title">إدارة المخاطر والكوارث والأزمات</div>
-            <div class="track-banner-details">18 ساعة | 1,350 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('quality')">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="الجودة الشاملة" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">الجودة والتميز</div>
-            <div class="track-banner-title">إدارة الجودة الشاملة (TQM)</div>
-            <div class="track-banner-details">18 ساعة | 1,350 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('performance')">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="الأداء الوظيفي" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">تقييم الأداء</div>
-            <div class="track-banner-title">إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)</div>
-            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('relations')">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="علاقات الموظفين" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">علاقات العمل</div>
-            <div class="track-banner-title">إدارة علاقات الموظفين والاتصال الفعال</div>
-            <div class="track-banner-details">20 ساعة | 1,500 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('meetings')">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="إدارة الاجتماعات" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">المهارات الإدارية</div>
-            <div class="track-banner-title">إدارة الاجتماعات الفعالة وصنع القرار</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-
-        <button type="button" class="track-banner-card" onclick="openBrochure('tourist')">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="خدمة السياح" class="track-banner-bg">
-          <div class="track-banner-overlay"></div>
-          <div class="track-banner-content">
-            <div class="track-banner-num">الخدمات والضيافة</div>
-            <div class="track-banner-title">كيفية التعامل مع السائح وتقديم خدمة استثنائية</div>
-            <div class="track-banner-details">12 ساعة | 950 دولار | عرض التفاصيل</div>
-          </div>
-        </button>
-      </div>
-
-      <div class="discovery-section" id="discovery">
+  <!-- صفحة تفاصيل الدورة (Brochure View) -->
+  <div x-show="currentView === 'brochure'" x-transition class="max-w-[1320px] mx-auto py-16 px-6">
+    <button type="button" @click="currentView = 'home'; window.scrollTo({top:0, behavior:'smooth'})" class="bg-primary text-white px-5 py-2.5 rounded-xl font-bold text-xs mb-8 cursor-pointer border-0">← العودة إلى الرئيسية والبرامج</button>
+    
+    <div class="bg-white border border-slate-200 rounded-3xl p-10 shadow-xl" x-data="{}">
+      <div class="border-b-2 border-gold pb-6 mb-8 flex justify-between items-center flex-wrap gap-4">
         <div>
-          <span class="discovery-badge">مبادرة الشراكة المؤسسية</span>
-          <h3>احجز جلسة تشخيص مؤسسي مجانية</h3>
-          <p>جلسة استكشافية لمدة 60 دقيقة مع المستشار التنفيذي لتحديد احتياجات فريقكم التدريبية والتطويرية.</p>
+          <h2 class="text-2xl md:text-3xl font-black text-primary mb-1" x-text="selectedCourse.title"></h2>
+          <div class="text-xs text-slate-500 font-bold" x-text="selectedCourse.subtitle"></div>
         </div>
-        <div class="discovery-action-box">
-          <h4 style="color:#fff; margin-bottom:10px;">تواصل مباشر مع الإدارة</h4>
-          <a href="https://wa.me/201271221780?text=نود%20حجز%20جلسة%20تشخيص%20مؤسسي%20مجانية" target="_blank" class="btn-booking">احجز جلستك الآن عبر واتساب</a>
+        <a :href="'https://wa.me/201271221780?text=' + encodeURIComponent('أرغب في حجز وتسجيل البرنامج: ' + selectedCourse.title)" target="_blank" class="bg-emerald-700 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md">🛒 حجز وتسجيل البرنامج</a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+        <div>
+          <h4 class="font-extrabold text-sm text-primary mb-3 border-r-4 border-gold pr-3">ماذا ستحقق مؤسستكم؟ (Benefits)</h4>
+          <ul class="space-y-2 text-xs text-slate-600 list-none pr-0" x-html="selectedCourse.benefits"></ul>
+        </div>
+        <div>
+          <h4 class="font-extrabold text-sm text-primary mb-3 border-r-4 border-gold pr-3">أهداف الدورة (Course Objectives)</h4>
+          <ul class="space-y-2 text-xs text-slate-600 list-none pr-0" x-html="selectedCourse.objectives"></ul>
         </div>
       </div>
-    </section>
 
-  </div>
-
-
-  <!-- صفحة تفاصيل الدورة (Brochure View) بدون زر التحميل المزعج وبشكل متناسق -->
-  <div id="brochure-view" class="view-section">
-    <div class="section-container">
-      <button type="button" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والبرامج</button>
-      
-      <div class="brochure-card">
-        <div class="brochure-header">
-          <div>
-            <h2 id="b-title" class="brochure-title">عنوان البرنامج التدريبي التنفيذي</h2>
-            <div id="b-subtitle" class="brochure-subtitle">تصنيف البرنامج ومدة التنفيذ</div>
-          </div>
-          <div>
-            <a id="btn-order-top" href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج</a>
-          </div>
+      <div class="grid md:grid-cols-2 gap-8 mb-8 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+        <div>
+          <h4 class="font-extrabold text-sm text-primary mb-3 border-r-4 border-gold pr-3">الفئة المستهدفة (Target Audience)</h4>
+          <ul class="space-y-2 text-xs text-slate-600 list-none pr-0" x-html="selectedCourse.audience"></ul>
         </div>
-
-        <div class="brochure-grid-2">
-          <div class="brochure-col-box">
-            <h4>ماذا ستحقق مؤسستكم؟ (Benefits)</h4>
-            <ul id="b-benefits"></ul>
-          </div>
-          <div class="brochure-col-box">
-            <h4>أهداف الدورة (Course Objectives)</h4>
-            <ul id="b-objectives"></ul>
-          </div>
+        <div>
+          <h4 class="font-extrabold text-sm text-primary mb-3 border-r-4 border-gold pr-3">منهجية الدورة التدريبية (Methodology)</h4>
+          <ul class="space-y-2 text-xs text-slate-600 list-none pr-0">
+            <li class="relative pr-4 before:content-['▪'] before:absolute before:right-0 before:text-gold">الحالات الدراسية والعملية الواقعية المستمدة من كبرى المؤسسات.</li>
+            <li class="relative pr-4 before:content-['▪'] before:absolute before:right-0 before:text-gold">ورش عمل تفاعلية وجلسات عصف ذهني لحل مشكلات المنظمة.</li>
+            <li class="relative pr-4 before:content-['▪'] before:absolute before:right-0 before:text-gold">التعلم التجريبي والتقييم المستمر للأداء قبل وبعد البرنامج.</li>
+          </ul>
         </div>
+      </div>
 
-        <div class="brochure-grid-2">
-          <div class="brochure-col-box">
-            <h4>الفئة المستهدفة (Target Audience)</h4>
-            <ul id="b-audience"></ul>
-          </div>
-          <div class="brochure-col-box">
-            <h4>منهجية الدورة التدريبية (Course Methodology)</h4>
-            <ul>
-              <li>الحالات الدراسية والعملية الواقعية المستمدة من كبرى المؤسسات.</li>
-              <li>ورش عمل تفاعلية وجلسات عصف ذهني لحل مشكلات المنظمة.</li>
-              <li>التعلم التجريبي والتقييم المستمر للأداء قبل وبعد البرنامج.</li>
-            </ul>
-          </div>
-        </div>
+      <div class="overflow-x-auto bg-slate-50 rounded-xl border border-slate-200 mt-8">
+        <table class="w-full text-center border-collapse">
+          <thead>
+            <tr class="bg-primary text-white text-xs">
+              <th class="p-4">المدة بالساعة</th>
+              <th class="p-4">نمط التدريب</th>
+              <th class="p-4">اللغة</th>
+              <th class="p-4">الرسوم</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-xs text-slate-700 font-semibold">
+              <td class="p-4 border-b" x-text="selectedCourse.hours + ' ساعة'"></td>
+              <td class="p-4 border-b">حضوري أو تفاعلي عن بُعد (Interactive)</td>
+              <td class="p-4 border-b">العربية</td>
+              <td class="p-4 border-b text-emerald-700 font-bold" x-text="selectedCourse.price"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="pricing-table-container">
-          <div style="margin-bottom: 15px; font-size: 18px; font-weight: 800; color: var(--primary);">معلومات الدورة والرسوم الاستثمارية</div>
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                <th>المدة بالساعة</th>
-                <th>نمط التدريب</th>
-                <th>اللغة</th>
-                <th>الرسوم</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td id="t-hours">16 ساعة</td>
-                <td>حضوري أو تفاعلي عن بُعد (Interactive)</td>
-                <td>العربية</td>
-                <td id="t-price" style="color: #047857; font-weight: 800;">1,200 دولار</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="brochure-actions">
-          <a id="btn-order-bottom" href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
-        </div>
+      <div class="mt-8">
+        <a :href="'https://wa.me/201271221780?text=' + encodeURIComponent('أرغب في حجز وتسجيل البرنامج: ' + selectedCourse.title)" target="_blank" class="bg-emerald-700 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-md inline-block">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
       </div>
     </div>
   </div>
-
 
   <!-- الفوتر -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="logo-title" style="margin-bottom: 12px;">FA <span>CONSULTING</span></div>
-        <p>بيت خبرة واستشارات قيادية يُعنى بتمكين المنظمات وصناعة القيادة الاحترافية.</p>
+  <footer class="bg-[#050c18] text-slate-500 py-12 px-6 mt-20">
+    <div class="max-w-[1320px] mx-auto grid md:grid-cols-3 gap-8 text-xs mb-8">
+      <div>
+        <div class="font-cinzel text-lg font-black text-white tracking-wide leading-none mb-3">FA <span class="text-gold">CONSULTING</span></div>
+        <p class="leading-relaxed">بيت خبرة واستشارات قيادية يُعنى بتمكين المنظمات وصناعة القيادة الاحترافية.</p>
       </div>
-      <div class="footer-col">
-        <h4>المسارات الاستشارية والتدريبية</h4>
-        <ul class="footer-links" style="list-style: none;">
-          <li><a href="#tracks" onclick="switchView('home')">القيادة والاتصال الفعال</a></li>
-          <li><a href="#tracks" onclick="switchView('home')">التطوير المؤسسي والموارد البشرية</a></li>
-        </ul>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-3">المسارات الاستشارية</h4>
+        <p class="leading-relaxed">القيادة والاتصال الفعال والتطوير المؤسسي والموارد البشرية.</p>
       </div>
-      <div class="footer-col">
-        <h4>التواصل والتعاقدات</h4>
-        <p>المقر الرئيسي: القاهرة، مصر<br>واتساب: <span dir="ltr">+20 127 122 1780</span></p>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-3">التواصل والتعاقدات</h4>
+        <p class="leading-relaxed">المقر الرئيسي: القاهرة، مصر<br>واتساب: <span dir="ltr">+20 127 122 1780</span></p>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="max-w-[1320px] mx-auto pt-6 border-t border-white/5 text-[11px] text-slate-600">
       <p>&copy; 2026 FA Consulting & Training. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
 
   <script>
-    const brochureData = {
-      'p1': { 
-        title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', hours: '16 ساعة', price: '1,200 دولار',
-        benefits: '<li>اكتساب أدوات الاتصال الحديثة وتوجيه الحوارات القيادية نحو أهداف المنظمة.</li><li>بناء جسور الثقة المؤسسية مع أعضاء مجالس الإدارة والفرق التنفيذية.</li>',
-        objectives: '<li>تمكين القيادات من صياغة استراتيجيات اتصال فعالة ومؤثرة.</li><li>التمكن من لغة الإقناع المؤسسي والتعامل مع مختلف أنماط الشخصيات.</li>',
-        audience: '<li>رؤساء الأقسام والمدراء التنفيذيون.</li><li>مديرو الموارد البشرية والمسؤولون عن التطوير المؤسسي.</li>'
-      },
-      'p2': { 
-        title: 'الذكاء العاطفي والاجتماعي لصناع القرار', subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', hours: '14 ساعة', price: '1,050 دولار',
-        benefits: '<li>تنمية الوعي الذاتي والاجتماعي لمديري الإدارات العليا.</li><li>إدارة الانفعالات الشخصية والجماعية وسط ضغوط العمل الشديدة.</li>',
-        objectives: '<li>فهم أبعاد الذكاء العاطفي وتوظيفه في القيادة الإدارية.</li><li>القدرة على احتواء الأزمات السلوكية وفض النزاعات بحكمة.</li>',
-        audience: '<li>صناع القرار ومجالس الإدارة.</li><li>مديرو الاحتفاظ بالموهوبين والموارد البشرية.</li>'
-      },
-      'p3': { 
-        title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', hours: '12 ساعة', price: '950 دولار',
-        benefits: '<li>إدارة أعباء العمل المتراكمة بأعلى كفاءة وأقل إجهاد ذهني.</li><li>الحد من معدلات الاحتراق الوظيفي وحماية رأس المال البشري.</li>',
-        objectives: '<li>تحديد مصادر الضغط التنظيمي ووضع خطط استباقية لمعالجتها.</li><li>تطبيق تقنيات الاسترخاء وإدارة الوقت الحديثة للقيادات.</li>',
-        audience: '<li>كافة الإدارات التنفيذية التي تعاني من ضغط تشغيلي عالي.</li><li>فرق خدمة العملاء والعمليات الميدانية.</li>'
-      },
-      'p4': { 
-        title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', hours: '16 ساعة', price: '1,200 دولار',
-        benefits: '<li>فهم التأثير المباشر للسلوك الإداري على جودة ومعدلات الإنتاج.</li><li>إعادة هيكلة الثقافة التنظيمية لتحقيق أقصى توافق مع معايير الجودة.</li>',
-        objectives: '<li>تحليل سلوكيات بيئة العمل وربطها بمؤشرات الأداء (KPIs).</li><li>تطوير استراتيجيات تحفيزية ترتبط برفع جودة المخرجات.</li>',
-        audience: '<li>مديرو الجودة والتطوير المؤسسي.</li><li>مديرو الإنتاج والعمليات والتشغيل.</li>'
-      },
-      'change': { 
-        title: 'إدارة التغيير التنظيمي', subtitle: 'التطوير المؤسسي | معهد الإدارة العامة', hours: '20 ساعة', price: '1,500 دولار',
-        benefits: '<li>تنمية معارف ومهارات المشاركين في إدارة التغيير في المنظمات بكفاءة وفاعلية.</li><li>معرفة المفاهيم الأساسية لإدارة التغيير التنظيمي وعناصره بدقة.</li>',
-        objectives: '<li>تحديد المجالات الرئيسية التي يستهدفها التغيير وأنواعه.</li><li>تطبيق استراتيجيات ونماذج إدارة التغيير بكفاءة وفاعلية.</li>',
-        audience: '<li>مديرو التطوير المؤسسي وإعادة الهيكلة.</li><li>مديرو الإدارات التنفيذية والقيادات العليا.</li>'
-      },
-      'hr_diversity': { 
-        title: 'إدارة التنوع في الموارد البشرية', subtitle: 'الموارد البشرية | بيئة العمل المؤسسي', hours: '12 ساعة', price: '950 دولار',
-        benefits: '<li>إكساب المتدربين مهارة إدارة تنوع الموارد البشرية بكفاءة وفاعلية.</li><li>إدراك دور إدارة التنوع في رفع مستويات الابتكار والإنتاجية.</li>',
-        objectives: '<li>ذكر مفهوم إدارة تنوع الموارد البشرية بيسر وسهولة.</li><li>تحديد أسس تفعيل دور إدارة التنوع في بيئة العمل.</li>',
-        audience: '<li>موظفو ومسؤولو الموارد البشرية.</li><li>مديرو الشؤون الإدارية وشؤون الأفراد.</li>'
-      },
-      'salary': { 
-        title: 'إدارة الرواتب والمكافآت والحوافز', subtitle: 'التعويضات والمكافآت | مركز الأعمال والاحتراف', hours: '20 ساعة', price: '1,500 دولار',
-        benefits: '<li>تنمية قدرات ومعارف المتدربين في مجال إدارة الرواتب والمكافآت.</li><li>تطبيق منهجية وطرق تقييم الوظائف بمهنية عالية.</li>',
-        objectives: '<li>تصميم هياكل الرواتب والأجور ونظم الحوافز المبنية على الأداء.</li><li>التعرف على الأخطاء الشائعة في تصميم نظم المكافآت.</li>',
-        audience: '<li>موظفو وممارسو الموارد البشرية (شؤون الموظفين).</li><li>محللو التعويضات والمزايا الوظيفية.</li>'
-      },
-      'talents': { 
-        title: 'إدارة المواهب والاحتفاظ بالكفاءات', subtitle: 'تطوير القيادات | إدارة الموارد البشرية', hours: '16 ساعة', price: '1,200 دولار',
-        benefits: '<li>تنمية معارف وقدرات المتدربين في عمليات ومراحل إدارة المواهب.</li><li>التعرف على أفضل ممارسات إدارة المواهب بمختلف عملياتها.</li>',
-        objectives: '<li>تقييم أداء المواهب وفق أسس علمية دقيقة.</li><li>تطبيق استراتيجيات الاحتفاظ بالكفاءات القيادية.</li>',
-        audience: '<li>مديرو إدارات المواهب والتطوير.</li><li>مسؤولو استقطاب الكفاءات والموارد البشرية.</li>'
-      },
-      'crisis': { 
-        title: 'إدارة المخاطر والكوارث والأزمات', subtitle: 'الإدارة الاستراتيجية | استجابة فعالة للمتغيرات', hours: '18 ساعة', price: '1,350 دولار',
-        benefits: '<li>تمكين المشاركين من تحديد المخاطر المحتملة، تقييمها، وتخفيف أثرها.</li><li>وضع خطط استجابة فعالة للأزمات باستخدام النماذج العلمية الحديثة.</li>',
-        objectives: '<li>تطوير خطط استجابة سريعة للأزمات الطارئة.</li><li>التواصل الفعال أثناء إدارة الأزمات وتحقيق القيادة الآمنة.</li>',
-        audience: '<li>مديرو الخط الأول والمشرفون ورؤساء الأقسام.</li><li>أعضاء لجان إدارة الأزمات والطوارئ.</li>'
-      },
-      'quality': { 
-        title: 'إدارة الجودة الشاملة (TQM)', subtitle: 'الجودة والتميز | معايير الأداء المؤسسي', hours: '18 ساعة', price: '1,350 دولار',
-        benefits: '<li>إكساب المتدربين المهارات اللازمة في إدارة الجودة الشاملة بكفاءة وفاعلية.</li><li>التعرف على المعايير الدولية والخطوات الصحيحة للتقييم والتميز.</li>',
-        objectives: '<li>تحديد العناصر الأساسية في إدارة الجودة بدقة وإتقان.</li><li>تطبيق مراحل تطبيق إدارة الجودة في الجهات الحكومية والخاصة.</li>',
-        audience: '<li>مسؤولو قطاع الجودة والتميز المؤسسي.</li><li>موظفو قطاع الإنتاج والخدمات.</li>'
-      },
-      'performance': { 
-        title: 'إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)', subtitle: 'تقييم الأداء | قياس العائد والإنتاجية', hours: '16 ساعة', price: '1,200 دولار',
-        benefits: '<li>اكساب المتدرب مهارات إدارة الأداء الوظيفي باحترافية وكفاءة عالية.</li><li>معرفة طرق تقييم الأداء الوظيفي ومؤشرات القياس الرئيسية.</li>',
-        objectives: '<li>تخطيط الأداء ووضع المستهدفات الاستراتيجية والتشغيلية.</li><li>تصميم نماذج تقييم أداء موضوعية وفعالة.</li>',
-        audience: '<li>موظفو ومسؤولو الموارد البشرية والمدراء التنفيذيون.</li>'
-      },
-      'relations': { 
-        title: 'إدارة علاقات الموظفين والاتصال الفعال', subtitle: 'علاقات العمل | بيئة عمل آمنة ومحفزة', hours: '20 ساعة', price: '1,500 دولار',
-        benefits: '<li>تنمية مهارات المدربين في إدارة علاقات الموظفين بكفاءة وفاعلية.</li><li>تطوير مهارات الاتصال الفعال والذكاء العاطفي في بيئة العمل.</li>',
-        objectives: '<li>فهم مفهوم وأهمية إدارة علاقات الموظفين بدقة.</li><li>إدارة النزاع في بيئة العمل باحترافية تامة.</li>',
-        audience: '<li>موظفو الموارد البشرية وعلاقات العمل.</li>'
-      },
-      'meetings': { 
-        title: 'إدارة الاجتماعات الفعالة وصنع القرار', subtitle: 'المهارات الإدارية | تحسين الإنتاجية الجماعية', hours: '12 ساعة', price: '950 دولار',
-        benefits: '<li>إتقان المفاهيم الأساسية لإدارة الاجتماعات الناجحة.</li><li>تنظيم مراحل التخطيط والحضور والتقييم والمتابعة للاجتماعات.</li>',
-        objectives: '<li>تجنب الهدر الزمني والتشغيلي في الاجتماعات الروتينية.</li><li>تفعيل المشاركة الفعالة للاجتماعات الافتراضية والواقعية.</li>',
-        audience: '<li>القادة ومديرو الإدارات ورؤساء الأقسام.</li>'
-      },
-      'tourist': { 
-        title: 'كيفية التعامل مع السائح وتقديم خدمة استثنائية', subtitle: 'الخدمات والضيافة | التميز في خدمة العملاء', hours: '12 ساعة', price: '950 دولار',
-        benefits: '<li>إكساب العاملين في قطاع الضيافة والسياحة مهارات التعامل الراقي مع السائح.</li><li>فهم أنماط السلوك السياحي وتلبية التوقعات باحترافية.</li>',
-        objectives: '<li>تطبيق مهارات الاستماع الفعال وحل المشكلات الفورية للعملاء والسياح.</li><li>ترسيخ الصورة الذهنية الاحترافية للمؤسسة السياحية أو الخدمية.</li>',
-        audience: '<li>العاملون في قطاع السياحة والفنادق والخدمات العامة.</li><li>ممثلو خدمة العملاء والاستقبال.</li>'
-      }
-    };
-
-    function switchView(viewName) {
-      const homeView = document.getElementById('home-view');
-      const brochureView = document.getElementById('brochure-view');
-
-      if (viewName === 'home') {
-        brochureView.classList.remove('active');
-        homeView.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-
-    function openBrochure(courseId) {
-      const course = brochureData[courseId];
-      if (course) {
-        document.getElementById('b-title').innerText = course.title;
-        document.getElementById('b-subtitle').innerText = course.subtitle;
-        document.getElementById('t-hours').innerText = course.hours;
-        document.getElementById('t-price').innerText = course.price;
-        
-        document.getElementById('b-benefits').innerHTML = course.benefits;
-        document.getElementById('b-objectives').innerHTML = course.objectives;
-        document.getElementById('b-audience').innerHTML = course.audience;
-
-        const encodedText = encodeURIComponent('أرغب في حجز وتسجيل البرنامج: ' + course.title);
-        const waLink = 'https://wa.me/201271221780?text=' + encodedText;
-        document.getElementById('btn-order-top').href = waLink;
-        document.getElementById('btn-order-bottom').href = waLink;
-
-        document.getElementById('home-view').classList.remove('active');
-        document.getElementById('brochure-view').classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function appState() {
+      return {
+        currentView: 'home',
+        selectedCourse: {},
+        courses: {
+          'p1': {
+            title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', hours: '16', price: '1,200 دولار', num: 'المسار الأول', img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>اكتساب أدوات الاتصال الحديثة وتوجيه الحوارات القيادية نحو أهداف المنظمة.</li><li>بناء جسور الثقة المؤسسية مع أعضاء مجالس الإدارة والفرق التنفيذية.</li>',
+            objectives: '<li>تمكين القيادات من صياغة استراتيجيات اتصال فعالة ومؤثرة.</li><li>التمكن من لغة الإقناع المؤسسي والتعامل مع مختلف أنماط الشخصيات.</li>',
+            audience: '<li>رؤساء الأقسام والمدراء التنفيذيون.</li><li>مديرو الموارد البشرية والمسؤولون عن التطوير المؤسسي.</li>'
+          },
+          'p2': {
+            title: 'الذكاء العاطفي والاجتماعي لصناع القرار', subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', hours: '14', price: '1,050 دولار', num: 'المسار الأول', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>تنمية الوعي الذاتي والاجتماعي لمديري الإدارات العليا.</li><li>إدارة الانفعالات الشخصية والجماعية وسط ضغوط العمل الشديدة.</li>',
+            objectives: '<li>فهم أبعاد الذكاء العاطفي وتوظيفه في القيادة الإدارية.</li><li>القدرة على احتواء الأزمات السلوكية وفض النزاعات بحكمة.</li>',
+            audience: '<li>صناع القرار ومجالس الإدارة.</li><li>مديرو الاحتفاظ بالموهوبين والموارد البشرية.</li>'
+          },
+          'p3': {
+            title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', hours: '12', price: '950 دولار', num: 'المسار الثاني', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>إدارة أعباء العمل المتراكمة بأعلى كفاءة وأقل إجهاد ذهني.</li><li>الحد من معدلات الاحتراق الوظيفي وحماية رأس المال البشري.</li>',
+            objectives: '<li>تحديد مصادر الضغط التنظيمي ووضع خطط استباقية لمعالجتها.</li><li>تطبيق تقنيات الاسترخاء وإدارة الوقت الحديثة للقيادات.</li>',
+            audience: '<li>كافة الإدارات التنفيذية التي تعاني من ضغط تشغيلي عالي.</li><li>فرق خدمة العملاء والعمليات الميدانية.</li>'
+          },
+          'p4': {
+            title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', hours: '16', price: '1,200 دولار', num: 'المسار الثالث', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>فهم التأثير المباشر للسلوك الإداري على جودة ومعدلات الإنتاج.</li><li>إعادة هيكلة الثقافة التنظيمية لتحقيق أقصى توافق مع معايير الجودة.</li>',
+            objectives: '<li>تحليل سلوكيات بيئة العمل وربطها بمؤشرات الأداء (KPIs).</li><li>تطوير استراتيجيات تحفيزية ترتبط برفع جودة المخرجات.</li>',
+            audience: '<li>مديرو الجودة والتطوير المؤسسي.</li><li>مديرو الإنتاج والعمليات والتشغيل.</li>'
+          },
+          'change': {
+            title: 'إدارة التغيير التنظيمي', subtitle: 'التطوير المؤسسي | معهد الإدارة العامة', hours: '20', price: '1,500 دولار', num: 'التطوير المؤسسي', img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>تنمية معارف ومهارات المشاركين في إدارة التغيير في المنظمات بكفاءة وفاعلية.</li><li>معرفة المفاهيم الأساسية لإدارة التغيير التنظيمي وعناصره بدقة.</li>',
+            objectives: '<li>تحديد المجالات الرئيسية التي يستهدفها التغيير وأنواعه.</li><li>تطبيق استراتيجيات ونماذج إدارة التغيير بكفاءة وفاعلية.</li>',
+            audience: '<li>مديرو التطوير المؤسسي وإعادة الهيكلة.</li><li>مديرو الإدارات التنفيذية والقيادات العليا.</li>'
+          },
+          'hr_diversity': {
+            title: 'إدارة التنوع في الموارد البشرية', subtitle: 'الموارد البشرية | بيئة العمل المؤسسي', hours: '12', price: '950 دولار', num: 'الموارد البشرية', img: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>إكساب المتدربين مهارة إدارة تنوع الموارد البشرية بكفاءة وفاعلية.</li><li>إدراك دور إدارة التنوع في رفع مستويات الابتكار والإنتاجية.</li>',
+            objectives: '<li>ذكر مفهوم إدارة تنوع الموارد البشرية بيسر وسهولة.</li><li>تحديد أسس تفعيل دور إدارة التنوع في بيئة العمل.</li>',
+            audience: '<li>موظفو ومسؤولو الموارد البشرية.</li><li>مديرو الشؤون الإدارية وشؤون الأفراد.</li>'
+          },
+          'salary': {
+            title: 'إدارة الرواتب والمكافآت والحوافز', subtitle: 'التعويضات والمكافآت | مركز الأعمال والاحتراف', hours: '20', price: '1,500 دولار', num: 'التعويضات', img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>تنمية قدرات ومعارف المتدربين في مجال إدارة الرواتب والمكافآت.</li><li>تطبيق منهجية وطرق تقييم الوظائف بمهنية عالية.</li>',
+            objectives: '<li>تصميم هياكل الرواتب والأجور ونظم الحوافز المبنية على الأداء.</li><li>التعرف على الأخطاء الشائعة في تصميم نظم المكافآت.</li>',
+            audience: '<li>موظفو وممارسو الموارد البشرية (شؤون الموظفين).</li><li>محللو التعويضات والمزايا الوظيفية.</li>'
+          },
+          'talents': {
+            title: 'إدارة المواهب والاحتفاظ بالكفاءات', subtitle: 'تطوير القيادات | إدارة الموارد البشرية', hours: '16', price: '1,200 دولار', num: 'تطوير القيادات', img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>تنمية معارف وقدرات المتدربين في عمليات ومراحل إدارة المواهب.</li><li>التعرف على أفضل ممارسات إدارة المواهب بمختلف عملياتها.</li>',
+            objectives: '<li>تقييم أداء المواهب وفق أسس علمية دقيقة.</li><li>تطبيق استراتيجيات الاحتفاظ بالكفاءات القيادية.</li>',
+            audience: '<li>مديرو إدارات المواهب والتطوير.</li><li>مسؤولو استقطاب الكفاءات والموارد البشرية.</li>'
+          },
+          'crisis': {
+            title: 'إدارة المخاطر والكوارث والأزمات', subtitle: 'الإدارة الاستراتيجية | استجابة فعالة للمتغيرات', hours: '18', price: '1,350 دولار', num: 'الإدارة الاستراتيجية', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>تمكين المشاركين من تحديد المخاطر المحتملة، تقييمها، وتخفيف أثرها.</li><li>وضع خطط استجابة فعالة للأزمات باستخدام النماذج العلمية الحديثة.</li>',
+            objectives: '<li>تطوير خطط استجابة سريعة للأزمات الطارئة.</li><li>التواصل الفعال أثناء إدارة الأزمات وتحقيق القيادة الآمنة.</li>',
+            audience: '<li>مديرو الخط الأول والمشرفون ورؤساء الأقسام.</li><li>أعضاء لجان إدارة الأزمات والطوارئ.</li>'
+          },
+          'quality': {
+            title: 'إدارة الجودة الشاملة (TQM)', subtitle: 'الجودة والتميز | معايير الأداء المؤسسي', hours: '18', price: '1,350 دولار', num: 'الجودة والتميز', img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>إكساب المتدربين المهارات اللازمة في إدارة الجودة الشاملة بكفاءة وفاعلية.</li><li>التعرف على المعايير الدولية والخطوات الصحيحة للتقييم والتميز.</li>',
+            objectives: '<li>تحديد العناصر الأساسية في إدارة الجودة بدقة وإتقان.</li><li>تطبيق مراحل تطبيق إدارة الجودة في الجهات الحكومية والخاصة.</li>',
+            audience: '<li>مسؤولو قطاع الجودة والتميز المؤسسي.</li><li>موظفو قطاع الإنتاج والخدمات.</li>'
+          },
+          'performance': {
+            title: 'إدارة الأداء الوظيفي ومؤشرات الأداء (KPIs)', subtitle: 'تقييم الأداء | قياس العائد والإنتاجية', hours: '16', price: '1,200 دولار', num: 'تقييم الأداء', img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>اكساب المتدرب مهارات إدارة الأداء الوظيفي باحترافية وكفاءة عالية.</li><li>معرفة طرق تقييم الأداء الوظيفي ومؤشرات القياس الرئيسية.</li>',
+            objectives: '<li>تخطيط الأداء ووضع المستهدفات الاستراتيجية والتشغيلية.</li><li>تصميم نماذج تقييم أداء موضوعية وفعالة.</li>',
+            audience: '<li>موظفو ومسؤولو الموارد البشرية والمدراء التنفيذيون.</li>'
+          },
+          'relations': {
+            title: 'إدارة علاقات الموظفين والاتصال الفعال', subtitle: 'علاقات العمل | بيئة عمل آمنة ومحفزة', hours: '20', price: '1,500 دولار', num: 'علاقات العمل', img: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>تنمية مهارات المدربين في إدارة علاقات الموظفين بكفاءة وفاعلية.</li><li>تطوير مهارات الاتصال الفعال والذكاء العاطفي في بيئة العمل.</li>',
+            objectives: '<li>فهم مفهوم وأهمية إدارة علاقات الموظفين بدقة.</li><li>إدارة النزاع في بيئة العمل باحترافية تامة.</li>',
+            audience: '<li>موظفو الموارد البشرية وعلاقات العمل.</li>'
+          },
+          'meetings': {
+            title: 'إدارة الاجتماعات الفعالة وصنع القرار', subtitle: 'المهارات الإدارية | تحسين الإنتاجية الجماعية', hours: '12', price: '950 دولار', num: 'المهارات الإدارية', img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>إتقان المفاهيم الأساسية لإدارة الاجتماعات الناجحة.</li><li>تنظيم مراحل التخطيط والحضور والتقييم والمتابعة للاجتماعات.</li>',
+            objectives: '<li>تجنب الهدر الزمني والتشغيلي في الاجتماعات الروتينية.</li><li>تفعيل المشاركة الفعالة للاجتماعات الافتراضية والواقعية.</li>',
+            audience: '<li>القادة ومديرو الإدارات ورؤساء الأقسام.</li>'
+          },
+          'tourist': {
+            title: 'كيفية التعامل مع السائح وتقديم خدمة استثنائية', subtitle: 'الخدمات والضيافة | التميز في خدمة العملاء', hours: '12', price: '950 دولار', num: 'الضيافة السياحية', img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+            benefits: '<li>إكساب العاملين في قطاع الضيافة والسياحة مهارات التعامل الراقي مع السائح.</li><li>فهم أنماط السلوك السياحي وتلبية التوقعات باحترافية.</li>',
+            objectives: '<li>تطبيق مهارات الاستماع الفعال وحل المشكلات الفورية للعملاء والسياح.</li><li>ترسيخ الصورة الذهنية الاحترافية للمؤسسة السياحية أو الخدمية.</li>',
+            audience: '<li>العاملون في قطاع السياحة والفنادق والخدمات العامة.</li><li>ممثلو خدمة العملاء والاستقبال.</li>'
+          }
+        },
+        selectCourse(key) {
+          this.selectedCourse = this.courses[key];
+          this.currentView = 'brochure';
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        }
       }
     }
   </script>
