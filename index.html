@@ -324,12 +324,11 @@
     }
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    /* شبكة البرامج التدريبية (في المنتصف وبشكل متناسق فخم) */
+    /* شبكة البرامج (في المنتصف وبشكل متناسق) */
     .tracks-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      justify-content: center;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -389,7 +388,7 @@
       font-weight: 600;
     }
 
-    /* صفحة البروفايل (Brochure View) بدون زر التحميل المزعج وبشكل متناسق */
+    /* صفحة البروفايل (Brochure View) */
     .view-section { display: none; }
     .view-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -664,7 +663,7 @@
             <span>بخبرة إقليمية رائدة</span>
           </h1>
           <p class="hero-desc">
-            تقديم حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بمملكة العربية السعودية وعمق أكاديمي متخصص في علم النفس لتشخيص وحل المشكلات التنظيمية.
+            تقديم حلول استشارية وبرامج تطويرية متقدمة لمجالس الإدارة والإدارات العليا؛ تستند إلى خبرة تدريبية عميقة بالمملكة العربية السعودية وعمق أكاديمي متخصص في علم النفس لتشخيص وحل المشكلات التنظيمية.
           </p>
           <div class="hero-actions">
             <a href="#tracks" class="btn-primary">برامجنا التدريبية</a>
@@ -866,7 +865,7 @@
       </div>
     </section>
 
-    <!-- الشهادات المهنية -->
+    <!-- الشهادات المهنية المعتمدة -->
     <section class="accred-section" id="certificates">
       <div class="accred-wrapper">
         <div class="accred-content">
@@ -898,7 +897,7 @@
       </div>
     </section>
 
-    <!-- قائمة جميع البرامج التدريبية والاستشارية (في المنتصف) -->
+    <!-- قائمة جميع البرامج التدريبية (في المنتصف وبشكل متناسق) -->
     <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
       <div class="section-header">
         <span class="section-label">Professional Programs</span>
@@ -1064,7 +1063,7 @@
   </div>
 
 
-  <!-- صفحة تفاصيل الدورة (Brochure View) -->
+  <!-- صفحة تفاصيل الدورة (Brochure View) بدون زر التحميل المزعج وبشكل متناسق -->
   <div id="brochure-view" class="view-section">
     <div class="section-container">
       <button type="button" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والبرامج</button>
