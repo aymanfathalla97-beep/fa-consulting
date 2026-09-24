@@ -617,7 +617,7 @@
   <!-- الهيدر -->
   <header>
     <nav class="nav-container">
-      <a href="#" class="logo-container" onclick="switchView('home')">
+      <a href="#" class="logo-container" onclick="switchView('home'); return false;">
         <div class="logo-box">FA</div>
         <div class="logo-block">
           <div class="logo-title">FA <span>CONSULTING</span></div>
@@ -848,16 +848,16 @@
       </div>
     </section>
 
-    <!-- المسارات التدريبية (برامج الـ 4 الأساسية مع بروفايل خاص لكل دورة) -->
+    <!-- المسارات التدريبية -->
     <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
       <div class="section-header">
         <span class="section-label">Professional Programs</span>
         <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
-        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) الخاص به وتفاصيلها الكاملة.</p>
+        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) وتفاصيلها الكاملة.</p>
       </div>
 
       <div class="tracks-grid">
-        <div class="track-banner-card" onclick="openBrochure('p1')">
+        <div class="track-banner-card" onclick="openBrochure('p1'); return false;">
           <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="برنامج 1" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
@@ -867,7 +867,7 @@
           </div>
         </div>
 
-        <div class="track-banner-card" onclick="openBrochure('p2')">
+        <div class="track-banner-card" onclick="openBrochure('p2'); return false;">
           <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="برنامج 2" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
@@ -877,7 +877,7 @@
           </div>
         </div>
 
-        <div class="track-banner-card" onclick="openBrochure('p3')">
+        <div class="track-banner-card" onclick="openBrochure('p3'); return false;">
           <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="برنامج 3" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
@@ -887,7 +887,7 @@
           </div>
         </div>
 
-        <div class="track-banner-card" onclick="openBrochure('p4')">
+        <div class="track-banner-card" onclick="openBrochure('p4'); return false;">
           <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="برنامج 4" class="track-banner-bg">
           <div class="track-banner-overlay"></div>
           <div class="track-banner-content">
@@ -949,7 +949,7 @@
   <!-- صفحة ملف الدورة المستقلة لكل برنامج (Brochure View) -->
   <div id="brochure-view" class="view-section">
     <div class="section-container">
-      <a href="#" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والمسارات</a>
+      <a href="#" class="back-btn" onclick="switchView('home'); return false;">← العودة إلى الرئيسية والمسارات</a>
       
       <div class="brochure-card">
         <div class="brochure-header">
@@ -1000,7 +1000,7 @@
           </div>
         </div>
 
-        <!-- جدول المواعيد والرسوم المنضبط بالكامل داخل الشاشة -->
+        <!-- جدول المواعيد والرسوم المنضبط بالكامل بدون أي أخطاء عرض -->
         <div class="pricing-table-container">
           <div class="brochure-section-title" style="margin-bottom: 15px;">معلومات الدورة والرسوم الاستثمارية</div>
           <table class="pricing-table">
@@ -1025,7 +1025,7 @@
 
         <div class="brochure-actions">
           <a id="btn-order-bottom" href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
-          <a href="#" onclick="alert('جاري معاينة ملف الدورة (Brochure PDF) للطباعة أو التنزيل...'); return false;" class="btn-download">📥 معاينة ملف الدورة (PDF)</a>
+          <a href="https://wa.me/201271221780?text=أرغب%20في%20طلب%20ملف%20الدورة%20PDF" target="_blank" class="btn-download">📥 احصل على ملف الدورة (PDF)</a>
         </div>
       </div>
     </div>
@@ -1057,7 +1057,6 @@
   </footer>
 
   <script>
-    // قاعدة بيانات دقيقة ومفصلة لكل دورة لتفتح في صفحة البروفايل الخاصة بها
     const brochureData = {
       'p1': { 
         title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', 
@@ -1066,8 +1065,7 @@
         price: '$1,200',
         benefits: '<li>اكتساب أدوات الاتصال الحديثة وتوجيه الحوارات القيادية نحو أهداف المنظمة.</li><li>بناء جسور الثقة المؤسسية مع أعضاء مجالس الإدارة والفرق التنفيذية.</li><li>رفع كفاءة التنسيق الإداري وتقليل الفجوات بين الأقسام.</li>',
         objectives: '<li>تمكين القيادات من صياغة استراتيجيات اتصال فعالة ومؤثرة.</li><li>التمكن من لغة الإقناع المؤسسي والتعامل مع مختلف أنماط الشخصيات.</li><li>تطبيق نماذج الاتصال الحديثة في حل مشكلات العمل.</li>',
-        audience: '<li>رؤساء الأقسام والمدراء التنفيذيون.</li><li>مديرو الموارد البشرية والمسؤولون عن التطوير المؤسسي.</li><li>القيادات الصاعدة والكفاءات الإشرافية.</li>',
-        waText: 'أرغب في حجز برنامج: فنون الاتصال الاستراتيجي والتأثير القيادي الفعال'
+        audience: '<li>رؤساء الأقسام والمدراء التنفيذيون.</li><li>مديرو الموارد البشرية والمسؤولون عن التطوير المؤسسي.</li><li>القيادات الصاعدة والكفاءات الإشرافية.</li>'
       },
       'p2': { 
         title: 'الذكاء العاطفي والاجتماعي لصناع القرار', 
@@ -1076,8 +1074,7 @@
         price: '$950',
         benefits: '<li>تنمية الوعي الذاتي والاجتماعي لمديري الإدارات العليا.</li><li>إدارة الانفعالات الشخصية والجماعية وسط ضغوط العمل الشديدة.</li><li>خلق بيئة عمل مرنة ومحفزة تزيد من ولاء وانتماء الموظفين.</li>',
         objectives: '<li>فهم أبعاد الذكاء العاطفي وتوظيفه في القيادة الإدارية.</li><li>القدرة على احتواء الأزمات السلوكية وفض النزاعات بحكمة.</li><li>تعزيز مهارات التعاطف والتوجيه الإيجابي لفريق العمل.</li>',
-        audience: '<li>صناع القرار ومجالس الإدارة.</li><li>مديرو الاحتفاظ بالموهوبين والموارد البشرية.</li><li>مشرفو فرق العمل والعمليات.</li>',
-        waText: 'أرغب في حجز برنامج: الذكاء العاطفي والاجتماعي لصناع القرار'
+        audience: '<li>صناع القرار ومجالس الإدارة.</li><li>مديرو الاحتفاظ بالموهوبين والموارد البشرية.</li><li>مشرفو فرق العمل والعمليات.</li>'
       },
       'p3': { 
         title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', 
@@ -1086,8 +1083,7 @@
         price: '$950',
         benefits: '<li>إدارة أعباء العمل المتراكمة بأعلى كفاءة وأقل إجهاد ذهني.</li><li>الحد من معدلات الاحتراق الوظيفي وحماية رأس المال البشري.</li><li>رفع مستويات التركيز والإنتاجية اليومية للمدراء والموظفين.</li>',
         objectives: '<li>تحديد مصادر الضغط التنظيمي ووضع خطط استباقية لمعالجتها.</li><li>تطبيق تقنيات الاسترخاء وإدارة الوقت الحديثة للقيادات.</li><li>خلق توازن مستدام بين متطلبات العمل وصحة فريق العمل.</li>',
-        audience: '<li>كافة الإدارات التنفيذية التي تعاني من ضغط تشغيلي عالي.</li><li>فرق خدمة العملاء والعمليات الميدانية.</li><li>المدراء المسؤولون عن إدارة المشاريع.</li>',
-        waText: 'أرغب في حجز برنامج: استراتيجيات التعامل الفعال مع ضغوط العمل اليومية'
+        audience: '<li>كافة الإدارات التنفيذية التي تعاني من ضغط تشغيلي عالي.</li><li>فرق خدمة العملاء والعمليات الميدانية.</li><li>المدراء المسؤولون عن إدارة المشاريع.</li>'
       },
       'p4': { 
         title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', 
@@ -1096,8 +1092,7 @@
         price: '$1,200',
         benefits: '<li>فهم التأثير المباشر للسلوك الإداري على جودة ومعدلات الإنتاج.</li><li>إعادة هيكلة الثقافة التنظيمية لتحقيق أقصى توافق مع معايير الجودة.</li><li>خلق دافعية ذاتية لدى الفرق لتحقيق التميز التشغيلي المستدام.</li>',
         objectives: '<li>تحليل سلوكيات بيئة العمل وربطها بمؤشرات الأداء (KPIs).</li><li>تطوير استراتيجيات تحفيزية ترتبط برفع جودة المخرجات.</li><li>إدارة التغيير السلوكي بمرونة ودون مقاومة تذكر من الفرق.</li>',
-        audience: '<li>مديرو الجودة والتطوير المؤسسي.</li><li>مديرو الإنتاج والعمليات والتشغيل.</li><li>أعضاء لجان التحول والتطوير الإداري.</li>',
-        waText: 'أرغب في حجز برنامج: السلوك التنظيمي وانعكاسه على جودة الإنتاج'
+        audience: '<li>مديرو الجودة والتطوير المؤسسي.</li><li>مديرو الإنتاج والعمليات والتشغيل.</li><li>أعضاء لجان التحول والتطوير الإداري.</li>'
       }
     };
 
@@ -1124,7 +1119,6 @@
         document.getElementById('b-objectives').innerHTML = course.objectives;
         document.getElementById('b-audience').innerHTML = course.audience;
 
-        // ربط أزرار الواتساب برسالة مخصصة لكل دورة تدريبية
         const encodedText = encodeURIComponent('أرغب في حجز وتسجيل البرنامج: ' + course.title);
         const waLink = 'https://wa.me/201271221780?text=' + encodedText;
         document.getElementById('btn-order-top').href = waLink;
