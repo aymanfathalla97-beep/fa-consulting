@@ -22,7 +22,7 @@
       --card-shadow-hover: 0 25px 50px -15px rgba(2, 12, 27, 0.12);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.9; font-size: 16px; }
+    body { font-family: 'Cairo', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.8; font-size: 15.5px; }
     
     header {
       background: rgba(10, 25, 47, 0.98);
@@ -378,7 +378,7 @@
       font-weight: 600;
     }
 
-    /* عرض صفحة تفاصيل الدورة (Brochure View) */
+    /* عرض صفحة ملف الدورة (Brochure View) تماماً مثل الصور الإحترافية */
     .view-section { display: none; }
     .view-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -416,38 +416,56 @@
       flex-wrap: wrap;
       gap: 20px;
     }
-    .brochure-title { font-size: 30px; font-weight: 900; color: var(--primary); }
+    .brochure-title { font-size: 28px; font-weight: 900; color: var(--primary); }
     .brochure-subtitle { font-size: 15px; color: var(--text-muted); font-weight: 600; margin-top: 6px; }
 
+    /* تصميم الأعمدة المتناظرة (زي الصور بالضبط) */
     .brochure-grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 35px;
+      gap: 30px;
+      margin-bottom: 30px;
+      background: #f8fafc;
+      padding: 24px;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
     }
-    .brochure-section-title {
-      font-size: 18px;
+    .brochure-col-box h4 {
+      font-size: 17px;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      margin-bottom: 12px;
       border-right: 4px solid var(--accent-gold);
       padding-right: 10px;
     }
-    .brochure-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .brochure-list li { font-size: 14.5px; color: #475569; position: relative; padding-right: 18px; line-height: 1.7; }
-    .brochure-list li::before { content: "▪"; position: absolute; right: 0; color: var(--accent-gold); font-size: 14px; }
+    .brochure-col-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .brochure-col-box ul li {
+      font-size: 14px;
+      color: #475569;
+      position: relative;
+      padding-right: 18px;
+      line-height: 1.7;
+    }
+    .brochure-col-box ul li::before {
+      content: "▪";
+      position: absolute;
+      right: 0;
+      color: var(--accent-gold);
+      font-size: 14px;
+    }
 
+    /* جدول المواعيد والأسعار المتناسق بالكامل */
     .pricing-table-container {
       margin-top: 40px;
       width: 100%;
-      overflow-x: hidden;
     }
     .pricing-table {
       width: 100%;
-      table-layout: fixed;
       border-collapse: collapse;
       text-align: center;
       background: #f8fafc;
@@ -458,18 +476,16 @@
     .pricing-table th {
       background: var(--primary);
       color: var(--white);
-      padding: 14px 10px;
+      padding: 14px 12px;
       font-size: 13.5px;
       font-weight: 700;
-      word-wrap: break-word;
     }
     .pricing-table td {
-      padding: 14px 10px;
-      font-size: 13.5px;
+      padding: 14px 12px;
+      font-size: 14px;
       color: #334155;
       border-bottom: 1px solid var(--border-color);
       font-weight: 600;
-      word-wrap: break-word;
     }
     .pricing-table tr:last-child td { border-bottom: none; }
 
@@ -863,7 +879,7 @@
           <div class="track-banner-content">
             <div class="track-banner-num">المسار الأول</div>
             <div class="track-banner-title">فنون الاتصال الاستراتيجي والتأثير القيادي الفعال</div>
-            <div class="track-banner-details">16 ساعة | $1,200 | عرض ملف الدورة (Brochure)</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة (Brochure)</div>
           </div>
         </div>
 
@@ -873,7 +889,7 @@
           <div class="track-banner-content">
             <div class="track-banner-num">المسار الثاني</div>
             <div class="track-banner-title">الذكاء العاطفي والاجتماعي لصناع القرار</div>
-            <div class="track-banner-details">12 ساعة | $950 | عرض ملف الدورة (Brochure)</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة (Brochure)</div>
           </div>
         </div>
 
@@ -883,7 +899,7 @@
           <div class="track-banner-content">
             <div class="track-banner-num">المسار الثالث</div>
             <div class="track-banner-title">استراتيجيات التعامل الفعال مع ضغوط العمل اليومية</div>
-            <div class="track-banner-details">12 ساعة | $950 | عرض ملف الدورة (Brochure)</div>
+            <div class="track-banner-details">12 ساعة | 950 دولار | عرض ملف الدورة (Brochure)</div>
           </div>
         </div>
 
@@ -893,7 +909,7 @@
           <div class="track-banner-content">
             <div class="track-banner-num">المسار الرابع</div>
             <div class="track-banner-title">السلوك التنظيمي وانعكاسه على جودة الإنتاج</div>
-            <div class="track-banner-details">16 ساعة | $1,200 | عرض ملف الدورة (Brochure)</div>
+            <div class="track-banner-details">16 ساعة | 1,200 دولار | عرض ملف الدورة (Brochure)</div>
           </div>
         </div>
       </div>
@@ -946,7 +962,7 @@
   </div>
 
 
-  <!-- صفحة ملف الدورة المستقلة لكل برنامج (Brochure View) -->
+  <!-- صفحة ملف الدورة المستقلة لكل برنامج (Brochure View) متطابقة تماماً للصور -->
   <div id="brochure-view" class="view-section">
     <div class="section-container">
       <a href="#" class="back-btn" onclick="switchView('home'); return false;">← العودة إلى الرئيسية والمسارات</a>
@@ -962,18 +978,19 @@
           </div>
         </div>
 
+        <!-- تخطيط الأعمدة المتناظرة المماثل تماماً لكتيبات الشركات الكبرى -->
         <div class="brochure-grid-2">
-          <div>
-            <div class="brochure-section-title">ماذا ستحقق مؤسستكم؟ (Benefits)</div>
-            <ul id="b-benefits" class="brochure-list">
+          <div class="brochure-col-box">
+            <h4>ماذا ستحقق مؤسستكم؟ (What Will I Benefit?)</h4>
+            <ul id="b-benefits">
               <li>اكتساب مهارات تحليلية وتطبيقية متقدمة لرفع كفاءة العمل اليومي.</li>
               <li>تعلم كيفية كتابة وصياغة تقارير مهنية واحترافية لمجالس الإدارة.</li>
               <li>تحسين القدرة على التواصل الفعال وإدارة صراعات بيئة العمل.</li>
             </ul>
           </div>
-          <div>
-            <div class="brochure-section-title">أهداف البرنامج التدريبي (Objectives)</div>
-            <ul id="b-objectives" class="brochure-list">
+          <div class="brochure-col-box">
+            <h4>أهداف الدورة (Course Objectives)</h4>
+            <ul id="b-objectives">
               <li>تطوير الكفاءات القيادية وتمكينهم من أدوات التفكير الاستراتيجي.</li>
               <li>تعلم تقنيات عرض البيانات بشكل جذاب ومؤثر أمام كبار المسؤولين.</li>
               <li>بناء بيئة عمل مستقرة وعالية الإنتاجية تدعم أهداف المنظمة.</li>
@@ -982,17 +999,17 @@
         </div>
 
         <div class="brochure-grid-2">
-          <div>
-            <div class="brochure-section-title">الفئة المستهدفة (Target Audience)</div>
-            <ul id="b-audience" class="brochure-list">
+          <div class="brochure-col-box">
+            <h4>الفئة المستهدفة (Target Audience)</h4>
+            <ul id="b-audience">
               <li>مديرو الإدارات العليا ورؤساء الأقسام التنفيذية.</li>
               <li>المسؤولون والمختصون في أقسام الموارد البشرية (HR).</li>
               <li>القيادات الصاعدة والكفاءات المرشحة لتولي مناصب إشرافية.</li>
             </ul>
           </div>
-          <div>
-            <div class="brochure-section-title">منهجية الدورة التدريبية (Methodology)</div>
-            <ul class="brochure-list">
+          <div class="brochure-col-box">
+            <h4>منهجية الدورة التدريبية (Course Methodology)</h4>
+            <ul>
               <li>الحالات الدراسية والعملية الواقعية المستمدة من كبرى المؤسسات.</li>
               <li>ورش عمل تفاعلية وجلسات عصف ذهني لحل مشكلات المنظمة.</li>
               <li>التعلم التجريبي والتقييم المستمر للأداء قبل وبعد البرنامج.</li>
@@ -1000,7 +1017,7 @@
           </div>
         </div>
 
-        <!-- جدول المواعيد والرسوم المنضبط بالكامل بدون أي أخطاء عرض -->
+        <!-- جدول المواعيد والرسوم المنضبط بالكامل -->
         <div class="pricing-table-container">
           <div class="brochure-section-title" style="margin-bottom: 15px;">معلومات الدورة والرسوم الاستثمارية</div>
           <table class="pricing-table">
@@ -1015,9 +1032,9 @@
             <tbody>
               <tr>
                 <td id="t-hours">16 ساعة</td>
-                <td>حضوري أو تفاعلي عن بُعد</td>
+                <td>حضوري أو تفاعلي عن بُعد (Interactive)</td>
                 <td>العربية</td>
-                <td id="t-price" style="color: #047857; font-weight: 800; direction: ltr; unicode-bidi: embed;">$1,200</td>
+                <td id="t-price" style="color: #047857; font-weight: 800;">1,200 دولار</td>
               </tr>
             </tbody>
           </table>
@@ -1057,12 +1074,13 @@
   </footer>
 
   <script>
+    // قاعدة بيانات الدورات الأربع لملء تفاصيل البروفايل (Brochure) لكل دورة بدقة
     const brochureData = {
       'p1': { 
         title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', 
         subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', 
         hours: '16 ساعة', 
-        price: '$1,200',
+        price: '1,200 دولار',
         benefits: '<li>اكتساب أدوات الاتصال الحديثة وتوجيه الحوارات القيادية نحو أهداف المنظمة.</li><li>بناء جسور الثقة المؤسسية مع أعضاء مجالس الإدارة والفرق التنفيذية.</li><li>رفع كفاءة التنسيق الإداري وتقليل الفجوات بين الأقسام.</li>',
         objectives: '<li>تمكين القيادات من صياغة استراتيجيات اتصال فعالة ومؤثرة.</li><li>التمكن من لغة الإقناع المؤسسي والتعامل مع مختلف أنماط الشخصيات.</li><li>تطبيق نماذج الاتصال الحديثة في حل مشكلات العمل.</li>',
         audience: '<li>رؤساء الأقسام والمدراء التنفيذيون.</li><li>مديرو الموارد البشرية والمسؤولون عن التطوير المؤسسي.</li><li>القيادات الصاعدة والكفاءات الإشرافية.</li>'
@@ -1071,7 +1089,7 @@
         title: 'الذكاء العاطفي والاجتماعي لصناع القرار', 
         subtitle: 'المسار الأول | اتخاذ قرارات متوازنة تحت الضغط', 
         hours: '12 ساعة', 
-        price: '$950',
+        price: '950 دولار',
         benefits: '<li>تنمية الوعي الذاتي والاجتماعي لمديري الإدارات العليا.</li><li>إدارة الانفعالات الشخصية والجماعية وسط ضغوط العمل الشديدة.</li><li>خلق بيئة عمل مرنة ومحفزة تزيد من ولاء وانتماء الموظفين.</li>',
         objectives: '<li>فهم أبعاد الذكاء العاطفي وتوظيفه في القيادة الإدارية.</li><li>القدرة على احتواء الأزمات السلوكية وفض النزاعات بحكمة.</li><li>تعزيز مهارات التعاطف والتوجيه الإيجابي لفريق العمل.</li>',
         audience: '<li>صناع القرار ومجالس الإدارة.</li><li>مديرو الاحتفاظ بالموهوبين والموارد البشرية.</li><li>مشرفو فرق العمل والعمليات.</li>'
@@ -1080,7 +1098,7 @@
         title: 'استراتيجيات التعامل الفعال مع ضغوط العمل اليومية', 
         subtitle: 'المسار الثاني | استعادة التوازن المهني والإنتاجي', 
         hours: '12 ساعة', 
-        price: '$950',
+        price: '950 دولار',
         benefits: '<li>إدارة أعباء العمل المتراكمة بأعلى كفاءة وأقل إجهاد ذهني.</li><li>الحد من معدلات الاحتراق الوظيفي وحماية رأس المال البشري.</li><li>رفع مستويات التركيز والإنتاجية اليومية للمدراء والموظفين.</li>',
         objectives: '<li>تحديد مصادر الضغط التنظيمي ووضع خطط استباقية لمعالجتها.</li><li>تطبيق تقنيات الاسترخاء وإدارة الوقت الحديثة للقيادات.</li><li>خلق توازن مستدام بين متطلبات العمل وصحة فريق العمل.</li>',
         audience: '<li>كافة الإدارات التنفيذية التي تعاني من ضغط تشغيلي عالي.</li><li>فرق خدمة العملاء والعمليات الميدانية.</li><li>المدراء المسؤولون عن إدارة المشاريع.</li>'
@@ -1089,7 +1107,7 @@
         title: 'السلوك التنظيمي وانعكاسه على جودة الإنتاج', 
         subtitle: 'المسار الثالث | ربط كفاءة الأداء بمعايير الجودة', 
         hours: '16 ساعة', 
-        price: '$1,200',
+        price: '1,200 دولار',
         benefits: '<li>فهم التأثير المباشر للسلوك الإداري على جودة ومعدلات الإنتاج.</li><li>إعادة هيكلة الثقافة التنظيمية لتحقيق أقصى توافق مع معايير الجودة.</li><li>خلق دافعية ذاتية لدى الفرق لتحقيق التميز التشغيلي المستدام.</li>',
         objectives: '<li>تحليل سلوكيات بيئة العمل وربطها بمؤشرات الأداء (KPIs).</li><li>تطوير استراتيجيات تحفيزية ترتبط برفع جودة المخرجات.</li><li>إدارة التغيير السلوكي بمرونة ودون مقاومة تذكر من الفرق.</li>',
         audience: '<li>مديرو الجودة والتطوير المؤسسي.</li><li>مديرو الإنتاج والعمليات والتشغيل.</li><li>أعضاء لجان التحول والتطوير الإداري.</li>'
