@@ -324,7 +324,7 @@
     }
     .eval-img-wrapper img, .testimonial-img-wrapper img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    /* بطاقات المسارات */
+    /* بطاقات المسارات الرئيسية */
     .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; }
     .track-banner-card {
       position: relative;
@@ -378,7 +378,7 @@
       font-weight: 600;
     }
 
-    /* عرض صفحة تفاصيل الدورة (Brochure View المماثل لموقع الطويل) */
+    /* عرض صفحة تفاصيل الدورة (Brochure View) */
     .view-section { display: none; }
     .view-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -440,7 +440,6 @@
     .brochure-list li { font-size: 14.5px; color: #475569; position: relative; padding-right: 18px; line-height: 1.7; }
     .brochure-list li::before { content: "▪"; position: absolute; right: 0; color: var(--accent-gold); font-size: 14px; }
 
-    /* جدول المواعيد والأسعار مثل موقع الطويل */
     .pricing-table-container {
       margin-top: 40px;
       overflow-x: auto;
@@ -634,7 +633,6 @@
   <!-- الصفحة الرئيسية (Home View) -->
   <div id="home-view" class="view-section active">
     
-    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-wrapper">
         <div>
@@ -654,7 +652,6 @@
           </div>
         </div>
 
-        <!-- بطاقة المستشار -->
         <div class="founder-card" id="about">
           <div class="founder-badge-top">القيادة الاستشارية والأكاديمية</div>
           <div class="founder-header">
@@ -682,7 +679,6 @@
       </div>
     </section>
 
-    <!-- شريط الأرقام -->
     <div class="authority-bar">
       <div class="authority-grid">
         <div class="auth-item">
@@ -704,7 +700,6 @@
       </div>
     </div>
 
-    <!-- قسم من نحن -->
     <section class="section-container" style="background: #ffffff;">
       <div class="about-company-box">
         <h3>من نحن | FA Consulting & Training</h3>
@@ -712,7 +707,6 @@
       </div>
     </section>
 
-    <!-- ما الذي تحصله مؤسستكم (B2B Value) -->
     <section class="section-container" id="b2b-offer" style="padding-top: 0;">
       <div class="b2b-value-section">
         <div class="section-header" style="margin-bottom: 25px;">
@@ -733,7 +727,6 @@
       </div>
     </section>
 
-    <!-- الأهداف المؤسسية -->
     <section class="section-container" id="goals" style="background: #ffffff;">
       <div class="section-header">
         <span class="section-label">Strategic Objectives</span>
@@ -850,12 +843,12 @@
       </div>
     </section>
 
-    <!-- المسارات التدريبية الرئيسية -->
+    <!-- المسارات التدريبية -->
     <section class="section-container" id="tracks" style="background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
       <div class="section-header">
         <span class="section-label">Professional Programs</span>
         <h2 class="section-title">مساراتنا التدريبية المتخصصة</h2>
-        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) وتفاصيلها الكاملة.</p>
+        <p class="section-desc">اضغط على أي برنامج أدناه لاستعراض ملف الدورة (Brochure) في صفحة مستقلة.</p>
       </div>
 
       <div class="tracks-grid">
@@ -900,7 +893,6 @@
         </div>
       </div>
 
-      <!-- جلسة التشخيص -->
       <div class="discovery-section" id="discovery">
         <div>
           <span class="discovery-badge">مبادرة الشراكة المؤسسية</span>
@@ -946,10 +938,10 @@
       </div>
     </section>
 
-  </div> <!-- نهاية الصفحة الرئيسية -->
+  </div>
 
 
-  <!-- صفحة ملف الدورة (Brochure View المماثل لموقع الطويل) -->
+  <!-- صفحة ملف الدورة المستقلة (Brochure View) المحدثة -->
   <div id="brochure-view" class="view-section">
     <div class="section-container">
       <a href="#" class="back-btn" onclick="switchView('home')">← العودة إلى الرئيسية والمسارات</a>
@@ -1003,13 +995,12 @@
           </div>
         </div>
 
-        <!-- جدول المواعيد والأسعار مثل موقع الطويل -->
         <div class="pricing-table-container">
           <div class="brochure-section-title" style="margin-bottom: 15px;">معلومات الدورة والرسوم الاستثمارية</div>
           <table class="pricing-table">
             <thead>
               <tr>
-                <th>المدة الساعاتية</th>
+                <th>المدة بالساعة</th>
                 <th>نمط التدريب</th>
                 <th>اللغة</th>
                 <th>الرسوم (USD)</th>
@@ -1017,9 +1008,9 @@
             </thead>
             <tbody>
               <tr>
-                <td id="t-hours">16 ساعة</td>
+                <td id="t-hours">16 ساعة تدريبية</td>
                 <td>حضوري أو تفاعلي عن بُعد (Interactive)</td>
-                <td>اللغة العربية / الإنجليزية</td>
+                <td>اللغة العربية</td>
                 <td id="t-price" style="color: #047857; font-weight: 800;">$1,200 (أو ما يعادله بالعملة المحلية)</td>
               </tr>
             </tbody>
@@ -1028,7 +1019,7 @@
 
         <div class="brochure-actions">
           <a href="https://wa.me/201271221780?text=أرغب%20في%20حجز%20البرنامج%20التدريبي" target="_blank" class="btn-register">🛒 حجز وتسجيل البرنامج (عبر واتساب)</a>
-          <a href="#" onclick="alert('تم تجهيز ملف البروفايل (Brochure) للتنزيل الفوري.'); return false;" class="btn-download">📥 احصل على ملف الدورة (PDF)</a>
+          <a href="#" onclick="alert('جاري تحميل ملف الدورة (Brochure PDF) الخاص بـ FA Consulting...'); return false;" class="btn-download">📥 احصل على ملف الدورة (PDF)</a>
         </div>
       </div>
     </div>
@@ -1059,7 +1050,6 @@
     </div>
   </footer>
 
-  <!-- سكربت التحكم في صفحات البروفايل (Brochure) -->
   <script>
     const brochureData = {
       'p1': { title: 'فنون الاتصال الاستراتيجي والتأثير القيادي الفعال', subtitle: 'المسار الأول | بناء حضور قيادي مؤثر', hours: '16 ساعة تدريبية', price: '$1,200 (أو ما يعادله بالعملة المحلية)' },
